@@ -1,0 +1,157 @@
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; */
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+nav img {
+    margin-left: 120px;
+}
+
+nav .links {
+    width: 70%;
+    /* background-color: red; */
+    margin-right: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+
+}
+
+/* #book {
+    background-color: #E91E63;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border: none;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+
+
+
+}
+
+#book:hover {
+    background-color: #F06292;
+    color: rgba(10, 10, 10, 0.6);
+    padding: 10px 24px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border: none;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+
+
+
+} */
+
+.links .fa-solid {
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#home {
+
+    background-color: white;
+    color: #E91E63;
+    border-bottom: 5px solid #F06292;
+    border-radius: 25px;
+    width: 89px;
+    height: 44px;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    /* padding: 0px; */
+
+
+
+
+}
+
+.links .fa-solid:hover {
+    color: #E91E63;
+    background-color: white;
+    border: 1.5px solid #F5F5F5;
+    border-radius: 5px;
+}
+
+.appointment-button {
+    background-color: #E91E63;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 20px 10px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border: none;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+}
+
+.appointment-button:hover {
+    background-color: #F06292;
+    color: rgba(10, 10, 10, 0.6);
+    padding: 10px 24px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border: none;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+} 
+
+.links .hamburger-button {
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+
+.links .hamburger-button:hover {
+    color: #E91E63;
+    background-color: white;
+    border: 1.5px solid #F5F5F5;
+    border-radius: 5px;
+}
