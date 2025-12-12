@@ -22,8 +22,7 @@ nav {
     align-items: center;
     position: absolute; /* Default: Absolute (for overlap on hero section) */
     top: 0;
-    z-index: 1001;
-    /* Reset default margin/padding for the bar itself */
+    z-index: 1002; /* Ensures nav is always on top */
     padding: 0; 
 }
 
@@ -49,7 +48,6 @@ nav .links {
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
-    /* Animation for hiding/showing desktop nav */
     transition: visibility 0s, opacity 0.3s linear;
 }
 
@@ -87,7 +85,7 @@ nav .links a {
     background-color: var(--primary-color);
     color: var(--text-light);
     padding: 10px 24px;
-    border-radius: 20px 10px; /* Unique border radius */
+    border-radius: 20px 10px; 
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border: none;
     font-style: normal;
@@ -101,7 +99,7 @@ nav .links a {
 .appointment-button:hover {
     background-color: var(--primary-light);
     color: rgba(10, 10, 10, 0.6);
-    border-radius: 10px; /* Slightly different hover radius */
+    border-radius: 10px; 
 }
 
 
@@ -111,7 +109,7 @@ nav .links a {
 
 .hamburger-button {
     cursor: pointer;
-    display: flex; /* Always visible in the desktop links container */
+    display: flex; 
     align-items: center;
     justify-content: center;
     width: 30px;
@@ -157,79 +155,246 @@ nav .links a {
 
 
 /* ---------------------------------------------------------
-   5. MOBILE MENU OVERLAY (.hamburger-menu)
+   5. MOBILE MENU OVERLAY (.hamburger-menu) - FIXED TO DESIGN
    --------------------------------------------------------- */
 .hamburger-menu {
-    position: fixed;
+    position: fixed; 
     top: 0;
-    right: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.95); 
+    z-index: 1001; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow-y: auto;
-    /* Default off-screen state */
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    overflow-y: hidden;
+    
+    /* Default off-screen state (use opacity/visibility for smooth transition) */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s;
 }
 
 .hamburger-menu.active {
-    /* Active on-screen state */
-    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
 }
 
+/* --- Content Wrapper (The maroon box from the design) --- */
+.menu-content-wrapper {
+    width: 90%; 
+    height: 85vh; 
+    max-width: 1300px;
+    background-color: #6A1B4D; 
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* --- LEFT COLUMN: Links and Header (Laptop View) --- */
+.menu-links-column {
+    width: 50%;
+    min-width: 300px;
+    padding: 60px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.menu-header {
+    display: flex;
+    width: 100%; 
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+/* Logo and Business Name Styling */
+.menu-logo {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.menu-logo-text {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.menu-business-name p {
+    color: white;
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+
+/* Close Button (X) Styling */
+.menu-close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 5px;
+}
+
+.close-icon::before {
+    content: 'x';
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* Links List (Vertical Stacked, Centered) */
 .hamburger-links {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px; 
     text-align: center;
-    padding-top: 0;
+    padding-right: 40px;
+    border-right: 2px solid rgba(255, 255, 255, 0.2); 
+    margin-right: 40px; 
 }
 
 .hamburger-links a {
-    color: var(--text-light);
+    color: white;
     text-decoration: none;
-    font-size: 24px;
-    padding: 10px 0;
+    font-family: 'Poppins';
+    font-size: 28px;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: color 0.2s;
+}
+
+/* Style for Home link inside the menu */
+#menu-home {
+    color: var(--primary-color);
+    background: none; 
+    border-bottom: none;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+}
+
+/* Styling the "Book a Call" link inside the menu */
+.mobile-book-call-link {
+    /* Style as a regular link for large screen pop-out */
+    color: white !important;
+    margin-top: 15px; 
+    font-size: 28px !important;
+    text-decoration: underline;
+    text-align: center;
+}
+
+
+/* --- RIGHT COLUMN: Image Container (Laptop View) --- */
+.menu-image-column {
+    flex-grow: 1; 
+    display: flex; /* Make sure it displays by default for laptop view */
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.menu-decorative-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 60px; 
+    max-height: 100%;
+    max-width: 100%;
 }
 
 
 /* ---------------------------------------------------------
-   6. RESPONSIVE BREAKPOINT (max-width: 1280px)
+   6. RESPONSIVE BREAKPOINT (max-width: 1280px) - Mobile Fixes
    --------------------------------------------------------- */
 @media (max-width: 1280px) {
     
     /* Fix the navigation bar to the top for mobile view */
     nav {
         position: fixed;
-        background-color: var(--nav-bg); /* Opaque background on scroll/mobile */
-        padding: 10px 20px; /* Mobile Alignment for Logo/Hamburger */
+        background-color: var(--nav-bg); 
+        padding: 10px 20px; 
+        z-index: 1003; 
+        top: 0;
+        left: 0;
+        right: 0;
     }
     
-    /* Reset Desktop Margins */
-    nav img {
-        margin-left: 0;
+    /* Reset Desktop Margins, Hide Desktop Links (Original Code) */
+    nav img { margin-left: 0; }
+    nav .links { margin-right: 0; width: auto; }
+    nav .links > a, 
+    nav .links .appointment-button { display: none !important; }
+    .links .hamburger-button { display: flex !important; margin-left: auto; }
+
+    
+    /* ---------------------------------------------------------
+       MOBILE OVERRIDES FOR FULL-SCREEN MENU 
+       --------------------------------------------------------- */
+    .menu-content-wrapper {
+        width: 100%; 
+        height: 100vh;
+        border-radius: 0;
+        flex-direction: column; 
+        padding: 0;
+        overflow-y: auto;
     }
     
-    nav .links {
-        margin-right: 0;
-        /* Force container to match mobile alignment logic */
-        width: auto;
+    .menu-links-column {
+        width: 100%;
+        padding: 40px 20px 20px; 
+        min-width: auto;
+        align-items: center; 
     }
 
-    /* Hide all desktop links (standard links + button) on mobile */
-    nav .links > a, 
-    nav .links .appointment-button {
-        display: none !important;
+    .hamburger-links {
+        border-right: none; 
+        padding-right: 0;
+        margin-right: 0;
+        text-align: center;
+        gap: 20px;
+        width: 100%; 
+    }
+
+    .hamburger-links a {
+        font-size: 20px;
     }
     
-    /* Ensure the hamburger button is visible and pushed to the right */
-    .links .hamburger-button {
-        display: flex !important;
-        margin-left: auto; 
+    .menu-header {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    /* Style the "Book a Call" link as a prominent button on mobile */
+    .mobile-book-call-link {
+        display: block; /* Make sure it is visible */
+        margin-top: 30px;
+        width: 100%;
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        /* Apply button-like styling */
+        background-color: var(--primary-color);
+        color: var(--text-light) !important;
+        padding: 10px 24px;
+        border-radius: 20px 10px; 
+        text-decoration: none; /* Remove underline for button look */
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    /* Hide the image completely on small mobile screens */
+    .menu-image-column {
+        display: none;
     }
 }
