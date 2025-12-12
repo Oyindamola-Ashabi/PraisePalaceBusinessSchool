@@ -522,9 +522,9 @@ section .abtusimg img {
 
 
 /* =========================================================
-   LAPTOP FIXES (Target: 1025px to 1400px) 
+   LAPTOP FIXES (Target: 1025px to 1400px)
    ---------------------------------------------------------
-   FIX 1: Scale down the About Us (section) text and image for side-by-side view.
+   LATEST FIX: Used Flexbox `gap` to reliably separate text and image, eliminating overlap.
    ========================================================= */
 
 @media (min-width: 1025px) and (max-width: 1400px) {
@@ -534,7 +534,7 @@ section .abtusimg img {
         padding: 0 5%; 
     }
 
-    /* 2. HERO SECTION - CRITICAL FIXES (H1, P, POSITIONING) */
+    /* 2. HERO SECTION - CRITICAL FIXES (Preserved) */
     .homescreen .head {
         min-height: 80vh; 
         display: flex;
@@ -577,43 +577,58 @@ section .abtusimg img {
         gap: 20px;
     }
     
-    /* 3. ABOUT US SECTION - CRITICAL FIXES (Scale text and image side-by-side) */
+    /* 3. ABOUT US SECTION - CRITICAL FIXES (Overlap Elimination) */
     section {
         min-height: auto;
-        padding: 40px 0;
-        display: flex; /* Ensure side-by-side */
-        flex-direction: row; /* Ensure text is left, image is right (default) */
+        display: flex; 
+        /* flex-direction: row;  */
         justify-content: space-between;
+        align-items: center; /* Vertical alignment */
+        margin-left: 0; 
+        /* padding: 60px 5%;  */
+        /* CRITICAL FIX: Use flexbox gap for reliable spacing */
+        gap: 60px; 
     }
     
     section .abtus {
-        /* Allocate space for text */
-        width: 45%; 
-        margin-left: 5%;
-        padding-right: 10px;
+         
+         width: 50%;  
+         margin: 0; 
+        padding-right: 0; 
+        padding-top: 0; 
+        /* background-color: #211ee9; */
     }
     
     section .abtus h1 {
-        font-size: 32px; 
+        font-size: 30px; 
+        margin-bottom: 20px; 
     }
 
     section .abtus p {
-        font-size: 16px; 
+        font-size: 10px; 
+        margin-top: 0; 
+        /* margin-bottom: 20px;  */
+        /* line-height: 1.5; */
+        white-space: normal; 
+        
+    }
+    
+    .Read-more-button {
+        margin-top: 20px; 
     }
 
     section .abtusimg {
-        /* Allocate space for image container */
-        width: 50%;
+        /* width: 50%;  */
         display: flex;
         justify-content: flex-end;
+        align-items: center; 
     }
 
     section .abtusimg img {
-        /* Image itself scales down */
         width: 100%; 
-        max-width: 550px; /* Max size for image */
+        max-width: 550px; 
         height: auto; 
-        margin-right: 5%;
+        margin-right: 0; 
         border-top-left-radius: 60px; 
     }
 
@@ -723,8 +738,7 @@ section .abtusimg img {
 /* =========================================================
    ORIGINAL MOBILE / SMALL TABLET OVERRIDES (max-width: 1024px)
    ---------------------------------------------------------
-   FIX 2: Move training image down.
-   FIX 3: Reduce highlight image width.
+   Includes all requested mobile fixes.
    ========================================================= */
 
 @media (max-width: 1024px) {
@@ -743,7 +757,6 @@ section .abtusimg img {
         flex-direction: column;
     }
 
-    /* Override fixed positioning for mobile */
     .head .hero h1, 
     .head .hero p, 
     .hero .hero-button {
@@ -753,7 +766,6 @@ section .abtusimg img {
         margin: 10px auto; 
     }
     
-    /* Responsive Hero Text Size */
     .head .hero h1 {
         font-size: 40px !important; 
         line-height: 1.2 !important;
@@ -783,7 +795,7 @@ section .abtusimg img {
         width: 90%;
     }
 
-    /* 3. ABOUT US SECTION - CRITICAL MOBILE FIXES */
+    /* 3. ABOUT US SECTION - CRITICAL MOBILE FIXES (Image before text, centered text) */
     section {
         flex-direction: column-reverse !important; 
         padding: 20px 0; 
@@ -857,30 +869,30 @@ section .abtusimg img {
         margin-bottom: 20px;
     }
     
-    /* 🛑 HIGHLIGHTS FIX 3: Reduce image width to fit parent box/border */
-    .hl .box-iems .box {
-        width: 100% !important;
-        max-width: 400px;
-        margin-top: 30px;
-        height: auto;
-        padding: 5px; /* Add padding inside the box to separate image from border */
-    }
-
-    .box img {
-        width: 100% !important; /* Image scales to the width of the box minus padding */
-        height: auto !important;
-    }
-
+    /* HIGHLIGHTS FIX: Vertical stacking and image sizing */
     .hl .box-iems {
         flex-direction: column; 
         gap: 30px;
         align-items: center;
     }
 
+    .hl .box-iems .box {
+        width: 100% !important;
+        max-width: 400px;
+        margin-top: 30px;
+        height: auto;
+        padding: 5px; 
+    }
 
+    .box img {
+        width: 100% !important; 
+        height: auto !important;
+    }
+
+
+    /* TRAINING FIXES: Title visibility and button centering */
     .tr {
         width: 100% !important;
-        /* 🛑 TRAINING TITLE FIX 2: Add top margin to push content down and show title */
         margin-top: 40px !important; 
         padding: 0 !important;
     }
@@ -905,7 +917,6 @@ section .abtusimg img {
         display: none !important;
     }
 
-    /* Reset fixed margins to 0 for mobile stacking */
     #move1, #move2, #move3, #move4 {
         margin-top: 0 !important;
     }
@@ -917,7 +928,6 @@ section .abtusimg img {
     .training-img-box img {
         width: 100% !important;
         height: auto !important;
-        /* 🛑 TRAINING IMAGE FIX 2: Add space below the image so it doesn't cover the title */
         margin-top: 20px; 
     }
     
@@ -936,7 +946,6 @@ section .abtusimg img {
         width: auto !important;
     }
 
-    /* 🛑 VIEW ALL BUTTON FIX: Center the button */
     .viewall-button {
         margin-top: 20px; 
         display: flex; 
