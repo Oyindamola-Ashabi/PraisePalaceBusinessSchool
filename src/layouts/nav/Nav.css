@@ -1,26 +1,26 @@
-nav{
+
+nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position: fixed; */
     position: absolute;
     top: 0;
-    z-index: 1;
+    z-index: 100;
 }
 
 nav img {
     margin-left: 120px;
+    width: 80px; 
+    height: 80px; 
 }
 
 nav .links {
     width: 70%;
-    /* background-color: red; */
     margin-right: 120px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -28,61 +28,13 @@ nav .links {
     line-height: 24px;
 }
 
-.links a {
+nav .links a {
     text-decoration: none;
     color: white;
-
 }
 
-/* #book {
-    background-color: #E91E63;
-    color: white;
-    padding: 10px 24px;
-    border-radius: 10px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-    border: none;
-
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-
-
-
-
-}
-
-#book:hover {
-    background-color: #F06292;
-    color: rgba(10, 10, 10, 0.6);
-    padding: 10px 24px;
-    border-radius: 10px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-    border: none;
-
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-
-
-
-
-} */
-
-.links .fa-solid {
-    color: white;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-}
 
 #home {
-
     background-color: white;
     color: #E91E63;
     border-bottom: 5px solid #F06292;
@@ -90,22 +42,10 @@ nav .links {
     width: 89px;
     height: 44px;
     display: flex;
-    /* flex-direction: row; */
     justify-content: center;
     align-items: center;
-    /* padding: 0px; */
-
-
-
-
 }
 
-.links .fa-solid:hover {
-    color: #E91E63;
-    background-color: white;
-    border: 1.5px solid #F5F5F5;
-    border-radius: 5px;
-}
 
 .appointment-button {
     background-color: #E91E63;
@@ -114,12 +54,10 @@ nav .links {
     border-radius: 20px 10px;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border: none;
-
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-
 }
 
 .appointment-button:hover {
@@ -129,24 +67,24 @@ nav .links {
     border-radius: 10px;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border: none;
-
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-} 
-
-.links .hamburger-button {
-    color: white;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
 }
 
+
+.links .hamburger-button {
+    display: flex; 
+    cursor: pointer;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    color: white; 
+}
 
 
 .links .hamburger-button:hover {
@@ -154,4 +92,75 @@ nav .links {
     background-color: white;
     border: 1.5px solid #F5F5F5;
     border-radius: 5px;
+}
+
+
+.hamburger-menu {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    
+    transform: translateX(100%); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.hamburger-menu.active {
+    transform: translateX(0); 
+}
+
+.hamburger-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+}
+
+.hamburger-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 10px 0;
+}
+
+
+@media (max-width: 1024px) {
+    
+   
+    nav {
+        padding: 10px 20px;
+        position: fixed; 
+        background-color: rgba(0, 0, 0, 0.8); 
+    }
+
+    nav img {
+        margin-left: 0;
+        height: 50px;
+        width: 50px;
+    }
+
+    nav .links {
+        width: auto;
+        margin-right: 0; 
+    }
+
+ 
+    nav .links a {
+        display: none !important;
+    }
+    
+  
+    .links .hamburger-button {
+        display: flex !important;
+        color: white !important; 
+        font-size: 28px; 
+    }
 }

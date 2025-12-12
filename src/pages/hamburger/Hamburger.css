@@ -1,0 +1,29 @@
+.hamburger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95); /* Semi-transparent overlay */
+    z-index: 99; /* Below the nav (100), but above content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hamburger-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+}
+
+.hamburger-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 10px 0;
+}

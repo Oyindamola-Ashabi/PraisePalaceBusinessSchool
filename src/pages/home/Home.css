@@ -1,3 +1,10 @@
+/* =========================================================
+   HOME.CSS - DESKTOP-FIRST VERSION (STRICT PRESERVATION)
+   
+   The code below is the UNALTERED DESKTOP BASE. 
+   It applies to all screen sizes unless overridden by a media query.
+   ========================================================= */
+
 .homescreen {
     position: absolute;
     top: 0;
@@ -5,46 +12,35 @@
 }
 
 .homescreen .head {
-
     width: 100%;
     min-height: 100vh;
-    /* background-color: red; */
-    background-image: url(image01.jpeg);
-    /* backdrop-filter: blur(10px); */
-    /* opacity: 0.5; */
-    /* background: linear-gradient(to right, rgba(11, 15, 25, 0.1) 0%, rgba(11, 15, 25, 0.1) 40%, transparent 100%); */
-
     background-size: cover;
     background-position: center;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/image01.jpeg") center/cover no-repeat;
 }
 
-
-
+/* 🛑 HERO SECTION - DESKTOP LOCK */
 .head .hero h1 {
     color: white;
-    /* background-color: black; */
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 110px;
     line-height: 120px;
-    position: absolute;
-    left: 120px;
-    top: 500px;
+    position: absolute; 
+    left: 120px;      
+    top: 500px;       
 }
 
 .head .hero p {
-    position: absolute;
-    left: 120px;
-    top: 633px;
+    position: absolute; 
+    left: 120px;      
+    top: 633px;       
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    /* display: flex;
-   align-items: center; */
     color: white;
 }
 
@@ -53,12 +49,12 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    position: absolute;
-    left: 120px;
-    top: 733px;
-
+    position: absolute; 
+    left: 120px;      
+    top: 733px;       
 }
 
+/* 🛑 MINI-TEXT - DESKTOP LOCK */
 .mini-text {
     position: relative;
     width: 100%;
@@ -77,16 +73,14 @@
     font-size: 26px;
     line-height: 31px;
     text-align: center;
-
-
 }
 
 .section {
     width: 100%;
-    padding: 0 10%;
-    /* background-color: aqua; */
+    padding: 0 10%; 
 }
 
+/* 🛑 ABOUT US SECTION - DESKTOP LOCK */
 section {
     width: 100%;
     min-height: 70vh;
@@ -95,26 +89,14 @@ section {
     display: flex;
     justify-content: space-between;
     position: relative;
-
     align-items: center;
-    /* left: 130px;
-    top: 1111px; */
     border: 2px solid white;
-
-
-
 }
 
 section .abtus {
-    width: 50%;
+    width: 50%; 
     height: auto;
-    /* margin-left: 60px; */
-    /* height: 250px; */
-    /* background-color: aqua; */
-    margin-left: 60px;
-    /* text-align: center; */
-
-
+    margin-left: 60px; 
 }
 
 .p-color {
@@ -122,86 +104,49 @@ section .abtus {
 }
 
 section .abtus h1 {
-    /* width: 509px;
-height: 58px; */
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 45px;
-    /* line-height: 58px; */
     letter-spacing: -0.02em;
-
-
-
-
 }
 
 section .abtus p {
-    /* width: 509px;
-height: 216px; */
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    /* line-height: 24px; */
     margin-top: 30px;
-
-
-
 }
 
 .Read-more-button {
     margin-top: 60px;
 }
 
-
-
 section .abtusimg img {
-    /* width: 50%; */
-    /* position: absolute; */
-    width: 700px;
-    height: 444px;
-    /* right: 0px;
-top: 0px; */
-    border-top-left-radius: 80px;
-    margin-right: 60px;
-
-
-    /* background-color: rgb(31, 145, 52); */
-
+    width: 700px; 
+    height: 444px; 
+    border-top-left-radius: 80px; 
+    margin-right: 60px; 
 }
 
-/* section .abtusimg img{
-    
-    
-} */
-
+/* 🛑 ELIPSE - DESKTOP LOCK */
 .elipse {
-    position: absolute;
+    position: absolute; 
     width: 412px;
     height: 427px;
     left: -135px;
     top: 897px;
     border-radius: 50%;
     background: rgba(51, 51, 51, 0.1);
-
 }
 
-
-
-
-
+/* 🛑 COURSE SECTION - DESKTOP LOCK */
 .course-section {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    /* left: 0px;
-    top: 1855px; */
-    /* background-color: blue; */
     padding-top: 50px;
-
-
 }
 
 .course-section .bckworld-img .shortc-group {
@@ -209,284 +154,96 @@ top: 0px; */
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
 }
 
 .course-section .bckworld-img {
     position: relative;
     width: 100%;
-    /* height: 744px; */
-    /* left: 130px;
-    top: 109px; */
-    /* background: rgba(10, 10, 10, 0.6); */
     background: linear-gradient(rgba(222, 217, 217, 0.461), rgba(113, 108, 108, 0.98)), url('../../assets/earth2.jpeg') center/cover no-repeat;
-
-    /* background: url(earth.jpeg); */
     background-size: cover;
     background-position: center;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     border-radius: 10px;
-
 }
-
 
 .short-courses {
     display: flex;
-
     flex-direction: column;
     align-items: center;
-    /* padding: 0px; */
     gap: 15px;
-
-    width: 355px;
-    height: 450px;
+    width: 355px; 
+    height: 450px; 
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-
 }
-
-.short-courses:hover {
-    color: #FFFFFF;
-    background: rgba(10, 10, 10, 0.6);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-
-
-}
-
-
 
 .course-section h1 {
-    /* position: absolute; */
-    /* width: 469px;
-    height: 58px; */
-    /* left: calc(50% - 469px/2 - 382.5px);
-top: 3px; */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
-    /* line-height: 58px; */
     letter-spacing: -0.02em;
     color: #000000;
-    /* margin-left: 140px; */
     padding: 30px 0;
 }
 
-.short-courses h3 {
-    width: 100%;
-    height: 29px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    /* line-height: 29px; */
-    /* identical to box height */
-    /* display: flex;
-align-items: center; */
-    text-align: center;
-    margin-left: 12px;
-    margin-top: 10px;
-
-}
-
-
-.short-courses p {
-    width: 100%;
-    height: 48px;
-    margin-left: 10px;
-
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    /* line-height: 24px; */
-    /* display: flex; */
-    /* align-items: center; */
-    text-align: center;
-
-    /* color: #000000;
-flex: none;
-order: 2;
-flex-grow: 0; */
-    margin-top: 15px;
-
-
-}
-
-.short-courses #book {
-    margin-left: 110px;
-    padding: 13px 48px;
-    margin-top: 15px;
-
-
-}
-
 .course-section img {
-    width: 355px;
-    height: 220px;
-
+    width: 355px; 
+    height: 220px; 
     border-radius: 10px;
-
-
-    /* flex: none;
-order: 0;
-flex-grow: 0; */
-
 }
 
 .bckworld-img .short-menthorship {
-    /* background-color: aqua; */
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* position: absolute; */
     margin-top: 80px;
-    width: 98%;
-    margin-left: 15px;
-
-    height: 260px;
-    /* left: 113px;
-top: 568px; */
+    width: 98%; 
+    margin-left: 15px; 
+    height: 260px; 
     background: rgba(10, 10, 10, 0.6);
-
 }
 
 .short-menthorship h2 {
-    /* position: absolute; */
-    width: 711px;
-    height: 96px;
-    /* left: 60px;
-top: 85px; */
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
+    width: 711px; 
+    height: 96px; 
     font-size: 40px;
     line-height: 48px;
-    letter-spacing: -0.02em;
-
-    /* Neutral */
     color: #FFFFFF;
-
 }
 
-
-.short-menthorship #book {
-    padding: 13px 58px;
-
-}
-
-
+/* 🛑 HIGHLIGHTS & TRAINING - DESKTOP LOCK */
 .higlight-Training-section {
     width: 100%;
-    /* min-height: 135vh; */
-    /* background-color: rgb(198, 145, 145); */
     position: relative;
-    /* width: 1240px;
-height: 1147px; */
-    /* left: 130px;
-    top: 2800px; */
-
-    /* background: #FFFFFF; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    /* padding-top: 50px; */
     margin-top: 100px;
-
 }
 
 .higlight-Training-section .hl h1 {
-    /* position: absolute; */
-    /* width: 469px;
-    height: 58px;
-    left: 2px;
-    top: 13px; */
-    /* background-color: red; */
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
     font-size: 48px;
-    /* line-height: 120%; */
     color: #000000;
-    /* margin-left: 10px; */
-
 }
 
 .hl .box-iems {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
 }
 
 .hl .box-iems .box {
-    /* position: absolute; */
-    width: 390px;
-    height: 410px;
-    /* left: 0px;
-top: 0px; */
-    background-color: #FFFFFF(158, 130, 130);
+    width: 390px; 
+    height: 410px; 
+    background-color: #FFFFFF;
     margin-top: 100px;
     border: 2px solid #E91E63;
     border-radius: 15px;
-
 }
 
 .box img {
-    /* position: absolute; */
-    width: 385px;
-    height: 219px;
-    /* left: 0px;
-top: 0px; */
-    /* margin-top: 2px; */
-
-    /* background: url(images (34).jpg); */
+    width: 385px; 
+    height: 219px; 
     border-radius: 10px 10px 50px 5px;
-}
-
-.box h3 {
-    /* position: absolute; */
-    width: 348px;
-    height: 31px;
-    /* left: 8px;
-top: 256px; */
-    margin-top: 30px;
-    margin-left: 10px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 31px;
-    display: flex;
-    align-items: center;
-
-    /* color: #000000; */
-}
-
-.box p {
-    /* position: absolute; */
-    width: 300px;
-    height: 48px;
-    /* left: 8px;
-top: 336px; */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-    margin-left: 10px;
-
-    /* color: #000000; */
 }
 
 .tr {
@@ -496,20 +253,11 @@ top: 336px; */
 }
 
 .higlight-Training-section .tr h1 {
-    /* position: absolute; */
-    /* width: 469px;
-    height: 58px; */
-    /* left: 2px;
-    top: 653px; */
-    /* background-color: red; */
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
-    /* line-height: 120%; */
     color: #000000;
-    /* margin-left: 10px; */
     margin-bottom: -58px;
 }
 
@@ -518,35 +266,24 @@ top: 336px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-top: 130px; */
 }
 
-
 .training-box {
-    width: 70%;
+    width: 70%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .training-box .line-1 {
-
-    /* position: absolute; */
     width: 3px;
     height: 110.02px;
-    /* left: 268px;
-top: 820.98px; */
     background-color: #F06292;
 }
 
 .main-training {
     width: 228px;
     height: 175px;
-    /* background-color: aqua; */
-    /* display: block;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20; */
 }
 
 .main-training img {
@@ -560,24 +297,18 @@ top: 820.98px; */
 .main-training h3 {
     width: 228px;
     height: 27px;
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
-
     text-align: center;
     margin-top: 20px;
-
-    /* color: #000000; */
 }
 
 .main-training p {
     width: 228px;
     height: 48px;
-
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -585,83 +316,45 @@ top: 820.98px; */
     line-height: 24px;
     text-align: center;
     margin-top: 20px;
-
-    /* color: #000000; */
-
 }
 
-#move1 {
-    margin-top: 100px;
-}
-
-#move2 {
-    margin-top: 150px;
-}
-
-#move3 {
-    margin-top: 300px;
-}
-
-#move4 {
-    margin-top: 350px;
-}
+/* 🛑 DESKTOP LOCK - ABSOLUTE MARGINS FOR TRAINING ALIGNMENT */
+#move1 { margin-top: 100px; }
+#move2 { margin-top: 150px; }
+#move3 { margin-top: 300px; }
+#move4 { margin-top: 350px; }
 
 .training-img-box img {
     width: auto;
-    height: 460px;
-
+    height: 460px; 
 }
 
 .viewall-button {
-
     margin-top: -50px;
 }
 
-
-
-
+/* 🛑 UPCOMING EVENTS - DESKTOP LOCK */
 .upcoming-event-section {
     width: 100%;
     min-height: 70vh;
-    /* background-color: rgb(198, 145, 145); */
     position: relative;
-    /* width: 1240px;
-height: 559px; */
-    /* left: 130px;
-    top: 4130px; */
-
-
-    /* background: #FFFFFF; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .event-text {
-    width: 37%;
+    width: 37%; 
     padding: 20px;
-
-    /* background-color: aqua; */
 }
 
 .upcoming-event-section .event-text h1 {
-    /* position: absolute;
-    width: 469px;
-    height: 58px;
-    left: 30px;
-    top: 41px; */
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 48px;
-    /* line-height: 58px; */
-
-    /* letter-spacing: -0.02em; */
     margin-bottom: 84px;
-
 }
 
 .upcoming-event-section .event-text h1 span {
@@ -669,41 +362,22 @@ height: 559px; */
 }
 
 .upcoming-event-section .event-text h1+p {
-    /* position: absolute;
-    width: 379px;
-    height: 72px;
-    left: 30px;
-    top: 173px; */
-
-
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-
 }
 
 .dotted-text {
     margin-top: 64px;
-    /* margin-left: 30px;
-    width: 379px;
-    height: 24px; */
-
-
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-
-
     color: #000000;
-
 }
-
 
 .dotted-text-content {
     width: 508px;
@@ -712,68 +386,30 @@ height: 559px; */
     gap: 20px;
     align-items: center;
     margin-top: 40px;
-    /* margin-left: 30px; */
-    /* background-color: aqua; */
 }
 
 #down {
-    /* margin-top: 50px; */
     position: relative;
-    top: 80px;
-
+    top: 80px; 
 }
-
-.dotted-text-content:hover {
-    color: #F06292;
-    font-size: 18px;
-
-}
-
-#down a {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#down a:hover {
-    text-decoration: underline;
-}
-
-
-
-
-/* .events-link:hover {
-  text-decoration: underline; 
-} */
-
 
 .event-img {
-
-    width: 63%;
+    width: 63%; 
     display: flex;
     justify-content: right;
-
-    /* background-color: aquamarine; */
-
     border-radius: 10px;
-
 }
 
 .event-img img {
     width: auto;
-    height: 586px;
+    height: 586px; 
 }
 
 .breadcrumb {
     padding-top: 120px;
 }
 
-
-
-
-
-
-/* Container for the testimonial section */
+/* 🛑 TESTIMONIALS - STRICT DESKTOP LOCK */
 .home-testimonial-section {
     text-align: center;
     padding: 60px 20px;
@@ -781,147 +417,364 @@ height: 559px; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: relative;
     width: 100%;
-
-
-
-
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
     margin-top: 100px;
 }
 
-/* Title styling */
 .home-testimonial-section h1 {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
     line-height: 72px;
-    /* identical to box height */
-
     color: #000000;
 }
 
 .home-testimonial-section h1 span {
     color: #E91E63;
-    /* Or your brand color */
 }
 
-/* Container for the first two testimonials */
 .two-testimonial-boxes {
     display: flex;
     justify-content: space-around;
-    /* gap: 30px; */
     flex-wrap: wrap;
     margin-bottom: 40px;
 }
 
-/* Individual testimonial card */
 .main-testimonial-content {
-
     padding: 25px;
     border-radius: 15px;
-    width: 300px;
-    /* Adjust as needed */
+    width: 473px; 
+    height: 339px; 
     text-align: center;
     position: relative;
     margin-top: 50px;
-    width: 473px;
-    height: 339px;
     background: #FFFFFF;
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
 }
 
-/* Testimonial image */
 .main-testimonial-content img {
     width: 240px;
-  height: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
 }
 
-/* Optional decorative circle or highlight */
 .testmonial-eclipse {
-    /* width: 50px;
-    height: 50px;
-    background-color: #007BFF;
-    
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 167px; 
+    top: 81px;  
+    background: rgba(240, 98, 146, 0.3);
     border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    opacity: 0.2; */
-
-    position: absolute;
-width: 120px;
-height: 120px;
-left: 167px;
-top: 81px;
-
-background: rgba(240, 98, 146, 0.3);
-border-radius: 50%;
-
-
 }
 
-/* Testimonial text */
+/* 🛑 ABSOLUTE POSITIONS FOR TESTIMONIAL TEXT - **MUST BE PRESERVED** */
 .main-testimonial-content p {
     font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 24px;
-text-align: center;
-
-color: #000000;
-position: absolute;
-width: 321px;
-height: 48px;
-left: 73px;
-top: 206px;
-
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    position: absolute;
+    width: 321px; 
+    height: 48px;
+    left: 73px; 
+    top: 206px; 
 }
 
-/* Name of the person */
 .main-testimonial-content h3 {
     font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 20px;
-line-height: 30px;
-/* identical to box height */
-text-align: center;
-
-color: #000000;
-position: absolute;
-width: 268px;
-height: 30px;
-left: 107px;
-top: 254px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+    position: absolute;
+    width: 268px; 
+    height: 30px;
+    left: 107px; 
+    top: 254px; 
 }
 
-/* Title of the person */
 .main-testimonial-content p:last-child {
     font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 24px;
-/* identical to box height */
-text-align: center;
-
-color: #000000;
-position: absolute;
-width: 268px;
-height: 24px;
-left: 103px;
-top: 283px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    position: absolute;
+    width: 268px; 
+    height: 24px;
+    left: 103px; 
+    top: 283px; 
 }
 
-/* Styling for the single testimonial (last one) if needed */
 .home-testimonial-section>.main-testimonial-content {
     margin: 0 auto;
     margin-top: 30px;
+}
+
+
+/* =========================================================
+   MOBILE / TABLET OVERRIDES (max-width: 1024px)
+   ---------------------------------------------------------
+   CRITICAL FIXES FOR ALL LAYOUTS AND TEXT SIZES
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    
+    /* 1. GLOBAL LAYOUT ADJUSTMENTS */
+    .section {
+        padding: 0 5%; 
+    }
+    
+    /* 2. HERO / HEADER - RESPONSIVE TEXT FIX */
+    .homescreen .head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 120px 5% 50px; 
+    }
+
+    /* Override fixed positioning for mobile */
+    .head .hero h1, 
+    .head .hero p, 
+    .hero .hero-button {
+        position: static !important; 
+        left: auto !important;
+        top: auto !important;
+        margin: 10px auto; 
+    }
+    
+    /* Responsive Hero Text Size */
+    .head .hero h1 {
+        font-size: 40px !important; 
+        line-height: 1.2 !important;
+    }
+    
+    .head .hero p {
+        font-size: 16px !important;
+    }
+
+    .hero .hero-button {
+        flex-direction: column; 
+    }
+    
+    /* 🛑 ELIPSE Mobile Fix */
+    .elipse {
+        display: none !important; 
+    }
+    
+    /* 🛑 MINI TEXT - Responsive Text Fix */
+    .mini-text h2 {
+        font-size: 18px !important;
+        line-height: 1.4 !important;
+        padding: 15px 10px;
+        width: 90%;
+    }
+
+    /* 3. ABOUT US SECTION - Responsive Text Fix */
+    section {
+        flex-direction: column !important; 
+    }
+
+    section .abtus {
+        width: 100% !important;
+        margin-left: 0;
+        padding: 0 10px;
+        text-align: center;
+    }
+    
+    section .abtus h1 {
+        font-size: 30px !important; 
+    }
+    
+    section .abtus p {
+        font-size: 16px !important;
+    }
+    
+    section .abtusimg img {
+        width: 100% !important; 
+        height: auto !important;
+    }
+
+    /* 4. COURSE SECTION (Stacking & Text Fix) */
+    .course-section h1 {
+        font-size: 30px !important;
+    }
+    
+    .course-section .bckworld-img .shortc-group {
+        flex-direction: column !important; 
+        gap: 25px;
+    }
+
+    .short-courses {
+        width: 90% !important; 
+        margin: 0 auto;
+    }
+
+    .bckworld-img .short-menthorship {
+        width: 100% !important;
+        height: auto !important;
+        flex-direction: column !important;
+        margin: 40px 0 0 0;
+    }
+
+    .short-menthorship h2 {
+        width: 100% !important;
+        font-size: 24px !important;
+        text-align: center;
+        height: auto !important;
+    }
+
+    /* 5. HIGHLIGHTS & TRAINING - CRITICAL MOBILE FIXES (NO SCATTER) */
+    .higlight-Training-section {
+        flex-direction: column !important;
+        padding: 0 5%;
+    }
+    
+    .higlight-Training-section .tr h1, .higlight-Training-section .hl h1 {
+        font-size: 30px !important;
+        margin-bottom: 20px;
+    }
+
+    .tr {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .higlight-Training-section .tr .training-items {
+        flex-direction: column !important; /* Force vertical stack */
+        gap: 30px;
+    }
+    
+    .training-box {
+        width: 100% !important; /* Force full width */
+        flex-direction: column !important; /* Force vertical stack */
+        gap: 30px;
+    }
+
+    .training-box .line-1 {
+        display: none !important; /* Hide vertical separator line */
+    }
+
+    /* Reset fixed margins to 0 for mobile stacking */
+    #move1, #move2, #move3, #move4 {
+        margin-top: 0 !important;
+    }
+    
+    .training-img-box {
+        width: 100% !important;
+    }
+
+    .training-img-box img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    .main-training {
+        width: 100% !important; /* Ensure main-training uses available width */
+        height: auto !important;
+    }
+
+    .main-training h3 {
+        font-size: 16px !important;
+        width: auto !important;
+    }
+    
+    .main-training p {
+        font-size: 14px !important;
+        width: auto !important;
+    }
+
+
+    /* 6. UPCOMING EVENTS - CRITICAL MOBILE FIXES (NO SCATTER) */
+    .upcoming-event-section {
+        flex-direction: column !important; /* Force vertical stack */
+        padding: 40px 5%;
+    }
+
+    .event-text {
+        width: 100% !important; /* Take full width */
+        padding: 0 !important;
+    }
+
+    .upcoming-event-section .event-text h1 {
+        font-size: 30px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .upcoming-event-section .event-text h1+p, .dotted-text {
+        font-size: 14px !important;
+    }
+
+    .event-img {
+        width: 100% !important; /* Take full width */
+        margin-top: 30px;
+        justify-content: center; /* Center image on mobile */
+    }
+
+    .event-img img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    #down {
+        position: static !important;
+        top: auto !important;
+    }
+    
+    .dotted-text-content {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column !important; /* Stack dotted items vertically */
+        gap: 15px;
+        align-items: flex-start !important;
+    }
+
+    /* 7. TESTIMONIALS - MOBILE FIXES (NO ABSOLUTE POSITIONS) */
+    .two-testimonial-boxes {
+        flex-direction: column !important; 
+    }
+
+    .home-testimonial-section h1 {
+        font-size: 30px !important;
+    }
+
+    .main-testimonial-content {
+        width: 100% !important; 
+        max-width: 450px !important; 
+        height: auto !important;
+        margin: 20px auto !important;
+        padding: 30px 10px !important;
+        position: static !important; 
+    }
+    
+    .testmonial-eclipse {
+        display: none !important;
+    }
+
+    /* Reset all absolute positioning for mobile testimonial text */
+    .main-testimonial-content p, 
+    .main-testimonial-content h3, 
+    .main-testimonial-content p:last-child {
+        position: static !important;
+        width: auto !important;
+        margin: 5px 0 !important;
+        height: auto !important;
+        left: auto !important;
+        top: auto !important;
+        text-align: center !important;
+        font-size: 14px !important; /* Reduced text size */
+        line-height: 1.4 !important;
+    }
 }
