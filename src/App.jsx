@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // 🆕 Import useState
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/home/Home"
 import Nav from "./layouts/nav/Nav"
@@ -9,8 +9,8 @@ import Training from "./pages/training/Training"
 import Events from "./pages/events/Events"
 import Contact from "./pages/contact/Contact"
 import Appointment from "./pages/appointment/Appointment"
-import Hamburger from "./pages/hamburger/Hamburger"; // Assumed Mobile Menu Overlay component
-// --- Image Imports ---
+
+// --- Image Imports and Data (Kept your structure) ---
 import sectionTwoImagegOne from './assets/woman.jpeg.jpg';
 import sectionTwoImageThree from './assets/secondwoman.jpeg.jpg';
 import sectionTwoImageFour from './assets/man.jpeg.jpg';
@@ -22,7 +22,6 @@ const sectionTwoImgThree = sectionTwoImageThree;
 const sectionTwoImgFour = sectionTwoImageFour; 
 
 const courseList = [
-    // 🧹 Removed <br /> for responsive text wrapping
     {id:1, img:sectionTwoImgOne, title:'Investment', description:'Build financial skills to grow your money.', link:'/courses'},
     {id:2, img:sectionTwoImgOne, title:'Entrepreneurship', description:`Turn ideas into successful ventures.`, link:'/courses'},
     {id:3, img:sectionTwoImgThree, title:'Leadership', description:`Gain tools to inspire and manage people.`, link:'/courses'},
@@ -45,17 +44,15 @@ const App = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
     const toggleMenu = () => {
-        setIsMenuOpen(prevState => !prevState);
+        // Use functional update for reliable state toggling
+        setIsMenuOpen(prevState => !prevState); 
     };
 
     return (
         <div>
             <BrowserRouter>
-                {/* 🆕 Pass state and toggle function to Nav */}
+                {/* Pass state and toggle function to Nav */}
                 <Nav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-                
-                {/* 🆕 Conditionally render the mobile menu overlay */}
-                {isMenuOpen && <Hamburger toggleMenu={toggleMenu} />}
                 
                 <Routes>
                     <Route path="/" element={<Home courses={courseList} highlights={highlightss} testimonials={testimonialss} />} />

@@ -1,28 +1,25 @@
 import myLogo from '../../assets/LOGO 2.png';
 import { Link } from 'react-router-dom';
-// import Button from '../../components/button-one/Button'; // Assuming this is not needed here
 import './Nav.css';
-import React from 'react'; // Ensure React is imported if you use useState/other hooks here
-
-/*
-  NOTE: This component assumes the parent component (e.g., App.jsx or Layout.jsx) 
-  is managing the state for the menu:
-  
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  
-  <Nav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-*/
+import React from 'react';
 
 const Nav = ({ isMenuOpen, toggleMenu }) => {
     return (
         <div className="nav-container">
             <nav>
-                {/* Logo - kept within the nav container */}
-                <img src={myLogo} alt="logo" width="80px" height="80px" /> 
+                {/* 1. ADDED: onClick={toggleMenu} to the logo. 
+                   When the menu is open, clicking the logo will now close it. */}
+                <img 
+                    src={myLogo} 
+                    alt="logo" 
+                    width="80px" 
+                    height="80px"
+                    onClick={isMenuOpen ? toggleMenu : undefined} // Only trigger if menu is already open
+                /> 
                 
-                <div className="links">
-                    {/* Desktop Links - Hidden on Mobile via CSS */}
+                {/* 2. Desktop links container (includes the fixed hamburger icon) */}
+                <div className={`links ${isMenuOpen ? 'desktop-hidden' : ''}`}>
+                    {/* Desktop Links */}
                     <Link to='/' id="home">Home</Link>
                     <Link to='/about'>About</Link>
                     <Link to='/courses'>Courses</Link>
@@ -30,21 +27,22 @@ const Nav = ({ isMenuOpen, toggleMenu }) => {
                     <Link to='/training'>Training</Link>
                     <Link to='/events'>Events</Link>
                     <Link to='/contact'>Contact</Link>
-                    
-                    {/* Book a Call Button Link - Hidden on Mobile via CSS */}
                     <Link to="/appointment"> <button className="appointment-button">Book a Call</button></Link>
                     
-                    {/* Hamburger/Close Button - ALWAYS VISIBLE */}
+                    {/* FIXED HAMBURGER BUTTON (Opens the menu) */}
                     <div className='hamburger-button' onClick={toggleMenu}>
-                        <i className={isMenuOpen ? "fa-solid fa-times" : "fa-solid fa-bars"}></i> 
+                        <i className="menu-icon"></i> 
                     </div>
                 </div>
             </nav>
             
-            {/* Mobile Menu Overlay - Toggles visibility based on isMenuOpen state */}
+            {/* 3. Mobile Menu Overlay - This slides in */}
             <div className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}>
+                
+                {/* REMOVED: The menu-header and close button */}
+
                 <div className="hamburger-links">
-                    {/* Links inside the mobile menu */}
+                    {/* Links inside the mobile menu (Clicking closes the menu) */}
                     <Link to='/' id="home" onClick={toggleMenu}>Home</Link>
                     <Link to='/about' onClick={toggleMenu}>About</Link>
                     <Link to='/courses' onClick={toggleMenu}>Courses</Link>

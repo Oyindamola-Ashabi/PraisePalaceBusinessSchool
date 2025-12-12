@@ -530,7 +530,7 @@ section .abtusimg img {
    CRITICAL FIXES FOR ALL LAYOUTS AND TEXT SIZES
    ========================================================= */
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     
     /* 1. GLOBAL LAYOUT ADJUSTMENTS */
     .section {
