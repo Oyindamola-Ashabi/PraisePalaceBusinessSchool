@@ -690,10 +690,11 @@ section .abtusimg img {
     }
     
     .head .hero h1, 
-    .head .hero p {
+    .head .hero p,
+    .head .hero-button {
         position: relative !important; 
         left: auto !important;
-        top: 400px!important;
+        top: 250px!important;
         /* margin-left: 0;  */
         /* margin-right: auto; */
     }
@@ -739,7 +740,7 @@ section .abtusimg img {
     
     section .abtusimg {
         width: 60%; 
-        background-color: #E91E63;
+        /* background-color: #E91E63; */
     }
 
     section .abtusimg img {
