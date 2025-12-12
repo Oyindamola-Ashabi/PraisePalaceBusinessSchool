@@ -1,8 +1,5 @@
 /* =========================================================
    HOME.CSS - DESKTOP-FIRST VERSION (STRICT PRESERVATION)
-   
-   The code below is the UNALTERED DESKTOP BASE. 
-   It applies to all screen sizes unless overridden by a media query.
    ========================================================= */
 
 .homescreen {
@@ -19,7 +16,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/image01.jpeg") center/cover no-repeat;
 }
 
-/* 🛑 HERO SECTION - DESKTOP LOCK (Uses Absolute Positioning) */
+/* 🛑 HERO SECTION - DESKTOP LOCK */
 .head .hero h1 {
     color: white;
     font-family: 'Poppins';
@@ -525,9 +522,9 @@ section .abtusimg img {
 
 
 /* =========================================================
-   NEW MEDIA QUERY: LAPTOP FIXES (Target: 1025px to 1400px)
+   LAPTOP FIXES (Target: 1025px to 1400px) 
    ---------------------------------------------------------
-   This block contains the definitive fix for the laptop view.
+   FIX 1: Scale down the About Us (section) text and image for side-by-side view.
    ========================================================= */
 
 @media (min-width: 1025px) and (max-width: 1400px) {
@@ -540,35 +537,30 @@ section .abtusimg img {
     /* 2. HERO SECTION - CRITICAL FIXES (H1, P, POSITIONING) */
     .homescreen .head {
         min-height: 80vh; 
-        
-        /* 🛑 NEW: Use flexbox to center content vertically */
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-top: 10vh; /* Add padding to push content down slightly */
+        padding-top: 10vh; 
         padding-bottom: 5vh;
     }
     
-    /* Ensure the hero container acts as a stacking context */
     .head .hero {
-        position: relative; /* Make this the reference point */
+        position: relative; 
         width: 90%;
-        max-width: 1200px; /* Optional: cap width slightly */
+        max-width: 1200px; 
     }
 
-    /* Reset absolute positioning and use margin/layout for spacing */
     .head .hero h1, 
     .head .hero p, 
     .hero .hero-button {
-        position: static !important; /* CRITICAL: Remove absolute positioning */
+        position: static !important; 
         left: auto !important;
         top: auto !important;
-        margin-left: 0; /* Reset margins */
+        margin-left: 0; 
         margin-right: auto;
     }
 
     .head .hero h1 {
-        /* Use VW for scaling size and line height */
         font-size: 4.5vw; 
         line-height: 1.1; 
         margin-bottom: 10px;
@@ -581,19 +573,24 @@ section .abtusimg img {
     }
 
     .hero .hero-button {
-        display: flex; /* Ensure buttons remain flexed (side-by-side) */
+        display: flex; 
         gap: 20px;
     }
     
-    /* 3. ABOUT US SECTION - CRITICAL FIXES (LAYOUT AND IMAGE) */
+    /* 3. ABOUT US SECTION - CRITICAL FIXES (Scale text and image side-by-side) */
     section {
         min-height: auto;
         padding: 40px 0;
+        display: flex; /* Ensure side-by-side */
+        flex-direction: row; /* Ensure text is left, image is right (default) */
+        justify-content: space-between;
     }
     
     section .abtus {
+        /* Allocate space for text */
         width: 45%; 
         margin-left: 5%;
+        padding-right: 10px;
     }
     
     section .abtus h1 {
@@ -604,9 +601,17 @@ section .abtusimg img {
         font-size: 16px; 
     }
 
+    section .abtusimg {
+        /* Allocate space for image container */
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
     section .abtusimg img {
-        width: 90%; 
-        max-width: 600px;
+        /* Image itself scales down */
+        width: 100%; 
+        max-width: 550px; /* Max size for image */
         height: auto; 
         margin-right: 5%;
         border-top-left-radius: 60px; 
@@ -695,7 +700,6 @@ section .abtusimg img {
         height: 300px;
     }
     
-    /* Adjusted text positions slightly for the new card size */
     .main-testimonial-content p {
         width: 90%; 
         left: 5%; 
@@ -719,7 +723,8 @@ section .abtusimg img {
 /* =========================================================
    ORIGINAL MOBILE / SMALL TABLET OVERRIDES (max-width: 1024px)
    ---------------------------------------------------------
-   **THIS IS YOUR ORIGINAL MOBILE CODE, PRESERVED AND UNTOUCHED**
+   FIX 2: Move training image down.
+   FIX 3: Reduce highlight image width.
    ========================================================= */
 
 @media (max-width: 1024px) {
@@ -778,16 +783,17 @@ section .abtusimg img {
         width: 90%;
     }
 
-    /* 3. ABOUT US SECTION - Responsive Text Fix */
+    /* 3. ABOUT US SECTION - CRITICAL MOBILE FIXES */
     section {
-        flex-direction: column !important; 
+        flex-direction: column-reverse !important; 
+        padding: 20px 0; 
     }
 
     section .abtus {
         width: 100% !important;
         margin-left: 0;
-        padding: 0 10px;
-        text-align: center;
+        padding: 20px 10px; 
+        text-align: center; 
     }
     
     section .abtus h1 {
@@ -841,7 +847,7 @@ section .abtusimg img {
         height: auto !important;
     }
 
-    /* 5. HIGHLIGHTS & TRAINING - CRITICAL MOBILE FIXES (NO SCATTER) */
+    /* 5. HIGHLIGHTS & TRAINING - CRITICAL MOBILE FIXES */
     .higlight-Training-section {
         padding: 0 5%;
     }
@@ -850,23 +856,38 @@ section .abtusimg img {
         font-size: 30px !important;
         margin-bottom: 20px;
     }
-
-    .hl .box-iems {
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
-    }
-
+    
+    /* 🛑 HIGHLIGHTS FIX 3: Reduce image width to fit parent box/border */
     .hl .box-iems .box {
         width: 100% !important;
         max-width: 400px;
         margin-top: 30px;
         height: auto;
+        padding: 5px; /* Add padding inside the box to separate image from border */
     }
+
+    .box img {
+        width: 100% !important; /* Image scales to the width of the box minus padding */
+        height: auto !important;
+    }
+
+    .hl .box-iems {
+        flex-direction: column; 
+        gap: 30px;
+        align-items: center;
+    }
+
 
     .tr {
         width: 100% !important;
+        /* 🛑 TRAINING TITLE FIX 2: Add top margin to push content down and show title */
+        margin-top: 40px !important; 
         padding: 0 !important;
+    }
+
+    .higlight-Training-section .tr h1 {
+        margin-top: 0;
+        margin-bottom: 20px; 
     }
 
     .higlight-Training-section .tr .training-items {
@@ -896,6 +917,8 @@ section .abtusimg img {
     .training-img-box img {
         width: 100% !important;
         height: auto !important;
+        /* 🛑 TRAINING IMAGE FIX 2: Add space below the image so it doesn't cover the title */
+        margin-top: 20px; 
     }
     
     .main-training {
@@ -911,6 +934,13 @@ section .abtusimg img {
     .main-training p {
         font-size: 14px !important;
         width: auto !important;
+    }
+
+    /* 🛑 VIEW ALL BUTTON FIX: Center the button */
+    .viewall-button {
+        margin-top: 20px; 
+        display: flex; 
+        justify-content: center; 
     }
 
 
