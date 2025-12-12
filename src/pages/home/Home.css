@@ -675,6 +675,18 @@ section .abtusimg img {
    This is the new fluid range for modern laptops.
    ========================================================= */
 
+/* =========================================================
+   LAPTOP FIXES (Target: 1025px to 1600px) - EXPANDED RANGE
+   ========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1600px) {
+    
+    /* =========================================================
+   LAPTOP FIXES (Target: 1025px to 1600px) - EXPANDED RANGE
+   ---------------------------------------------------------
+   Focus: Centering, Spacing, and Margin Fixes
+   ========================================================= */
+
 @media (min-width: 1025px) and (max-width: 1600px) {
     
     /* 1. GLOBAL LAYOUT ADJUSTMENTS */
@@ -682,38 +694,66 @@ section .abtusimg img {
         padding: 0 5%; 
     }
 
-    /* 2. HERO SECTION - FLUID SIZING */
+    /* 2. HERO SECTION - FLUID SIZING & CENTERING */
     .homescreen .head {
         min-height: 85vh; 
         padding-top: 8vh; 
-        padding-bottom: 5vh;
+        
+        /* 💥 ADD THESE LINES FOR CENTERING AND STACKING 💥 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centers the content vertically */
+        align-items: center; /* Centers the content horizontally */
     }
     
-    .head .hero h1, 
-    .head .hero p,
-    .head .hero-button {
-        position: relative !important; 
-        left: auto !important;
-        top: 250px!important;
-        /* margin-left: 0;  */
-        /* margin-right: auto; */
+    /* CRITICAL: UNLOCK HERO ELEMENTS & SET MAX-WIDTH */
+    .head .hero {
+        /* This ensures the whole hero block is centered and has a constrained width */
+        width: 70%; /* <--- Use the same percentage as your h1 width */
+        text-align: center; /* Centers text inside the hero block */
     }
 
+    .head .hero h1, 
+    .head .hero p, 
+    .hero .hero-button {
+        /* CRITICAL: UNLOCK the elements from the desktop's absolute position */
+        position: static !important; /* Changes the element's position context */
+        left: auto !important;
+        top: auto !important;
+        margin-left: auto; /* Centers the block elements */
+        margin-right: auto; /* Centers the block elements */
+        width: 100% !important; /* Ensure children take the full width of the .hero container */
+    }
+
+    /* 3. HERO ELEMENT STYLING AND SPACING */
     .head .hero h1 {
-        font-size: clamp(16px, 1.5vw, 22px); 
-        /* background-color: #E91E63; */
+        /* The width property here is now controlled by the parent .head .hero selector */
+        font-size: 30px; 
+        line-height: 1.1; 
+        /* background-color: #E91E63;  */
+        
+        /* 💥 ADD SPACING BELOW H1 💥 */
+        margin-top: 0; /* Remove previous margin-top */
+        margin-bottom: 25px; /* Spacing between H1 and P tag */
     }
 
     .head .hero p {
         font-size: clamp(16px, 1.5vw, 22px);
         
-        margin-top: 30px;
+        /* 💥 ADD SPACING BELOW P 💥 */
+        margin-top: 0; 
+        margin-bottom: 30px; /* Spacing between P tag and Button group */
     }
 
-    .hero-button{
-        margin-right: 60px;
+    .hero .hero-button {
+        /* 💥 REMOVE TOP MARGIN 💥 (Spacing is now controlled by P tag's margin-bottom) */
+        margin-top: 0; 
+        justify-content: center; /* Centers the buttons inside their container */
     }
     
+    /* ... (rest of the media query code) ... */
+}
+     
     /* 3. ABOUT US SECTION - FLUID SCALING */
     section {
         min-height: auto;
