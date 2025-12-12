@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from "./pages/home/Home"
+
+// Layout Imports
 import Nav from "./layouts/nav/Nav"
+import Footer from "./layouts/footer/Footer"; // Footer component import
 import About from "./pages/about-us/About"
 import Courses from "./pages/courses/Courses"
 import Mentorship from "./pages/mentorship/Mentorship"
@@ -9,14 +11,25 @@ import Training from "./pages/training/Training"
 import Events from "./pages/events/Events"
 import Contact from "./pages/contact/Contact"
 import Appointment from "./pages/appointment/Appointment"
+import Podcast from './pages/podcast/Podcast';
+import Home from "./pages/home/Home"
 
-// --- Image Imports and Data (Kept your structure) ---
+// --- Placeholder Components for Footer Links ---
+// These are needed for the routes to function correctly.
+const PrivacyPolicy = () => <div><h1>Privacy Policy</h1><p>Content goes here.</p></div>;
+const TermsAndConditions = () => <div><h1>Terms and Conditions</h1><p>Content goes here.</p></div>;
+const FAQPage = () => <div><h1>Frequently Asked Questions</h1><p>Content goes here.</p></div>;
+const LearnMorePage = () => <div><h1>Learn More</h1><p>Content goes here.</p></div>;
+const GetStartedPage = () => <div><h1>Get Started</h1><p>Content goes here.</p></div>;
+const SubscribePage = () => <div><h1>Subscribe Now</h1><p>Content goes here.</p></div>;
+
+
+// --- Image Imports and Data (Keep this structure) ---
 import sectionTwoImagegOne from './assets/woman.jpeg.jpg';
 import sectionTwoImageThree from './assets/secondwoman.jpeg.jpg';
 import sectionTwoImageFour from './assets/man.jpeg.jpg';
 import sectionThreeImgOne from './assets/book1.png.png';
 import SectionFourImg from './assets/star.png.png'
-import Podcast from './pages/podcast/Podcast';
 
 const sectionTwoImgOne = sectionTwoImagegOne; 
 const sectionTwoImgThree = sectionTwoImageThree; 
@@ -40,33 +53,57 @@ const testimonialss = [
     {id: 2, img: SectionFourImg, text: '“The mentorship sessions opened doors I never imagined.”', name: 'Chinwe A', title: 'Startup Founder'},
     {id: 3, img: SectionFourImg, text: '“Practical lessons I applied immediately, results came fast.”', name: 'James L', title: 'Entrepreneur & Consultant'},
 ];
+
+
+const faqData = [
+    { id: 1, question: "Do I need experience to join your classes?", answer: "No, our programs are designed to accommodate students at various skill levels, from beginners to experienced professionals." },
+    { id: 2, question: "How do I join the free classes?", answer: "Free classes are usually announced on our website and social media. You can register via the dedicated link provided in the announcement." },
+    { id: 3, question: "What's included in the premium plan?", answer: "The premium plan includes access to all courses, one-on-one mentorship sessions, exclusive workshops, and premium support." },
+    { id: 4, question: "Can I cancel my subscription anytime?", answer: "Yes, you can cancel your subscription at any time directly through your user dashboard with no cancellation fees." },
+    { id: 5, question: "Are the classes live or recorded?", answer: "We offer a mix of live virtual classes for real-time interaction and recorded sessions that you can access on demand at your convenience." },
+];
     
 const App = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
     const toggleMenu = () => {
-        // Use functional update for reliable state toggling
         setIsMenuOpen(prevState => !prevState); 
     };
 
     return (
-        <div>
+        // 1. 💥 FIX: Top-level container for Flexbox (Must have CSS: display: flex; flex-direction: column; min-height: 100vh;)
+        <div className="app-container"> 
             <BrowserRouter>
-                {/* Pass state and toggle function to Nav */}
-                <Nav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
                 
-                <Routes>
-                    <Route path="/" element={<Home courses={courseList} highlights={highlightss} testimonials={testimonialss} />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/courses" element={<Courses courses={courseList} />} />
-                    <Route path="/mentorship" element={<Mentorship />} />
-                    <Route path="/training" element={<Training/>}/>
-                    <Route path="/events" element={<Events/>}/>
-                    <Route path="/contact" element={<Contact/>}/>
-                    <Route path="/appointment" element={<Appointment/>}/>
-                    <Route path="/podcast" element={<Podcast/>}/>
+                {/* 2. 💥 FIX: Wrapper for all content that should scroll (Must have CSS: flex-grow: 1;) */}
+                <div className="main-content-wrapper"> 
+                    
+                    <Nav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+                    
+                    <Routes>
+                        <Route path="/" element={<Home courses={courseList} highlights={highlightss} testimonials={testimonialss} FAQ={faqData} />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/courses" element={<Courses courses={courseList} />} />
+                        <Route path="/mentorship" element={<Mentorship />} />
+                        <Route path="/training" element={<Training/>}/>
+                        <Route path="/events" element={<Events/>}/>
+                        <Route path="/contact" element={<Contact/>}/>
+                        <Route path="/appointment" element={<Appointment/>}/>
+                        <Route path="/podcast" element={<Podcast/>}/>
+                        
+                        {/* Routes for Footer Links (Added missing placeholder pages) */}
+                        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+                        <Route path="/terms-and-condition" element={<TermsAndConditions/>}/>
+                        <Route path="/faq" element={<FAQPage/>}/>
+                        <Route path="/learn-more" element={<LearnMorePage/>}/>
+                        <Route path="/get-started" element={<GetStartedPage/>}/>
+                        <Route path="/subscribe" element={<SubscribePage/>}/>
 
-                </Routes>
+                    </Routes>
+                </div> 
+                
+                {/* 3. Footer remains outside the content wrapper */}
+                <Footer /> 
 
             </BrowserRouter>
         </div>

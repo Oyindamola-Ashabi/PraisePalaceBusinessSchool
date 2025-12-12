@@ -1,12 +1,26 @@
 /* =========================================================
-   HOME.CSS - DESKTOP-FIRST VERSION (STRICT PRESERVATION)
+   1. GLOBAL STYLES & DESKTOP LOCKS (1600px+)
    ========================================================= */
 
 .homescreen {
-    position: absolute;
-    top: 0;
+    /* 💥 CRITICAL FIX: Changed from 'absolute' to 'relative' to keep it in the normal flow */
+    position: relative; 
+    top: auto;          /* Reset top positioning */
     width: 100%;
 }
+
+.section {
+    width: 100%;
+    padding: 0 10%; 
+}
+
+.p-color {
+    color: #E91E63; /* Primary Color Reference */
+}
+
+/* ---------------------------------------------------------
+   1.1. HERO SECTION (Desktop Fixed Positioning)
+   --------------------------------------------------------- */
 
 .homescreen .head {
     width: 100%;
@@ -14,13 +28,14 @@
     background-size: cover;
     background-position: center;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/image01.jpeg") center/cover no-repeat;
+    /* 💥 CRITICAL FIX: Make this the positioning context for its absolutely-positioned children (h1, p, button) */
+    position: relative; 
 }
 
-/* 🛑 HERO SECTION - DESKTOP LOCK (Original Fixed Positioning) */
+/* 🛑 Desktop Lock: Absolute positioning for Hero elements (now anchored to .head) */
 .head .hero h1 {
     color: white;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 700;
     font-size: 110px;
     line-height: 120px;
@@ -34,7 +49,6 @@
     left: 120px; 
     top: 633px; 
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
@@ -51,7 +65,10 @@
     top: 733px; 
 }
 
-/* 🛑 MINI-TEXT - DESKTOP LOCK */
+/* ---------------------------------------------------------
+   1.2. MINI-TEXT SECTION (Desktop)
+   --------------------------------------------------------- */
+
 .mini-text {
     position: relative;
     width: 100%;
@@ -65,19 +82,16 @@
 .mini-text h2 {
     color: white;
     font-family: 'Inter';
-    font-style: normal;
     font-weight: 700;
     font-size: 26px;
     line-height: 31px;
     text-align: center;
 }
 
-.section {
-    width: 100%;
-    padding: 0 10%; 
-}
+/* ---------------------------------------------------------
+   1.3. ABOUT US SECTION (Desktop)
+   --------------------------------------------------------- */
 
-/* 🛑 ABOUT US SECTION - DESKTOP LOCK */
 section {
     width: 100%;
     min-height: 70vh;
@@ -96,13 +110,8 @@ section .abtus {
     margin-left: 60px; 
 }
 
-.p-color {
-    color: #E91E63;
-}
-
 section .abtus h1 {
     font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 45px;
     letter-spacing: -0.02em;
@@ -110,7 +119,6 @@ section .abtus h1 {
 
 section .abtus p {
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     margin-top: 30px;
@@ -127,18 +135,22 @@ section .abtusimg img {
     margin-right: 60px; 
 }
 
-/* 🛑 ELIPSE - DESKTOP LOCK */
+/* 🛑 ELIPSE Desktop Lock */
 .elipse {
     position: absolute; 
     width: 412px;
     height: 427px;
     left: -135px;
-    top: 897px;
+    /* NOTE: This top value might need adjustment since the overall flow changed */
+    top: 897px; 
     border-radius: 50%;
     background: rgba(51, 51, 51, 0.1);
 }
 
-/* 🛑 COURSE SECTION - DESKTOP LOCK */
+/* ---------------------------------------------------------
+   1.4. COURSE SECTION (Desktop)
+   --------------------------------------------------------- */
+
 .course-section {
     position: relative;
     width: 100%;
@@ -146,11 +158,13 @@ section .abtusimg img {
     padding-top: 50px;
 }
 
-.course-section .bckworld-img .shortc-group {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.course-section h1 {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    padding: 30px 0;
 }
 
 .course-section .bckworld-img {
@@ -160,6 +174,13 @@ section .abtusimg img {
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+}
+
+.course-section .bckworld-img .shortc-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .short-courses {
@@ -172,16 +193,6 @@ section .abtusimg img {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-}
-
-.course-section h1 {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    letter-spacing: -0.02em;
-    color: #000000;
-    padding: 30px 0;
 }
 
 .course-section img {
@@ -209,7 +220,10 @@ section .abtusimg img {
     color: #FFFFFF;
 }
 
-/* 🛑 HIGHLIGHTS & TRAINING - DESKTOP LOCK */
+/* ---------------------------------------------------------
+   1.5. HIGHLIGHTS & TRAINING (Desktop)
+   --------------------------------------------------------- */
+
 .higlight-Training-section {
     width: 100%;
     position: relative;
@@ -251,7 +265,6 @@ section .abtusimg img {
 
 .higlight-Training-section .tr h1 {
     font-family: 'Inter';
-    font-style: normal;
     font-weight: 700;
     font-size: 48px;
     color: #000000;
@@ -295,7 +308,6 @@ section .abtusimg img {
     width: 228px;
     height: 27px;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
@@ -307,7 +319,6 @@ section .abtusimg img {
     width: 228px;
     height: 48px;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -315,7 +326,7 @@ section .abtusimg img {
     margin-top: 20px;
 }
 
-/* 🛑 DESKTOP LOCK - ABSOLUTE MARGINS FOR TRAINING ALIGNMENT */
+/* 🛑 Desktop Lock: Absolute margins for Training alignment */
 #move1 { margin-top: 100px; }
 #move2 { margin-top: 150px; }
 #move3 { margin-top: 300px; }
@@ -330,7 +341,10 @@ section .abtusimg img {
     margin-top: -50px;
 }
 
-/* 🛑 UPCOMING EVENTS - DESKTOP LOCK */
+/* ---------------------------------------------------------
+   1.6. UPCOMING EVENTS (Desktop)
+   --------------------------------------------------------- */
+
 .upcoming-event-section {
     width: 100%;
     min-height: 70vh;
@@ -348,7 +362,6 @@ section .abtusimg img {
 
 .upcoming-event-section .event-text h1 {
     font-family: 'Inter';
-    font-style: normal;
     font-weight: 600;
     font-size: 48px;
     margin-bottom: 84px;
@@ -360,7 +373,6 @@ section .abtusimg img {
 
 .upcoming-event-section .event-text h1+p {
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -369,7 +381,6 @@ section .abtusimg img {
 .dotted-text {
     margin-top: 64px;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -402,11 +413,10 @@ section .abtusimg img {
     height: 586px; 
 }
 
-.breadcrumb {
-    padding-top: 120px;
-}
+/* ---------------------------------------------------------
+   1.7. TESTIMONIALS (Desktop Fixed Positioning)
+   --------------------------------------------------------- */
 
-/* 🛑 TESTIMONIALS - STRICT DESKTOP LOCK */
 .home-testimonial-section {
     text-align: center;
     padding: 60px 20px;
@@ -419,7 +429,6 @@ section .abtusimg img {
 
 .home-testimonial-section h1 {
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 700;
     font-size: 48px;
     line-height: 72px;
@@ -468,10 +477,9 @@ section .abtusimg img {
     border-radius: 50%;
 }
 
-/* 🛑 ABSOLUTE POSITIONS FOR TESTIMONIAL TEXT - **MUST BE PRESERVED** */
+/* 🛑 Desktop Lock: Absolute positions for Testimonial Text */
 .main-testimonial-content p {
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -486,7 +494,6 @@ section .abtusimg img {
 
 .main-testimonial-content h3 {
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
@@ -501,7 +508,6 @@ section .abtusimg img {
 
 .main-testimonial-content p:last-child {
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -520,12 +526,12 @@ section .abtusimg img {
 }
 
 
-/* =========================================================
-   PODCAST SECTION STYLES (Applies to all views - Responsive by default)
-   ========================================================= */
+/* ---------------------------------------------------------
+   1.8. PODCAST SECTION (Desktop)
+   --------------------------------------------------------- */
 
 .podcast-section-replica {
-    padding: 60px 10%; /* Use global section padding */
+    padding: 60px 10%; 
     background-color: white; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: relative;
@@ -535,7 +541,6 @@ section .abtusimg img {
 
 .podcast-section-replica h1 {
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 700;
     font-size: 48px;
     line-height: 72px;
@@ -549,7 +554,6 @@ section .abtusimg img {
     border-radius: 10px;
 }
 
-/* Featured Episode Box Styling */
 .featured-episode-box {
     display: flex;
     align-items: flex-start; 
@@ -590,7 +594,6 @@ section .abtusimg img {
     margin-bottom: 20px;
     margin-top: 20px;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -612,8 +615,6 @@ section .abtusimg img {
     margin-right: 8px;
 }
 
-
-/* Episode List Styling */
 .episode-list-container {
     display: flex;
     flex-direction: column;
@@ -631,7 +632,6 @@ section .abtusimg img {
 
 .episode-list-item h3 {
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
@@ -644,7 +644,6 @@ section .abtusimg img {
     font-size: 14px;
 }
 
-/* Explore All Link Styling */
 .explore-all-link {
     text-align: center;
     width: 100%; 
@@ -669,92 +668,308 @@ section .abtusimg img {
     margin-right: 8px;
 }
 
-/* =========================================================
-   LAPTOP FIXES (Target: 1025px to 1600px) - EXPANDED RANGE
-   ---------------------------------------------------------
-   This is the new fluid range for modern laptops.
-   ========================================================= */
 
 /* =========================================================
-   LAPTOP FIXES (Target: 1025px to 1600px) - EXPANDED RANGE
+   2. FAQ SECTION STYLES (NEW ACCORDION STYLES)
+   ========================================================= */
+
+.faq-section {
+    width: 100%;
+    background-color: #EDEDED;
+    margin-top: 60px;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.faq-section h1 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #000000;
+    margin-bottom: 50px;
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.faq-question-button {
+    width: 100%;
+    padding: 20px 30px;
+    border: none;
+    background: #FFFFFF;
+    text-align: left;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question-button:hover {
+    background-color: #f7f7f7;
+}
+
+.faq-question-button .question-text {
+    flex-grow: 1;
+}
+
+.faq-question-button .arrow-icon {
+    font-size: 20px;
+    margin-left: 15px;
+    color: #E91E63;
+    transition: transform 0.3s;
+}
+
+/* Style for the active/open state */
+.faq-item:has(.faq-answer-panel.open) .faq-question-button .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    background-color: #fff;
+}
+
+.faq-answer-panel.open {
+    max-height: 200px;
+    padding: 0 30px 20px;
+}
+
+.faq-answer {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    text-align: left;
+}
+
+
+
+
+/* ---------------------------------------------------------
+   1.10. CONTACT US SECTION STYLES 💥 NEW (Desktop) 💥
+   --------------------------------------------------------- */
+.home-contact-section {
+    width: 100%;
+    background-color: #F8F8F8; /* Very light background for contrast */
+    padding: 80px 10%; 
+    text-align: center;
+    color: #333;
+    margin-top: 60px;
+}
+
+.contact-content-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.home-contact-section h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.home-contact-section p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Style for the Contact Us Button (Outline style from image) */
+.contact-us-button-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: #E91E63; 
+    border: 2px solid #E91E63;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 40px;
+}
+
+.contact-us-button-outline:hover {
+    background-color: #E91E63;
+    color: white;
+}
+
+/* Style for the inner form box */
+.contact-form-box {
+    background-color: #FCE4EC; /* Light pink background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-box p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.message-textarea-container {
+    width: 80%;
+    background-color: #FFCDD2; /* Slightly darker pink for the text area background */
+    padding: 20px; 
+    border-radius: 8px;
+    margin-bottom: 25px;
+    margin-left: 90px;
+}
+
+.message-textarea-container textarea {
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid #E91E63;
+    border-radius: 6px;
+    padding: 10px;
+    resize: vertical;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.send-message-button {
+    width: 100%;
+    /* max-width: 400px; */
+    padding: 15px 0;
+    background-color: #E91E63; /* Primary Pink */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-message-button:hover {
+    background-color: #C2185B; /* Darker Pink on hover */
+}
+
+
+/* ---------------------------------------------------------
+   4.10. CONTACT US Mobile Overrides 💥 NEW (max-width: 1024px) 💥
+   --------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .home-contact-section {
+        padding: 50px 5%;
+    }
+
+    .home-contact-section h1 {
+        font-size: 30px !important;
+        margin-bottom: 10px;
+    }
+
+    .home-contact-section p {
+        font-size: 15px !important;
+        margin-bottom: 20px;
+    }
+    .contact-us-button-outline {
+        margin-bottom: 30px;
+    }
+
+    .contact-form-box {
+        padding: 30px 20px;
+        
+    }
+    
+    .contact-form-box p {
+        font-size: 16px;
+    }
+
+    .send-message-button {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 0;
+    }
+}
+
+/* =========================================================
+   3. LAPTOP / MEDIUM SCREEN FIXES (1025px to 1600px)
    ========================================================= */
 
 @media (min-width: 1025px) and (max-width: 1600px) {
     
-    /* =========================================================
-   LAPTOP FIXES (Target: 1025px to 1600px) - EXPANDED RANGE
-   ---------------------------------------------------------
-   Focus: Centering, Spacing, and Margin Fixes
-   ========================================================= */
-
-@media (min-width: 1025px) and (max-width: 1600px) {
-    
-    /* 1. GLOBAL LAYOUT ADJUSTMENTS */
+    /* 3.1. GLOBAL LAYOUT ADJUSTMENTS */
     .section {
         padding: 0 5%; 
     }
 
-    /* 2. HERO SECTION - FLUID SIZING & CENTERING */
+    /* 3.2. HERO SECTION FIXES (Unlock absolute positioning) */
     .homescreen .head {
         min-height: 85vh; 
         padding-top: 8vh; 
-        
-        /* 💥 ADD THESE LINES FOR CENTERING AND STACKING 💥 */
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centers the content vertically */
-        align-items: center; /* Centers the content horizontally */
+        justify-content: center; 
+        align-items: center; 
     }
     
-    /* CRITICAL: UNLOCK HERO ELEMENTS & SET MAX-WIDTH */
     .head .hero {
-        /* This ensures the whole hero block is centered and has a constrained width */
-        width: 70%; /* <--- Use the same percentage as your h1 width */
-        text-align: center; /* Centers text inside the hero block */
+        width: 70%; 
+        text-align: center; 
     }
 
     .head .hero h1, 
     .head .hero p, 
     .hero .hero-button {
-        /* CRITICAL: UNLOCK the elements from the desktop's absolute position */
-        position: static !important; /* Changes the element's position context */
+        position: static !important; 
         left: auto !important;
         top: auto !important;
-        margin-left: auto; /* Centers the block elements */
-        margin-right: auto; /* Centers the block elements */
-        width: 100% !important; /* Ensure children take the full width of the .hero container */
+        margin-left: auto; 
+        margin-right: auto; 
+        width: 100% !important; 
     }
 
-    /* 3. HERO ELEMENT STYLING AND SPACING */
     .head .hero h1 {
-        /* The width property here is now controlled by the parent .head .hero selector */
         font-size: 30px; 
         line-height: 1.1; 
-        /* background-color: #E91E63;  */
-        
-        /* 💥 ADD SPACING BELOW H1 💥 */
-        margin-top: 0; /* Remove previous margin-top */
-        margin-bottom: 25px; /* Spacing between H1 and P tag */
+        margin-top: 0; 
+        margin-bottom: 25px; 
     }
 
     .head .hero p {
         font-size: clamp(16px, 1.5vw, 22px);
-        
-        /* 💥 ADD SPACING BELOW P 💥 */
         margin-top: 0; 
-        margin-bottom: 30px; /* Spacing between P tag and Button group */
+        margin-bottom: 30px; 
     }
 
     .hero .hero-button {
-        /* 💥 REMOVE TOP MARGIN 💥 (Spacing is now controlled by P tag's margin-bottom) */
         margin-top: 0; 
-        justify-content: center; /* Centers the buttons inside their container */
+        justify-content: center; 
     }
     
-    /* ... (rest of the media query code) ... */
-}
-     
-    /* 3. ABOUT US SECTION - FLUID SCALING */
+    /* 3.3. ABOUT US SECTION FIXES (Fluid scaling) */
     section {
         min-height: auto;
         gap: 5%; 
@@ -774,24 +989,19 @@ section .abtusimg img {
     section .abtus p {
         font-size: clamp(14px, 1.2vw, 18px); 
         line-height: 1.6;
-        
-        
     }
     
     section .abtusimg {
         width: 60%; 
-        /* background-color: #E91E63; */
     }
 
     section .abtusimg img {
         width: 100%; 
-        background-color: aqua;
         height: auto; 
         border-top-left-radius: 60px; 
-        /* padding-left: 100px; */
     }
 
-    /* 4. COURSE SECTION FIXES */
+    /* 3.4. COURSE SECTION FIXES (Card scaling) */
     .course-section h1 {
         font-size: 38px;
     }
@@ -802,22 +1012,21 @@ section .abtusimg img {
     }
 
     .short-courses {
-        width: 21%; /* Allows 4 cards comfortably */
+        width: 21%; 
         min-width: 250px; 
         height: auto;
     }
     
-    /* Ensure the cards wrap correctly if needed in the 1025-1200 range */
+    /* Card Wrap for Smaller Laptops (1025px-1250px) */
     @media (min-width: 1025px) and (max-width: 1250px) {
-         .short-courses {
+        .short-courses {
             width: 45%;
             margin: 10px;
-         }
-         .course-section .bckworld-img .shortc-group {
-             justify-content: center;
-         }
+        }
+        .course-section .bckworld-img .shortc-group {
+            justify-content: center;
+        }
     }
-
 
     .course-section img {
         width: 100%;
@@ -834,7 +1043,7 @@ section .abtusimg img {
         width: 70%; 
     }
 
-    /* 5. TRAINING SECTION FIXES */
+    /* 3.5. TRAINING SECTION FIXES */
     .higlight-Training-section .tr h1, .higlight-Training-section .hl h1 {
         font-size: 38px;
     }
@@ -852,16 +1061,11 @@ section .abtusimg img {
         height: 400px; 
     }
     
-    /* 6. UPCOMING EVENTS FIXES (Fluid Image and Text) */
+    /* 3.6. UPCOMING EVENTS FIXES */
     .upcoming-event-section {
         padding: 60px 0;
         gap: 8%;
     }
-
-    /* .event-text {
-        width: 40%; 
-        padding-left: 5%;
-    } */
 
     .upcoming-event-section .event-text h1 {
         font-size: clamp(30px, 2.5vw, 40px);
@@ -872,7 +1076,6 @@ section .abtusimg img {
         width: 100%; 
         max-width: 700px;
         padding-right: 5%;
-        /* background-color: #E91E63; */
     }
 
     .event-img img {
@@ -881,7 +1084,7 @@ section .abtusimg img {
         height: auto; 
     }
 
-    /* 7. TESTIMONIALS FIXES (Fluid Card Content) */
+    /* 3.7. TESTIMONIALS FIXES (Fluid Card Content) */
     .two-testimonial-boxes {
         justify-content: space-evenly;
         gap: 30px;
@@ -913,7 +1116,7 @@ section .abtusimg img {
         font-size: 16px;
     }
 
-    /* 8. PODCAST SECTION FIXES */
+    /* 3.8. PODCAST SECTION FIXES */
     .podcast-section-replica {
         padding: 60px 5%;
     }
@@ -925,23 +1128,40 @@ section .abtusimg img {
     .featured-image-container {
         height: 180px;
     }
+
+    /* 3.9. FAQ RESPONSIVENESS */
+    .faq-section h1 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .faq-question-button {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    .faq-answer-panel.open {
+        padding: 0 20px 15px;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+    }
 }
 
 
 /* =========================================================
-   MOBILE / SMALL TABLET OVERRIDES (max-width: 1024px)
-   ---------------------------------------------------------
-   This section is strictly preserved and remains responsive.
+   4. MOBILE / SMALL TABLET OVERRIDES (max-width: 1024px)
    ========================================================= */
 
 @media (max-width: 1024px) {
     
-    /* 1. GLOBAL LAYOUT ADJUSTMENTS */
+    /* 4.1. GLOBAL LAYOUT ADJUSTMENTS */
     .section {
         padding: 0 5%; 
     }
     
-    /* 2. HERO / HEADER - RESPONSIVE TEXT FIX */
+    /* 4.2. HERO / HEADER - RESPONSIVE TEXT FIX */
     .homescreen .head {
         display: flex;
         justify-content: center;
@@ -990,7 +1210,7 @@ section .abtusimg img {
         width: 90%;
     }
 
-    /* 3. ABOUT US SECTION - CRITICAL MOBILE FIXES (Image before text, centered text) */
+    /* 4.3. ABOUT US SECTION - CRITICAL MOBILE FIXES */
     section {
         flex-direction: column-reverse !important; 
         padding: 20px 0; 
@@ -1018,7 +1238,7 @@ section .abtusimg img {
         border-top-left-radius: 0;
     }
 
-    /* 4. COURSE SECTION (Stacking & Text Fix) */
+    /* 4.4. COURSE SECTION (Stacking & Text Fix) */
     .course-section h1 {
         font-size: 30px !important;
     }
@@ -1054,7 +1274,7 @@ section .abtusimg img {
         height: auto !important;
     }
 
-    /* 5. HIGHLIGHTS & TRAINING - CRITICAL MOBILE FIXES */
+    /* 4.5. HIGHLIGHTS & TRAINING - CRITICAL MOBILE FIXES */
     .higlight-Training-section {
         padding: 0 5%;
     }
@@ -1084,8 +1304,7 @@ section .abtusimg img {
         height: auto !important;
     }
 
-
-    /* TRAINING FIXES: Title visibility and button centering */
+    /* TRAINING FIXES: Vertical stacking */
     .tr {
         width: 100% !important;
         margin-top: 40px !important; 
@@ -1148,7 +1367,7 @@ section .abtusimg img {
     }
 
 
-    /* 6. UPCOMING EVENTS - CRITICAL MOBILE FIXES (NO SCATTER) */
+    /* 4.6. UPCOMING EVENTS - CRITICAL MOBILE FIXES (NO SCATTER) */
     .upcoming-event-section {
         flex-direction: column !important; 
         padding: 40px 5%;
@@ -1191,7 +1410,7 @@ section .abtusimg img {
         align-items: flex-start !important;
     }
 
-    /* 7. TESTIMONIALS - MOBILE FIXES (NO ABSOLUTE POSITIONS) */
+    /* 4.7. TESTIMONIALS - MOBILE FIXES (NO ABSOLUTE POSITIONS) */
     .two-testimonial-boxes {
         flex-direction: column !important; 
         justify-content: center;
@@ -1234,7 +1453,7 @@ section .abtusimg img {
         margin: 30px auto !important;
     }
 
-    /* 8. PODCAST SECTION - MOBILE FIXES */
+    /* 4.8. PODCAST SECTION - MOBILE FIXES */
     .podcast-section-replica h1 {
         font-size: 30px !important;
         line-height: 1.2 !important;

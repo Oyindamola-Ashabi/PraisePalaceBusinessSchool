@@ -1,10 +1,7 @@
+import React, { useState } from 'react'; // 💥 NEW: Import useState
 import Button from "../../components/button-one/Button"
 import headingImage from '../../assets/image01.jpeg'
 import sectionOneImg from '../../assets/download (41).jpeg.jpg'
-// import sectionTwoImgOne from '../../assets/woman.jpeg.jpg'
-// import sectionTwoImgTwo from '../../assets/woman.jpeg.jpg'
-// import sectionTwoImgThree from '../../assets/secondwoman.jpeg.jpg'
-// import sectionTwoImgFour from '../../assets/man.jpeg.jpg'
 import sectionThreeImgOne from '../../assets/book1.png.png'
 import sectionThreeImgTwo from '../../assets/iconbootcamp.png.png'
 import sectionThreeImgThree from '../../assets/icondigitalskilllab.png.png'
@@ -14,17 +11,23 @@ import sectionFourImgTwo from '../../assets/majesticons_arrow-up-line.png.png'
 import sectionFourImgThree from '../../assets/eventimg.png.png'
 import { Link } from "react-router-dom"
 import SectionFourImg from '../../assets/star.png.png'
-
-// --- NEW PODCAST IMAGES ---
 import podcastMainImage from '../../assets/miclady.png'
 import playIcon from '../../assets/play.png'
 import arrowRight from '../../assets/sidearrow.png'
-// -------------------------
-
 import './Home.css'
 
 
-const Home = ({ courses, highlights, testimonials }) => {
+
+
+const Home = ({ courses, highlights, testimonials, FAQ }) => {
+  // 💥 NEW: State to track which FAQ item is currently open
+  const [openId, setOpenId] = useState(null);
+
+  // 💥 NEW: Function to toggle the open state
+  const toggleFAQ = (id) => {
+    setOpenId(openId === id ? null : id);
+  };
+
   return (
     <div>
       <div className="homescreen">
@@ -218,7 +221,7 @@ const Home = ({ courses, highlights, testimonials }) => {
               </div>
             </div>
 
-            {/* Episode List */}
+
             <div className="episode-list-container">
               <div className="episode-list-item">
                 <h3>Ep 06: Mastering Digital Growth</h3>
@@ -234,7 +237,7 @@ const Home = ({ courses, highlights, testimonials }) => {
               </div>
             </div>
 
-            {/* Explore All Link */}
+
             <div className="explore-all-link">
               <Link to="/podcast">
                 <img src={arrowRight} alt="Arrow right" className="arrow-icon" />
@@ -243,7 +246,60 @@ const Home = ({ courses, highlights, testimonials }) => {
             </div>
 
           </div>
-          {/* -------------------------------------------------------------------------- */}
+    
+          
+        
+          <div className="faq-section">
+            <div className="section">
+              <h1>Frequently <span className="p-color">Asked</span> Question</h1>
+
+              <div className="faq-container">
+                {FAQ.map(item => (
+                  <div key={item.id} className="faq-item">
+                    <button
+                      className="faq-question-button"
+                      onClick={() => toggleFAQ(item.id)}
+                    >
+                      <span className="question-text">{item.question}</span>
+                      <span className="arrow-icon">
+                        {/* Change arrow based on open state */}
+                        {openId === item.id ? 'V' : '→'}
+                      </span>
+                    </button>
+
+                    {/* The answer panel that toggles */}
+                    <div
+                      className={`faq-answer-panel ${openId === item.id ? 'open' : ''}`}
+                    >
+                      <p className="faq-answer">{item.answer}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* 💥 END FAQ SECTION 💥 */}
+
+
+          <div className="home-contact-section">
+        <div className="contact-content-container">
+            <h1>Need help? <span className="p-color">Contact us</span> for support.</h1>
+            <p>Got more questions or need help? Contact us below, we are here for you!</p>
+            
+            <a href="/contact" className="contact-us-button-outline">Contact Us</a>
+
+            <div className="contact-form-box">
+                <p>Send message directly below to get instant response.</p>
+                <div className="message-textarea-container">
+                    {/* Placeholder for a large text area/input field */}
+                    <textarea placeholder="Type your message here..." rows="8"></textarea>
+                </div>
+                {/* Note: Using a standard <button> element as per the image's function */}
+                <button className="send-message-button">Send Message</button>
+            </div>
+        </div>
+    </div>
+
         </div>
 
       </div>
