@@ -16,7 +16,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/image01.jpeg") center/cover no-repeat;
 }
 
-/* 🛑 HERO SECTION - DESKTOP LOCK */
+/* 🛑 HERO SECTION - DESKTOP LOCK (Original Fixed Positioning) */
 .head .hero h1 {
     color: white;
     font-family: 'Poppins';
@@ -414,7 +414,6 @@ section .abtusimg img {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: relative;
     width: 100%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-top: 100px;
 }
 
@@ -522,127 +521,262 @@ section .abtusimg img {
 
 
 /* =========================================================
-   LAPTOP FIXES (Target: 1025px to 1400px)
-   ---------------------------------------------------------
-   LATEST FIX: Used Flexbox `gap` to reliably separate text and image, eliminating overlap.
+   PODCAST SECTION STYLES (Applies to all views - Responsive by default)
    ========================================================= */
 
-@media (min-width: 1025px) and (max-width: 1400px) {
+.podcast-section-replica {
+    padding: 60px 10%; /* Use global section padding */
+    background-color: white; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.podcast-section-replica h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    color: #000000;
+    margin-bottom: 30px; 
+}
+
+.podcast-main-container {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+/* Featured Episode Box Styling */
+.featured-episode-box {
+    display: flex;
+    align-items: flex-start; 
+    gap: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.featured-image-container {
+    width: 45%; 
+    max-width: 430px;
+    height: 190px; 
+    overflow: hidden;
+    border-radius: 8px;
+    flex-shrink: 0; 
+}
+
+.featured-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.featured-details {
+    flex: 1; 
+}
+
+.featured-details h2 {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 26px;
+    margin-top: 0;
+}
+
+.featured-details p {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+    
+.podcast-duration {
+    display: flex;
+    align-items: center;
+    color: #888;
+    font-size: 0.9em;
+}
+
+.play-icon-small {
+    width: 24px;
+    height: 24px;
+    background-color: #E91E63; 
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+
+/* Episode List Styling */
+.episode-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    margin: 10px auto 20px auto;
+}
+
+.episode-list-item {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.episode-list-item h3 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.episode-list-item span {
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* Explore All Link Styling */
+.explore-all-link {
+    text-align: center;
+    width: 100%; 
+    margin: 10px auto 20px auto;
+}
+
+.explore-all-link a {
+    text-decoration: none;
+    color: var(--p-color, #E91E63); 
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+}
+
+.explore-all-link .arrow-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+/* =========================================================
+   LAPTOP FIXES (Target: 1025px to 1600px) - EXPANDED RANGE
+   ---------------------------------------------------------
+   This is the new fluid range for modern laptops.
+   ========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1600px) {
     
     /* 1. GLOBAL LAYOUT ADJUSTMENTS */
     .section {
         padding: 0 5%; 
     }
 
-    /* 2. HERO SECTION - CRITICAL FIXES (Preserved) */
+    /* 2. HERO SECTION - FLUID SIZING */
     .homescreen .head {
-        min-height: 80vh; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 10vh; 
+        min-height: 85vh; 
+        padding-top: 8vh; 
         padding-bottom: 5vh;
     }
     
-    .head .hero {
-        position: relative; 
-        width: 90%;
-        max-width: 1200px; 
-    }
-
     .head .hero h1, 
-    .head .hero p, 
-    .hero .hero-button {
-        position: static !important; 
+    .head .hero p {
+        position: relative !important; 
         left: auto !important;
-        top: auto !important;
-        margin-left: 0; 
-        margin-right: auto;
+        top: 400px!important;
+        /* margin-left: 0;  */
+        /* margin-right: auto; */
     }
 
     .head .hero h1 {
-        font-size: 4.5vw; 
-        line-height: 1.1; 
-        margin-bottom: 10px;
+        font-size: clamp(16px, 1.5vw, 22px); 
+        /* background-color: #E91E63; */
     }
 
     .head .hero p {
-        font-size: 1.5vw; 
-        line-height: 1.3; 
-        margin-bottom: 25px;
+        font-size: clamp(16px, 1.5vw, 22px);
+        
+        margin-top: 30px;
     }
 
-    .hero .hero-button {
-        display: flex; 
-        gap: 20px;
+    .hero-button{
+        margin-right: 60px;
     }
     
-    /* 3. ABOUT US SECTION - CRITICAL FIXES (Overlap Elimination) */
+    /* 3. ABOUT US SECTION - FLUID SCALING */
     section {
         min-height: auto;
-        display: flex; 
-        /* flex-direction: row;  */
-        justify-content: space-between;
-        align-items: center; /* Vertical alignment */
-        margin-left: 0; 
-        /* padding: 60px 5%;  */
-        /* CRITICAL FIX: Use flexbox gap for reliable spacing */
-        gap: 60px; 
+        gap: 5%; 
+        padding: 60px 0; 
     }
     
     section .abtus {
-         
-         width: 50%;  
-         margin: 0; 
-        padding-right: 0; 
-        padding-top: 0; 
-        /* background-color: #211ee9; */
+        width: 100%; 
+        margin: 0; 
     }
     
     section .abtus h1 {
-        font-size: 30px; 
-        margin-bottom: 20px; 
+        font-size: clamp(30px, 2.5vw, 40px); 
+        margin-bottom: 25px; 
     }
 
     section .abtus p {
-        font-size: 10px; 
-        margin-top: 0; 
-        /* margin-bottom: 20px;  */
-        /* line-height: 1.5; */
-        white-space: normal; 
+        font-size: clamp(14px, 1.2vw, 18px); 
+        line-height: 1.6;
+        
         
     }
     
-    .Read-more-button {
-        margin-top: 20px; 
-    }
-
     section .abtusimg {
-        /* width: 50%;  */
-        display: flex;
-        justify-content: flex-end;
-        align-items: center; 
+        width: 60%; 
+        background-color: #E91E63;
     }
 
     section .abtusimg img {
         width: 100%; 
-        max-width: 550px; 
+        background-color: aqua;
         height: auto; 
-        margin-right: 0; 
         border-top-left-radius: 60px; 
+        /* padding-left: 100px; */
     }
 
-    /* 4. COURSE SECTION FIXES (Card Scaling) */
+    /* 4. COURSE SECTION FIXES */
+    .course-section h1 {
+        font-size: 38px;
+    }
+
     .course-section .bckworld-img .shortc-group {
         justify-content: space-evenly;
-        gap: 20px;
+        gap: 30px;
     }
 
     .short-courses {
-        width: 30%; 
-        min-width: 280px; 
+        width: 21%; /* Allows 4 cards comfortably */
+        min-width: 250px; 
         height: auto;
     }
+    
+    /* Ensure the cards wrap correctly if needed in the 1025-1200 range */
+    @media (min-width: 1025px) and (max-width: 1250px) {
+         .short-courses {
+            width: 45%;
+            margin: 10px;
+         }
+         .course-section .bckworld-img .shortc-group {
+             justify-content: center;
+         }
+    }
+
 
     .course-section img {
         width: 100%;
@@ -650,75 +784,79 @@ section .abtusimg img {
     }
 
     .bckworld-img .short-menthorship {
-        width: 95%; 
         height: 200px; 
-        margin-left: 2.5%; 
         margin-top: 50px;
     }
 
     .short-menthorship h2 {
-        font-size: 28px;
-        line-height: 1.3;
-        width: 60%; 
+        font-size: 32px;
+        width: 70%; 
     }
 
     /* 5. TRAINING SECTION FIXES */
+    .higlight-Training-section .tr h1, .higlight-Training-section .hl h1 {
+        font-size: 38px;
+    }
+    
     .training-box {
         width: 65%; 
-        gap: 10px;
+        gap: 20px;
     }
 
     .main-training {
-        width: 200px;
+        width: 25%;
     }
 
     .training-img-box img {
-        height: 350px; 
+        height: 400px; 
     }
     
-    /* 6. UPCOMING EVENTS FIXES (Image Scaling) */
+    /* 6. UPCOMING EVENTS FIXES (Fluid Image and Text) */
     .upcoming-event-section {
-        min-height: auto;
         padding: 60px 0;
+        gap: 8%;
     }
 
-    .event-text {
-        width: 45%; 
+    /* .event-text {
+        width: 40%; 
         padding-left: 5%;
-    }
+    } */
 
     .upcoming-event-section .event-text h1 {
-        font-size: 38px;
+        font-size: clamp(30px, 2.5vw, 40px);
         margin-bottom: 40px;
     }
 
-    .dotted-text-content {
-        width: 100%;
-    }
-    
     .event-img {
-        width: 55%; 
-        justify-content: center;
+        width: 100%; 
+        max-width: 700px;
         padding-right: 5%;
+        /* background-color: #E91E63; */
     }
 
     .event-img img {
-        width: 100%; 
+        width: 50%; 
+        max-width: 700px;
         height: auto; 
-        max-width: 500px;
     }
 
-    /* 7. TESTIMONIALS FIXES (Card Scaling) */
+    /* 7. TESTIMONIALS FIXES (Fluid Card Content) */
+    .two-testimonial-boxes {
+        justify-content: space-evenly;
+        gap: 30px;
+    }
+
     .main-testimonial-content {
         width: 45%; 
-        min-width: 350px;
-        height: 300px;
+        min-width: 400px;
+        height: 320px;
     }
     
     .main-testimonial-content p {
         width: 90%; 
         left: 5%; 
-        top: 180px; 
+        top: 190px; 
+        font-size: 16px;
     }
     
     .main-testimonial-content h3 {
@@ -731,14 +869,28 @@ section .abtusimg img {
         left: 5%;
         width: 90%;
         top: 270px; 
+        font-size: 16px;
+    }
+
+    /* 8. PODCAST SECTION FIXES */
+    .podcast-section-replica {
+        padding: 60px 5%;
+    }
+
+    .featured-details h2 {
+        font-size: 24px;
+    }
+
+    .featured-image-container {
+        height: 180px;
     }
 }
 
 
 /* =========================================================
-   ORIGINAL MOBILE / SMALL TABLET OVERRIDES (max-width: 1024px)
+   MOBILE / SMALL TABLET OVERRIDES (max-width: 1024px)
    ---------------------------------------------------------
-   Includes all requested mobile fixes.
+   This section is strictly preserved and remains responsive.
    ========================================================= */
 
 @media (max-width: 1024px) {
@@ -755,8 +907,10 @@ section .abtusimg img {
         align-items: center;
         padding: 120px 5% 50px; 
         flex-direction: column;
+        min-height: 70vh; 
     }
 
+    /* Reset absolute positions */
     .head .hero h1, 
     .head .hero p, 
     .hero .hero-button {
@@ -1037,5 +1191,39 @@ section .abtusimg img {
     
     .home-testimonial-section>.main-testimonial-content {
         margin: 30px auto !important;
+    }
+
+    /* 8. PODCAST SECTION - MOBILE FIXES */
+    .podcast-section-replica h1 {
+        font-size: 30px !important;
+        line-height: 1.2 !important;
+        text-align: center;
+    }
+
+    .featured-episode-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .featured-image-container {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+    }
+
+    .featured-details h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .featured-details p {
+        font-size: 14px;
+    }
+
+    .episode-list-container {
+        width: 100%; 
+        padding: 0 5%;
     }
 }

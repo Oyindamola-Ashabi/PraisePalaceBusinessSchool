@@ -1,202 +1,235 @@
 /* =========================================================
-   NAV.CSS - DESKTOP STYLES (Applies to screens wider than 1280px)
+   Nav.css - Optimized and Cleaned Styles
    ========================================================= */
 
+/* --- Root Variables (For easy color management) --- */
+:root {
+    /* Assuming your primary pink color is #E91E63 */
+    --primary-color: #E91E63;
+    --primary-light: #F06292;
+    --text-dark: #000;
+    --text-light: white;
+    --nav-bg: rgba(0, 0, 0, 0.8);
+}
+
+/* ---------------------------------------------------------
+   1. BASE NAVIGATION CONTAINER & STRUCTURE
+   --------------------------------------------------------- */
 nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: absolute; /* Default: Absolute (for overlap on hero section) */
     top: 0;
-    z-index: 1001; 
+    z-index: 1001;
+    /* Reset default margin/padding for the bar itself */
+    padding: 0; 
 }
 
+/* --- Logo Styling --- */
 nav img {
-    margin-left: 120px;
-    width: 80px; 
+    margin-left: 120px; /* Desktop margin */
+    width: 80px;
     height: 80px;
-    /* Ensure cursor shows it's clickable */
-    cursor: pointer; 
+    cursor: pointer;
 }
 
+
+/* ---------------------------------------------------------
+   2. DESKTOP LINKS (.links)
+   --------------------------------------------------------- */
 nav .links {
     width: 70%;
-    margin-right: 120px;
+    margin-right: 120px; /* Desktop margin */
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
     font-size: 20px;
+    font-weight: 400;
     line-height: 24px;
+    /* Animation for hiding/showing desktop nav */
     transition: visibility 0s, opacity 0.3s linear;
 }
 
-nav .links a {
-    text-decoration: none;
-    color: white;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-}
-
+/* --- Hiding Desktop Links during Mobile Menu active state --- */
 nav .links.desktop-hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
 
-/* 🎯 RESTORED: HOME LINK COLOR */
+/* --- General Link Styling --- */
+nav .links a {
+    text-decoration: none;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Current/Active Link (Home) Styling --- */
 #home {
-    background-color: white;
-    color: #E91E63;
-    border-bottom: 5px solid #F06292;
+    background-color: var(--text-light);
+    color: var(--primary-color);
+    border-bottom: 5px solid var(--primary-light);
     border-radius: 25px;
     width: 89px;
     height: 44px;
 }
 
-/* 🎯 RESTORED: APPOINTMENT BUTTON COLOR */
+
+/* ---------------------------------------------------------
+   3. APPOINTMENT BUTTON (.appointment-button)
+   --------------------------------------------------------- */
 .appointment-button {
-    background-color: #E91E63;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-light);
     padding: 10px 24px;
-    border-radius: 20px 10px;
+    border-radius: 20px 10px; /* Unique border radius */
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border: none;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-}
-.appointment-button:hover {
-    background-color: #F06292;
-    color: rgba(10, 10, 10, 0.6);
-    padding: 10px 24px;
-    border-radius: 10px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-    border: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-/* 🎯 Hamburger Button Styling */
+.appointment-button:hover {
+    background-color: var(--primary-light);
+    color: rgba(10, 10, 10, 0.6);
+    border-radius: 10px; /* Slightly different hover radius */
+}
+
+
+/* ---------------------------------------------------------
+   4. HAMBURGER ICON (Desktop Visibility & Styling)
+   --------------------------------------------------------- */
+
 .hamburger-button {
     cursor: pointer;
+    display: flex; /* Always visible in the desktop links container */
     align-items: center;
     justify-content: center;
     width: 30px;
     height: 30px;
-    color: white;
-    display: flex;
+    margin-left: 20px;
 }
 
-.links .hamburger-button {
-    display: flex; 
-    margin-left: 20px; 
-}
-
-/* 🎯 Hamburger Hover Effect RESTORED */
+/* Hamburger Hover Effect */
 .links .hamburger-button:hover {
-    background-color: white; 
+    background-color: var(--text-light);
     border-radius: 5px;
 }
 .links .hamburger-button:hover .menu-icon,
 .links .hamburger-button:hover .menu-icon::before,
 .links .hamburger-button:hover .menu-icon::after {
-    background-color: #E91E63; 
+    background-color: var(--primary-color);
 }
 
-
-/* --- PURE CSS ICON STYLES (Hamburger only) --- */
+/* --- PURE CSS ICON STYLES --- */
 .menu-icon {
-    display: block; width: 25px; height: 3px; background-color: white; position: relative; transition: background-color 0.3s;
+    display: block; 
+    width: 25px; 
+    height: 3px; 
+    background-color: var(--text-light); 
+    position: relative; 
+    transition: background-color 0.3s;
+}
+.menu-icon::before,
+.menu-icon::after {
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    width: 25px; 
+    height: 3px; 
+    background-color: var(--text-light);
 }
 .menu-icon::before {
-    content: ''; position: absolute; top: -8px; left: 0; width: 25px; height: 3px; background-color: white;
+    top: -8px; 
 }
 .menu-icon::after {
-    content: ''; position: absolute; top: 8px; left: 0; width: 25px; height: 3px; background-color: white;
+    top: 8px; 
 }
 
 
-/* --- MOBILE MENU STRUCTURE (OFFCANVAS) --- */
+/* ---------------------------------------------------------
+   5. MOBILE MENU OVERLAY (.hamburger-menu)
+   --------------------------------------------------------- */
 .hamburger-menu {
     position: fixed;
     top: 0;
-    right: 0; 
+    right: 0;
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.95);
-    z-index: 1000; 
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow-y: auto;
-    transform: translateX(100%); 
+    /* Default off-screen state */
+    transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
 }
 
 .hamburger-menu.active {
-    transform: translateX(0); 
+    /* Active on-screen state */
+    transform: translateX(0);
 }
-
-/* Removed menu-header styles as the close button is gone */
 
 .hamburger-links {
     display: flex;
     flex-direction: column;
     gap: 25px;
     text-align: center;
-    /* Padding reset since the menu-header is gone */
-    padding-top: 0; 
+    padding-top: 0;
 }
+
 .hamburger-links a {
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
     font-size: 24px;
     padding: 10px 0;
 }
 
 
-/* =========================================================
-   LAPTOP/MOBILE OVERRIDES (max-width: 1280px)
-   ========================================================= */
+/* ---------------------------------------------------------
+   6. RESPONSIVE BREAKPOINT (max-width: 1280px)
+   --------------------------------------------------------- */
 @media (max-width: 1280px) {
     
-    /* Mobile Alignment for Logo/Hamburger */
+    /* Fix the navigation bar to the top for mobile view */
     nav {
-        /* This padding sets the margin on the sides (requested alignment) */
-        padding: 10px 20px; 
-        position: fixed; 
-        background-color: rgba(0, 0, 0, 0.8); 
-        width: 100%;
-        z-index: 1001; 
+        position: fixed;
+        background-color: var(--nav-bg); /* Opaque background on scroll/mobile */
+        padding: 10px 20px; /* Mobile Alignment for Logo/Hamburger */
     }
     
+    /* Reset Desktop Margins */
     nav img {
-        /* Reset desktop margin */
-        margin-left: 0; 
+        margin-left: 0;
+    }
+    
+    nav .links {
+        margin-right: 0;
+        /* Force container to match mobile alignment logic */
+        width: auto;
     }
 
-    /* Hide all desktop links on mobile */
-    nav .links a {
+    /* Hide all desktop links (standard links + button) on mobile */
+    nav .links > a, 
+    nav .links .appointment-button {
         display: none !important;
     }
     
+    /* Ensure the hamburger button is visible and pushed to the right */
     .links .hamburger-button {
         display: flex !important;
-        margin-left: auto; /* Pushes the button to the right end of the nav bar */
-        color: white;
-    }
-
-    /* Reset desktop margin on the links container */
-    nav .links {
-        margin-right: 0; 
+        margin-left: auto; 
     }
 }

@@ -16,6 +16,7 @@ import sectionTwoImageThree from './assets/secondwoman.jpeg.jpg';
 import sectionTwoImageFour from './assets/man.jpeg.jpg';
 import sectionThreeImgOne from './assets/book1.png.png';
 import SectionFourImg from './assets/star.png.png'
+import Podcast from './pages/podcast/Podcast';
 
 const sectionTwoImgOne = sectionTwoImagegOne; 
 const sectionTwoImgThree = sectionTwoImageThree; 
@@ -63,6 +64,8 @@ const App = () => {
                     <Route path="/events" element={<Events/>}/>
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="/appointment" element={<Appointment/>}/>
+                    <Route path="/podcast" element={<Podcast/>}/>
+
                 </Routes>
 
             </BrowserRouter>

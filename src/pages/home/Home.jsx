@@ -15,7 +15,11 @@ import sectionFourImgThree from '../../assets/eventimg.png.png'
 import { Link } from "react-router-dom"
 import SectionFourImg from '../../assets/star.png.png'
 
-
+// --- NEW PODCAST IMAGES ---
+import podcastMainImage from '../../assets/miclady.png'
+import playIcon from '../../assets/play.png'
+import arrowRight from '../../assets/sidearrow.png'
+// -------------------------
 
 import './Home.css'
 
@@ -78,22 +82,6 @@ const Home = ({ courses, highlights, testimonials }) => {
                 })}
               </div>
 
-              {/* Using the propos method below */}
-
-              {/* <div className="shortc-group">
-                {props.courses.slice(0, 4).map((course) => {
-                  return (
-                    <div className="short-courses" key={course.id}>
-                      <img src={course.img} alt="" />
-                      <h3>{course.title}</h3>
-                      <p dangerouslySetInnerHTML={{ __html: course.description }} />
-                      <Button title="Enroll" type="primary small-button" link={course.link} />
-                    </div>
-                  );
-                })}
-              </div> */}
-
-
               <div className="short-menthorship">
                 <h2>Get guidance from experienced business leaders.</h2>
                 <Button title="Apply for Mentorship" type="primary md-button" link="/mentorship" />
@@ -144,28 +132,6 @@ const Home = ({ courses, highlights, testimonials }) => {
                   </div>
 
                 </div>
-
-                {/* or */}
-
-
-                {/* <div className="training-box">
-                  {trainings.map((train) => (
-                    <div key={train.id}>
-                      <div className="main-training" id={train.moveId}>
-                        <img src={train.img} alt={train.title} />
-                        <h3>{train.title}</h3>
-                        <p>{train.text}</p>
-                      </div>
-
-                     
-                      <div className="line-1"></div>
-                    </div>
-                  ))}
-                </div> */}
-
-
-
-
 
                 <div className="training-img-box">
                   <img src={sectionThreeImgFour} alt="" width="" />
@@ -230,11 +196,54 @@ const Home = ({ courses, highlights, testimonials }) => {
               <p>{testimonials[2].title}</p>
             </div>
           </div>
-          
 
 
+          {/* --- NEW PODCAST SECTION (Exact Image Replica - Placed AFTER testimonials) --- */}
+          <div className="podcast-section-replica">
+            <h1>Listen & Learn – Our <span className="p-color">Podcast</span></h1>
+            <div className="podcast-main-container">
+              {/* Featured Episode Box */}
+              <div className="featured-episode-box">
+                <div className="featured-image-container">
+                  <img src={podcastMainImage} alt="Podcast Host Recording Episode" />
+                </div>
+                <div className="featured-details">
+                  <h2>Ep 07: Mastering Digital Growth</h2>
+                  <p>Expert insight to grow your Business in the digital age</p>
+                  <div className="podcast-duration">
+                    <img src={playIcon} alt="Play icon" className="play-icon-small" />
+                    <span>32min</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            {/* Episode List */}
+            <div className="episode-list-container">
+              <div className="episode-list-item">
+                <h3>Ep 06: Mastering Digital Growth</h3>
+                <span>28min</span>
+              </div>
+              <div className="episode-list-item">
+                <h3>Ep 05: Building Sustainable Businesses</h3>
+                <span>28min</span>
+              </div>
+              <div className="episode-list-item">
+                <h3>Ep 06: Investing in your Future</h3>
+                <span>28min</span>
+              </div>
+            </div>
 
+            {/* Explore All Link */}
+            <div className="explore-all-link">
+              <Link to="/podcast">
+                <img src={arrowRight} alt="Arrow right" className="arrow-icon" />
+                Explore All Episodes
+              </Link>
+            </div>
+
+          </div>
+          {/* -------------------------------------------------------------------------- */}
         </div>
 
       </div>
