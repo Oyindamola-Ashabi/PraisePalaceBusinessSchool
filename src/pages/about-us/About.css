@@ -71,7 +71,7 @@ main {
     /* background-color: rgba(0, 0, 0, 0.4); */
     /* Dark overlay for readability */
     /* border-radius: 10px; */
-    font-family: Inter;
+    font-family: 'Inter';
     margin-top: 110px;
     /* width: 100%; */
 }
@@ -89,42 +89,67 @@ main {
 
 
 /* ---------------------------------------------------------
-   2. OUR STORY SECTION
-   --------------------------------------------------------- */
+   2. OUR STORY SECTION
+   --------------------------------------------------------- */
 .our-story-section {
-    padding: 40px 0 80px 0;
+    padding: 100px 5%; /* Generous padding for a clean look */
+    background-color: #ffffff; /* Clean white background like the image */
+    width: 100%;
 }
 
 .story-content-wrapper {
     display: flex;
-    gap: 40px;
-    align-items: center;
+    align-items: center; /* Vertically centers text against image */
+    justify-content: space-between;
+    gap: 60px; /* Space between text and image */
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .story-text {
     flex: 1;
-    padding-right: 20px;
+    text-align: center; /* Centers the text alignment */
+}
+
+.story-text h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #F8BBD0; /* The soft pink color from your image */
+    margin-bottom: 30px;
 }
 
 .story-text p {
-    color: #555;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 15px;
+    color: #333;
+    margin-bottom: 20px;
+    max-width: 550px; /* Limits width to match the image layout */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .story-image {
     flex: 1;
-    /* Maintain the large, rounded-corner appearance */
+    position: relative;
+    /* This creates the gray "sub-box" look from your image */
+    background-color: #757575; 
+    border-radius: 40px; 
+    padding-bottom: 60px; /* The height of the gray area at the bottom */
     overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .story-image img {
     width: 100%;
-    height: auto;
+    height: 400px; /* Fixed height to match image proportions */
+    object-fit: cover;
     display: block;
+    border-radius: 40px 40px 0 0; /* Rounds top corners only to sit on the gray base */
 }
+
+
 
 
 /* ---------------------------------------------------------
@@ -373,6 +398,23 @@ main {
         order: 1;
         /* Image above text on mobile */
     }
+
+
+   
+    /* .story-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .story-text h2 {
+        font-size: 36px;
+    }
+
+    .story-image {
+        width: 100%;
+    } */
+
+
 
     /* 3. MISSION, VISION, CORE VALUE, WHY CHOOSE US? SECTION */
     .mission-vision-grid,
