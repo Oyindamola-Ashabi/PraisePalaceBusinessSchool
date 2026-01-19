@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 // Layout Imports
 import Nav from "./layouts/nav/Nav"
-import Footer from "./layouts/footer/Footer"; // Footer component import
+import Footer from "./layouts/footer/Footer"; 
 import About from "./pages/about-us/About"
 import Courses from "./pages/courses/Courses"
 import Mentorship from "./pages/mentorship/Mentorship"

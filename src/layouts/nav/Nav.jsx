@@ -1,55 +1,54 @@
-// src/components/nav/Nav.jsx
-
+import React from 'react';
 import myLogo from '../../assets/LOGO 2.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // Added useLocation
 import './Nav.css';
+import menuImage from '../../assets/hamimg.png'
 
-// 💥 IMPORTANT: Ensure this path is correct for the decorative image
-import menuImage from '../../assets/miclady.png'
-
-const Nav = ({ isMenuOpen, toggleMenu }) => {
+const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
+    const location = useLocation();
+    
+    // Check if the current page is the About page
+    const isAboutPage = location.pathname === '/about';
+    
+    // Combine the transparent/solid logic with an 'about-theme' class if on the about page
+    const navClass = `${isTransparent ? 'nav-transparent' : 'nav-solid'} ${isAboutPage ? 'about-theme' : ''}`; 
+    
     return (
         <div className="nav-container">
-            <nav>
+            <nav className={navClass}>
                 <img 
                     src={myLogo} 
                     alt="logo" 
                     width="80px" 
                     height="80px"
+                    style={{ cursor: 'pointer' }} 
                     onClick={isMenuOpen ? toggleMenu : undefined}
                 /> 
                 
-                {/* Desktop links container */}
                 <div className={`links ${isMenuOpen ? 'desktop-hidden' : ''}`}>
-                    {/* Desktop Links */}
-                    <Link to='/' id="home">Home</Link>
-                    <Link to='/about'>About</Link>
+                    <Link to='/' id={location.pathname === '/' ? "home" : ""}>Home</Link>
+                    <Link to='/about' id={location.pathname === '/about' ? "home" : ""}>About</Link>
                     <Link to='/courses'>Courses</Link>
                     <Link to='/mentorship'>Mentorship</Link>
                     <Link to='/training'>Training</Link>
                     <Link to='/events'>Events</Link>
                     <Link to='/contact'>Contact</Link>
                     
-                    {/* Desktop Button */}
                     <Link to="/appointment"> 
                         <button className="appointment-button">Book a Call</button>
                     </Link>
                     
-                    {/* FIXED HAMBURGER BUTTON (Opens the menu) */}
                     <div className='hamburger-button' onClick={toggleMenu}>
                         <i className="menu-icon"></i> 
                     </div>
                 </div>
             </nav>
             
-            {/* 💥 FIXED HAMBURGER MENU OVERLAY 💥 */}
+            {/* ... Hamburger Menu Overlay remains exactly the same as your code ... */}
             <div className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}>
                 <div className="menu-content-wrapper">
-                    
-                    {/* LEFT COLUMN: Logo, Close Button, and Links */}
                     <div className="menu-links-column">
                         <div className="menu-header">
-                            {/* Logo section matching the image design */}
                             <div className="menu-logo">
                                 <span className='menu-logo-text'>Logo</span>
                                 <div className="menu-business-name">
@@ -57,14 +56,10 @@ const Nav = ({ isMenuOpen, toggleMenu }) => {
                                     <p>Business School</p>
                                 </div>
                             </div>
-                            
-                            {/* Close Button (X) - Clicks toggleMenu to close */}
                             <button className="menu-close-button" onClick={toggleMenu}>
                                 <i className="close-icon"></i>
                             </button>
                         </div>
-                        
-                        {/* Links List (ALL LINKS INCLUDED) */}
                         <div className="hamburger-links">
                             <Link to='/' id="menu-home" onClick={toggleMenu}>Home</Link>
                             <Link to='/about' onClick={toggleMenu}>About Us</Link>
@@ -74,26 +69,14 @@ const Nav = ({ isMenuOpen, toggleMenu }) => {
                             <Link to='/events' onClick={toggleMenu}>Events</Link>
                             <Link to='/podcast' onClick={toggleMenu}>Podcast</Link>
                             <Link to='/contact' onClick={toggleMenu}>Contact Us</Link>
-                            
-                            {/* Mobile Book a Call Link/Button */}
-                            <Link to="/appointment" onClick={toggleMenu} className="mobile-book-call-link">
-                                Book a Call
-                            </Link>
+                            <Link to="/appointment" onClick={toggleMenu} className="mobile-book-call-link">Book a Call</Link>
                         </div>
                     </div>
-                    
-                    {/* RIGHT COLUMN: Decorative Image (Laptop/Desktop View) */}
                     <div className="menu-image-column">
-                        <img 
-                            src={menuImage} 
-                            alt="Business professionals"
-                            className='menu-decorative-image' 
-                        />
+                        <img src={menuImage} alt="Business professionals" className='menu-decorative-image' />
                     </div>
-
                 </div>
             </div>
-            {/* 💥 END FIXED MENU 💥 */}
         </div>
     );
 }

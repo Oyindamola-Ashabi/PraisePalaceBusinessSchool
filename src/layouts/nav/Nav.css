@@ -255,7 +255,7 @@ nav .links a {
 .hamburger-links {
     display: flex;
     flex-direction: column;
-    gap: 15px; 
+    gap: 1px; 
     text-align: center;
     padding-right: 40px;
     border-right: 2px solid rgba(255, 255, 255, 0.2); 
@@ -310,6 +310,30 @@ nav .links a {
     max-height: 100%;
     max-width: 100%;
 }
+
+/* Changes the text color to black */
+.about-theme .links a {
+    color: var(--text-dark) !important;
+}
+
+/* Changes the hamburger icon and its lines to black */
+.about-theme .menu-icon,
+.about-theme .menu-icon::before,
+.about-theme .menu-icon::after {
+    background-color: var(--text-dark) !important;
+}
+
+/* Optional: If the logo needs to be darker to show on light backgrounds */
+/* .about-theme img {
+    filter: brightness(0); 
+} */
+
+/* Ensure the 'Active/Home' link background stays white so the pink text is readable */
+/* .about-theme #home {
+    background-color: var(--primary-color);
+    color: white !important;
+    border-bottom: 5px solid var(--primary-light);
+} */
 
 
 /* ---------------------------------------------------------

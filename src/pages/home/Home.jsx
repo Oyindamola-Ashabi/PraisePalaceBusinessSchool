@@ -200,8 +200,6 @@ const Home = ({ courses, highlights, testimonials, FAQ }) => {
             </div>
           </div>
 
-
-          {/* --- NEW PODCAST SECTION (Exact Image Replica - Placed AFTER testimonials) --- */}
           <div className="podcast-section-replica">
             <h1>Listen & Learn – Our <span className="p-color">Podcast</span></h1>
             <div className="podcast-main-container">
@@ -248,7 +246,6 @@ const Home = ({ courses, highlights, testimonials, FAQ }) => {
           </div>
     
           
-        
           <div className="faq-section">
             <div className="section">
               <h1>Frequently <span className="p-color">Asked</span> Question</h1>
@@ -278,8 +275,7 @@ const Home = ({ courses, highlights, testimonials, FAQ }) => {
               </div>
             </div>
           </div>
-          {/* 💥 END FAQ SECTION 💥 */}
-
+          
 
           <div className="home-contact-section">
         <div className="contact-content-container">

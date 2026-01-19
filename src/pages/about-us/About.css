@@ -1,0 +1,420 @@
+/* =========================================================
+   About.css - CORRECTED VERSION
+   ========================================================= */
+
+/* 💥 CRITICAL FIX FOR NAV OVERLAP 💥 */
+/* Pushes all main content down below the fixed header (assuming Nav is 80px high) */
+/* This rule MUST be in your global CSS or included in your Nav.css or this file if only used here */
+main {
+    padding-top: 80px;
+    /* Adjust this value if your Nav height is different */
+}
+
+/* --- General Styling and Utilities --- */
+/* :root {
+    --pink-primary: #E91E63;
+    --text-dark: #333;
+    --text-light: #555;
+    --bg-light: #f9f9f9;
+    --bg-gray: #ededed;
+} */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.pink-text {
+    color: #E91E63;
+}
+
+
+/* ---------------------------------------------------------
+   1. HERO SECTION
+   --------------------------------------------------------- */
+.about-hero-section {
+    position: relative;
+    height: 60vh;
+    /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* background-color: #d11e5c; */
+    /* z-index: 1; */
+    border-radius: 0 0 50px 50px;
+    /* Rounded bottom corners */
+}
+
+.hero-content {
+    z-index: 1;
+    padding: 10px;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    /* Dark overlay for readability */
+    /* border-radius: 10px; */
+    font-family: Inter;
+    margin-top: 110px;
+    /* width: 100%; */
+}
+
+.hero-content h1 {
+    font-size: 66px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+
+/* ---------------------------------------------------------
+   2. OUR STORY SECTION
+   --------------------------------------------------------- */
+.our-story-section {
+    padding: 40px 0 80px 0;
+}
+
+.story-content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.story-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.story-text p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.story-image {
+    flex: 1;
+    /* Maintain the large, rounded-corner appearance */
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ---------------------------------------------------------
+   3. MISSION, VISION, CORE VALUE, WHY CHOOSE US? SECTION
+   --------------------------------------------------------- */
+.values-section {
+    padding: 60px 0;
+    background-color: #ededed;
+    /* Outer border matching the full image's container */
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.values-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- Mission & Vision Grid --- */
+.mission-vision-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.mission-box,
+.vision-box {
+    flex: 1;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.mission-box h3,
+.vision-box h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.mission-box p,
+.vision-box p {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* --- Core Value & Why Choose Us Grid --- */
+.core-why-grid {
+    display: flex;
+    gap: 30px;
+    /* Use a lighter background for this section as seen in the image */
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.core-value-box {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    /* Vertical separator */
+}
+
+.why-choose-box {
+    flex: 1;
+    padding: 20px;
+}
+
+.core-value-box h3,
+.why-choose-box h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.value-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.value-item {
+    width: 45%;
+    /* Two items per row */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+}
+
+.value-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.why-list p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+}
+
+.why-list .check-icon::before {
+    content: '✓';
+    /* Checkmark icon */
+    color: #E91E63;
+    margin-right: 10px;
+    font-weight: 900;
+}
+
+
+/* ---------------------------------------------------------
+   4. CONTACT ME SECTION
+   --------------------------------------------------------- */
+.contact-me-section {
+    padding: 80px 0;
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.contact-image-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-image-area img {
+    max-width: 100%;
+    height: auto;
+}
+
+.contact-form-area {
+    flex: 1;
+}
+
+.contact-form-area h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group-inline {
+    display: flex;
+    gap: 20px;
+}
+
+.input-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-field input,
+.input-field textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-field textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-button {
+    background-color: #E91E63;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+    /* Full width for better mobile experience */
+    max-width: 250px;
+    /* Limit width on desktop */
+    align-self: flex-start;
+}
+
+.submit-button:hover {
+    background-color: #d11e5c;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE RESPONSIVENESS (max-width: 1024px)
+   --------------------------------------------------------- */
+@media (max-width: 1024px) {
+
+    /* CRITICAL: Adjust the content offset for the fixed mobile nav */
+    main {
+        padding-top: 100px;
+        /* Increased padding for fixed mobile nav */
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* 1. HERO SECTION */
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    /* 2. OUR STORY SECTION */
+    .story-content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .story-text {
+        padding-right: 0;
+        order: 2;
+        /* Text below image on mobile */
+    }
+
+    .story-image {
+        order: 1;
+        /* Image above text on mobile */
+    }
+
+    /* 3. MISSION, VISION, CORE VALUE, WHY CHOOSE US? SECTION */
+    .mission-vision-grid,
+    .core-why-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .core-value-box {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        /* Use horizontal separator */
+    }
+
+    .value-icons {
+        justify-content: center;
+    }
+
+    /* 4. CONTACT ME SECTION */
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-image-area {
+        order: 2;
+        /* Move image below form on mobile */
+    }
+
+    .contact-form-area {
+        order: 1;
+        /* Move form above image on mobile */
+    }
+
+    .form-group-inline {
+        flex-direction: column;
+        gap: 0;
+        /* Stack first/last name fields */
+    }
+
+    .submit-button {
+        width: 100%;
+        max-width: 100%;
+    }
+}
