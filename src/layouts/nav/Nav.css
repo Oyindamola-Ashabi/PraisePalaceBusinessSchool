@@ -1,10 +1,9 @@
 /* =========================================================
-   Nav.css - Optimized and Cleaned Styles
+   Nav.css - Full Styles preserved with Mentorship Width Fix
    ========================================================= */
 
-/* --- Root Variables (For easy color management) --- */
+/* --- Root Variables --- */
 :root {
-    /* Assuming your primary pink color is #E91E63 */
     --primary-color: #E91E63;
     --primary-light: #F06292;
     --text-dark: #000;
@@ -20,27 +19,26 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute; /* Default: Absolute (for overlap on hero section) */
+    position: absolute; 
     top: 0;
-    z-index: 1002; /* Ensures nav is always on top */
+    z-index: 1002;
     padding: 0; 
 }
 
 /* --- Logo Styling --- */
 nav img {
-    margin-left: 120px; /* Desktop margin */
+    margin-left: 120px;
     width: 80px;
     height: 80px;
     cursor: pointer;
 }
-
 
 /* ---------------------------------------------------------
    2. DESKTOP LINKS (.links)
    --------------------------------------------------------- */
 nav .links {
     width: 70%;
-    margin-right: 120px; /* Desktop margin */
+    margin-right: 120px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -51,14 +49,12 @@ nav .links {
     transition: visibility 0s, opacity 0.3s linear;
 }
 
-/* --- Hiding Desktop Links during Mobile Menu active state --- */
 nav .links.desktop-hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
 
-/* --- General Link Styling --- */
 nav .links a {
     text-decoration: none;
     color: var(--text-light);
@@ -67,16 +63,21 @@ nav .links a {
     justify-content: center;
 }
 
-/* --- Current/Active Link (Home) Styling --- */
+/* --- Current/Active Link Styling (FIXED TO FIT MENTORSHIP) --- */
 #home {
     background-color: var(--text-light);
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     border-bottom: 5px solid var(--primary-light);
     border-radius: 25px;
-    width: 89px;
+    /* Changed fixed width to auto + padding to fit long words */
+    width: auto;
+    padding: 0 20px; 
     height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Prevents text from breaking into two lines */
 }
-
 
 /* ---------------------------------------------------------
    3. APPOINTMENT BUTTON (.appointment-button)
@@ -102,11 +103,9 @@ nav .links a {
     border-radius: 10px; 
 }
 
-
 /* ---------------------------------------------------------
    4. HAMBURGER ICON (Desktop Visibility & Styling)
    --------------------------------------------------------- */
-
 .hamburger-button {
     cursor: pointer;
     display: flex; 
@@ -117,18 +116,17 @@ nav .links a {
     margin-left: 20px;
 }
 
-/* Hamburger Hover Effect */
 .links .hamburger-button:hover {
     background-color: var(--text-light);
     border-radius: 5px;
 }
+
 .links .hamburger-button:hover .menu-icon,
 .links .hamburger-button:hover .menu-icon::before,
 .links .hamburger-button:hover .menu-icon::after {
     background-color: var(--primary-color);
 }
 
-/* --- PURE CSS ICON STYLES --- */
 .menu-icon {
     display: block; 
     width: 25px; 
@@ -137,6 +135,7 @@ nav .links a {
     position: relative; 
     transition: background-color 0.3s;
 }
+
 .menu-icon::before,
 .menu-icon::after {
     content: ''; 
@@ -146,16 +145,12 @@ nav .links a {
     height: 3px; 
     background-color: var(--text-light);
 }
-.menu-icon::before {
-    top: -8px; 
-}
-.menu-icon::after {
-    top: 8px; 
-}
 
+.menu-icon::before { top: -8px; }
+.menu-icon::after { top: 8px; }
 
 /* ---------------------------------------------------------
-   5. MOBILE MENU OVERLAY (.hamburger-menu) - FIXED TO DESIGN
+   5. MOBILE MENU OVERLAY (Left exactly as you provided)
    --------------------------------------------------------- */
 .hamburger-menu {
     position: fixed; 
@@ -170,8 +165,6 @@ nav .links a {
     align-items: center;
     justify-content: center;
     overflow-y: hidden;
-    
-    /* Default off-screen state (use opacity/visibility for smooth transition) */
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.4s ease-in-out, visibility 0.4s;
@@ -182,7 +175,6 @@ nav .links a {
     opacity: 1;
 }
 
-/* --- Content Wrapper (The maroon box from the design) --- */
 .menu-content-wrapper {
     width: 90%; 
     height: 85vh; 
@@ -194,7 +186,6 @@ nav .links a {
     overflow: hidden;
 }
 
-/* --- LEFT COLUMN: Links and Header (Laptop View) --- */
 .menu-links-column {
     width: 50%;
     min-width: 300px;
@@ -212,7 +203,6 @@ nav .links a {
     margin-bottom: 50px;
 }
 
-/* Logo and Business Name Styling */
 .menu-logo {
     display: flex;
     align-items: flex-start;
@@ -232,8 +222,6 @@ nav .links a {
     line-height: 1.2;
 }
 
-
-/* Close Button (X) Styling */
 .menu-close-button {
     background: none;
     border: none;
@@ -251,7 +239,6 @@ nav .links a {
     font-weight: bold;
 }
 
-/* Links List (Vertical Stacked, Centered) */
 .hamburger-links {
     display: flex;
     flex-direction: column;
@@ -272,7 +259,6 @@ nav .links a {
     transition: color 0.2s;
 }
 
-/* Style for Home link inside the menu */
 #menu-home {
     color: var(--primary-color);
     background: none; 
@@ -282,9 +268,7 @@ nav .links a {
     height: auto;
 }
 
-/* Styling the "Book a Call" link inside the menu */
 .mobile-book-call-link {
-    /* Style as a regular link for large screen pop-out */
     color: white !important;
     margin-top: 15px; 
     font-size: 28px !important;
@@ -292,11 +276,9 @@ nav .links a {
     text-align: center;
 }
 
-
-/* --- RIGHT COLUMN: Image Container (Laptop View) --- */
 .menu-image-column {
     flex-grow: 1; 
-    display: flex; /* Make sure it displays by default for laptop view */
+    display: flex; 
     justify-content: center;
     align-items: center;
     padding: 40px;
@@ -311,37 +293,29 @@ nav .links a {
     max-width: 100%;
 }
 
-/* Changes the text color to black */
+/* ---------------------------------------------------------
+   6. THEME OVERRIDES (About, Courses, Events)
+   --------------------------------------------------------- */
 .about-theme .links a {
     color: var(--text-dark) !important;
 }
 
-/* Changes the hamburger icon and its lines to black */
 .about-theme .menu-icon,
 .about-theme .menu-icon::before,
 .about-theme .menu-icon::after {
     background-color: var(--text-dark) !important;
 }
 
-/* Optional: If the logo needs to be darker to show on light backgrounds */
-/* .about-theme img {
-    filter: brightness(0); 
-} */
-
-/* Ensure the 'Active/Home' link background stays white so the pink text is readable */
-/* .about-theme #home {
-    background-color: var(--primary-color);
-    color: white !important;
-    border-bottom: 5px solid var(--primary-light);
-} */
-
+/* Active Highlight for Dark Pages (Ensures Pink Text on White Background) */
+.about-theme #home {
+    color: #E91E63 !important;
+    background-color: var(--text-light); /* Or white */
+}
 
 /* ---------------------------------------------------------
-   6. RESPONSIVE BREAKPOINT (max-width: 1280px) - Mobile Fixes
+   7. RESPONSIVE BREAKPOINT
    --------------------------------------------------------- */
 @media (max-width: 1280px) {
-    
-    /* Fix the navigation bar to the top for mobile view */
     nav {
         position: fixed;
         background-color: var(--nav-bg); 
@@ -352,17 +326,12 @@ nav .links a {
         right: 0;
     }
     
-    /* Reset Desktop Margins, Hide Desktop Links (Original Code) */
     nav img { margin-left: 0; }
     nav .links { margin-right: 0; width: auto; }
     nav .links > a, 
     nav .links .appointment-button { display: none !important; }
     .links .hamburger-button { display: flex !important; margin-left: auto; }
 
-    
-    /* ---------------------------------------------------------
-       MOBILE OVERRIDES FOR FULL-SCREEN MENU 
-       --------------------------------------------------------- */
     .menu-content-wrapper {
         width: 100%; 
         height: 100vh;
@@ -388,37 +357,24 @@ nav .links a {
         width: 100%; 
     }
 
-    .hamburger-links a {
-        font-size: 20px;
-    }
-    
-    .menu-header {
-        margin-bottom: 20px;
-        width: 100%;
-    }
+    .hamburger-links a { font-size: 20px; }
+    .menu-header { margin-bottom: 20px; width: 100%; }
 
-    /* Style the "Book a Call" link as a prominent button on mobile */
     .mobile-book-call-link {
-        display: block; /* Make sure it is visible */
+        display: block;
         margin-top: 30px;
         width: 100%;
         max-width: 250px;
         margin-left: auto;
         margin-right: auto;
-        
-        /* Apply button-like styling */
         background-color: var(--primary-color);
         color: var(--text-light) !important;
         padding: 10px 24px;
         border-radius: 20px 10px; 
-        text-decoration: none; /* Remove underline for button look */
+        text-decoration: none;
         font-weight: 400;
         font-size: 16px;
-        line-height: 24px;
     }
     
-    /* Hide the image completely on small mobile screens */
-    .menu-image-column {
-        display: none;
-    }
+    .menu-image-column { display: none; }
 }

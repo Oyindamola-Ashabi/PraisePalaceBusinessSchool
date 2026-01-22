@@ -1,17 +1,16 @@
 import React from 'react';
 import myLogo from '../../assets/LOGO 2.png';
-import { Link, useLocation } from 'react-router-dom'; // Added useLocation
+import { Link, useLocation } from 'react-router-dom';
 import './Nav.css';
 import menuImage from '../../assets/hamimg.png'
 
 const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
     const location = useLocation();
     
-    // Check if the current page is the About page
-    const isAboutPage = location.pathname === '/about';
+    // Logic updated: Only these three pages get the black text theme
+    const isDarkPage = location.pathname === '/about' || location.pathname === '/courses' || location.pathname === '/events';
     
-    // Combine the transparent/solid logic with an 'about-theme' class if on the about page
-    const navClass = `${isTransparent ? 'nav-transparent' : 'nav-solid'} ${isAboutPage ? 'about-theme' : ''}`; 
+    const navClass = `${isTransparent ? 'nav-transparent' : 'nav-solid'} ${isDarkPage ? 'about-theme' : ''}`; 
     
     return (
         <div className="nav-container">
@@ -28,11 +27,11 @@ const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
                 <div className={`links ${isMenuOpen ? 'desktop-hidden' : ''}`}>
                     <Link to='/' id={location.pathname === '/' ? "home" : ""}>Home</Link>
                     <Link to='/about' id={location.pathname === '/about' ? "home" : ""}>About</Link>
-                    <Link to='/courses'>Courses</Link>
-                    <Link to='/mentorship'>Mentorship</Link>
-                    <Link to='/training'>Training</Link>
-                    <Link to='/events'>Events</Link>
-                    <Link to='/contact'>Contact</Link>
+                    <Link to='/courses' id={location.pathname === '/courses' ? "home" : ""}>Courses</Link>
+                    <Link to='/mentorship' id={location.pathname === '/mentorship' ? "home" : ""}>Mentorship</Link>
+                    <Link to='/training' id={location.pathname === '/training' ? "home" : ""}>Training</Link>
+                    <Link to='/events' id={location.pathname === '/events' ? "home" : ""}>Events</Link>
+                    <Link to='/contact' id={location.pathname === '/contact' ? "home" : ""}>Contact</Link>
                     
                     <Link to="/appointment"> 
                         <button className="appointment-button">Book a Call</button>
@@ -44,7 +43,6 @@ const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
                 </div>
             </nav>
             
-            {/* ... Hamburger Menu Overlay remains exactly the same as your code ... */}
             <div className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}>
                 <div className="menu-content-wrapper">
                     <div className="menu-links-column">
