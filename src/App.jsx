@@ -15,7 +15,6 @@ import Podcast from './pages/podcast/Podcast';
 import Home from "./pages/home/Home"
 
 // --- Placeholder Components for Footer Links ---
-// These are needed for the routes to function correctly.
 const PrivacyPolicy = () => <div><h1>Privacy Policy</h1><p>Content goes here.</p></div>;
 const TermsAndConditions = () => <div><h1>Terms and Conditions</h1><p>Content goes here.</p></div>;
 const FAQPage = () => <div><h1>Frequently Asked Questions</h1><p>Content goes here.</p></div>;
@@ -24,7 +23,7 @@ const GetStartedPage = () => <div><h1>Get Started</h1><p>Content goes here.</p><
 const SubscribePage = () => <div><h1>Subscribe Now</h1><p>Content goes here.</p></div>;
 
 
-// --- Image Imports and Data (Keep this structure) ---
+// --- Image Imports and Data ---
 import sectionTwoImagegOne from './assets/woman.jpeg.jpg';
 import sectionTwoImageThree from './assets/secondwoman.jpeg.jpg';
 import sectionTwoImageFour from './assets/man.jpeg.jpg';
@@ -71,15 +70,10 @@ const App = () => {
     };
 
     return (
-        // 1. 💥 FIX: Top-level container for Flexbox (Must have CSS: display: flex; flex-direction: column; min-height: 100vh;)
         <div className="app-container"> 
             <BrowserRouter>
-                
-                {/* 2. 💥 FIX: Wrapper for all content that should scroll (Must have CSS: flex-grow: 1;) */}
                 <div className="main-content-wrapper"> 
-                    
                     <Nav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-                    
                     <Routes>
                         <Route path="/" element={<Home courses={courseList} highlights={highlightss} testimonials={testimonialss} FAQ={faqData} />} />
                         <Route path="/about" element={<About />} />
@@ -91,20 +85,16 @@ const App = () => {
                         <Route path="/appointment" element={<Appointment/>}/>
                         <Route path="/podcast" element={<Podcast/>}/>
                         
-                        {/* Routes for Footer Links (Added missing placeholder pages) */}
+                        {/* Routes for Footer Links */}
                         <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
                         <Route path="/terms-and-condition" element={<TermsAndConditions/>}/>
                         <Route path="/faq" element={<FAQPage/>}/>
                         <Route path="/learn-more" element={<LearnMorePage/>}/>
                         <Route path="/get-started" element={<GetStartedPage/>}/>
                         <Route path="/subscribe" element={<SubscribePage/>}/>
-
                     </Routes>
                 </div> 
-                
-                {/* 3. Footer remains outside the content wrapper */}
                 <Footer /> 
-
             </BrowserRouter>
         </div>
     )

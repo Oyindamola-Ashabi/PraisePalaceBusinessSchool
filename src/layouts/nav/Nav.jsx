@@ -7,8 +7,12 @@ import menuImage from '../../assets/hamimg.png'
 const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
     const location = useLocation();
     
-    // Logic updated: Only these three pages get the black text theme
-    const isDarkPage = location.pathname === '/about' || location.pathname === '/courses' || location.pathname === '/events';
+    // Updated Logic: Only these five pages get the black text theme
+    const isDarkPage = location.pathname === '/about' || 
+                       location.pathname === '/courses' || 
+                       location.pathname === '/events' || 
+                       location.pathname === '/mentorship' || 
+                       location.pathname === '/training';
     
     const navClass = `${isTransparent ? 'nav-transparent' : 'nav-solid'} ${isDarkPage ? 'about-theme' : ''}`; 
     
@@ -25,6 +29,7 @@ const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
                 /> 
                 
                 <div className={`links ${isMenuOpen ? 'desktop-hidden' : ''}`}>
+                    {/* Home and Mentorship use the "home" id when active for the pink-text button style */}
                     <Link to='/' id={location.pathname === '/' ? "home" : ""}>Home</Link>
                     <Link to='/about' id={location.pathname === '/about' ? "home" : ""}>About</Link>
                     <Link to='/courses' id={location.pathname === '/courses' ? "home" : ""}>Courses</Link>
