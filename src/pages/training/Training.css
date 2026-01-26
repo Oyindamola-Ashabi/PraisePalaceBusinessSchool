@@ -1,0 +1,493 @@
+/* =========================================================
+   1. GENERAL PAGE STYLING
+   ========================================================= */
+.training-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; 
+}
+
+/* =========================================================
+   2. HERO SECTION
+   ========================================================= */
+.training-hero {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 80px; 
+    overflow: hidden;
+    background-color: #fcfcfc; 
+}
+
+.training-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.1), 
+        rgba(255, 255, 255, 0.1)
+    ), var(--hero-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1; 
+    z-index: 1;
+}
+
+.t-hero-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.t-hero-content {
+    max-width: 1000px;
+}
+
+.t-hero-content h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 72px;
+    font-weight: 800;
+    color: #222222; 
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-shadow: 0px 2px 10px rgba(255, 255, 255, 0.8);
+}
+
+.t-hero-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #444444; 
+    line-height: 1.3;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   3. SECOND SECTION: CATEGORIES
+   ========================================================= */
+.training-categories-section {
+    background-color: #ffffff;
+    width: 95%;
+    max-width: 1500px;
+    margin: 50px auto; 
+    padding: 80px 20px;
+    border-radius: 40px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.02);
+}
+
+.section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #000;
+    width: 100%; 
+    text-align: center;
+}
+
+.categories-grid-container {
+    display: grid;
+    grid-template-columns: 384px 340px 384px; 
+    grid-template-areas: 
+        "card1 center card2"
+        "card3 center card4";
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.course-card {
+    width: 384px;
+    height: 356px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.07);
+    overflow: hidden;
+    border: 1px solid #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-startup { grid-area: card1; }
+.card-finance { grid-area: card2; }
+.card-leadership { grid-area: card3; }
+.card-marketing { grid-area: card4; }
+
+.categories-center-col {
+    grid-area: center;
+    width: 340px;
+    height: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-icon {
+    width: 340px;
+    height: 370px;
+    object-fit: contain;
+}
+
+.course-img-wrapper img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.course-info {
+    padding: 15px 35px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-info h3 {
+    font-size: 24px;
+    font-family: "Inter";
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.course-info p {
+    font-size: 16px;
+    color: #666;
+    font-family: "Poppins";
+    line-height: 1.5;
+    margin-bottom: auto;
+    max-width: 240px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #f5f5f5;
+}
+
+.meta-text { text-align: left; }
+.meta-text span { display: block; font-size: 16px; color: #999; font-family: "Poppins";}
+.meta-text strong { font-size: 16px; color: #000; font-family: "Poppins"; }
+
+.enroll-btn {
+    background-color: #e91e63;
+    font-size: 16px;
+    color: white;
+    padding: 10px 45px; 
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Poppins";
+}
+
+/* =========================================================
+   4. THIRD SECTION: WHY CHOOSE
+   ========================================================= */
+.why-choose-section {
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+}
+
+.why-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #000;
+    text-align: center;
+}
+
+.diamond-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 40px;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+
+.diamond-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 350px;
+}
+
+.feat-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.diamond-item h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+.d-top { grid-column: 2; grid-row: 1; }
+.d-left { grid-column: 1; grid-row: 2; justify-self: end; }
+.d-right { grid-column: 3; grid-row: 2; justify-self: start; }
+.d-bottom { grid-column: 2; grid-row: 3; }
+
+/* =========================================================
+   5. FOURTH SECTION: TESTIMONIAL
+   ========================================================= */
+.testimonial-section {
+    width: 100%;
+    margin: 10px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    min-height: 100px;
+}
+
+.testimonial-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #000;
+    width: 100%;
+    text-align: center;
+}
+
+.testimonial-content-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    width: 100%;
+    
+}
+
+.testimonial-card {
+    background: transparent;
+    padding: 40px;
+    max-width: 450px;
+    text-align: center;
+}
+
+.testimonial-stars {
+    color: #FFB400;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.testimonial-avatar {
+    width: 110px;
+    height: 110px;
+    background-color: #fce4ec;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+}
+
+.testimonial-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.testimonial-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #000;
+}
+
+.testimonial-image-box {
+    flex: 1;
+    max-width: 550px;
+}
+
+.testimonial-main-img {
+    width: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+/* =========================================================
+   6. FIFTH SECTION: CTA BANNER
+   ========================================================= */
+.cta-banner-section {
+    background-color: #555555;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+}
+
+.cta-banner-content {
+    text-align: center;
+}
+
+.cta-banner-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.cta-banner-btn {
+    background-color: #e91e63;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   7. RESPONSIVE MEDIA QUERIES (TITLES PINNED TO TOP)
+   ========================================================= */
+
+@media (max-width: 1150px) {
+    /* 1. TRAINING CATEGORIES SECTION */
+    .training-categories-section {
+        padding: 40px 15px;
+        display: flex;
+        flex-direction: column; /* This keeps title on top */
+    }
+
+    .categories-grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .section-title {
+        order: -2; /* Forces title to absolute top */
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .categories-center-col {
+        order: -1; /* Puts illustration below title but above cards */
+        width: 100%;
+        height: auto;
+    }
+
+    .center-icon {
+        width: 250px; /* Scaled down for mobile */
+        height: auto;
+    }
+
+    .course-card {
+        width: 100%;
+        max-width: 384px;
+        height: auto;
+    }
+
+    /* 2. WHY CHOOSE SECTION */
+    .why-choose-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .why-title {
+        order: -1; /* Keeps title at top */
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .diamond-grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* 3. TESTIMONIAL SECTION */
+    .testimonial-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .testimonial-title {
+        order: -2; /* Keeps title at top */
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .testimonial-content-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .testimonial-image-box {
+        order: -1; /* Puts image below title but above text */
+        width: 100%;
+    }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+    .t-hero-content h1 {
+        font-size: 38px;
+    }
+
+    .t-hero-content p {
+        font-size: 18px;
+    }
+
+    .cta-banner-text {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+
+    .course-info h3 {
+        font-size: 20px;
+    }
+
+    .course-info p {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .enroll-btn {
+        padding: 10px 30px;
+    }
+}
