@@ -7,10 +7,10 @@ import menuImage from '../../assets/hamimg.png'
 const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
     const location = useLocation();
     
-    // Updated Logic: Only these five pages get the black text theme
+    // FIX: Added startsWith('/events') so the Detail pages also get the dark theme
     const isDarkPage = location.pathname === '/about' || 
                        location.pathname === '/courses' || 
-                       location.pathname === '/events' || 
+                       location.pathname.startsWith('/events') || 
                        location.pathname === '/mentorship' || 
                        location.pathname === '/training';
     
@@ -29,13 +29,12 @@ const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
                 /> 
                 
                 <div className={`links ${isMenuOpen ? 'desktop-hidden' : ''}`}>
-                    {/* Home and Mentorship use the "home" id when active for the pink-text button style */}
                     <Link to='/' id={location.pathname === '/' ? "home" : ""}>Home</Link>
                     <Link to='/about' id={location.pathname === '/about' ? "home" : ""}>About</Link>
                     <Link to='/courses' id={location.pathname === '/courses' ? "home" : ""}>Courses</Link>
                     <Link to='/mentorship' id={location.pathname === '/mentorship' ? "home" : ""}>Mentorship</Link>
                     <Link to='/training' id={location.pathname === '/training' ? "home" : ""}>Training</Link>
-                    <Link to='/events' id={location.pathname === '/events' ? "home" : ""}>Events</Link>
+                    <Link to='/events' id={location.pathname.startsWith('/events') ? "home" : ""}>Events</Link>
                     <Link to='/contact' id={location.pathname === '/contact' ? "home" : ""}>Contact</Link>
                     
                     <Link to="/appointment"> 
@@ -64,7 +63,7 @@ const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
                             </button>
                         </div>
                         <div className="hamburger-links">
-                            <Link to='/' id="menu-home" onClick={toggleMenu}>Home</Link>
+                            <Link to='/' onClick={toggleMenu}>Home</Link>
                             <Link to='/about' onClick={toggleMenu}>About Us</Link>
                             <Link to='/courses' onClick={toggleMenu}>Courses</Link>
                             <Link to='/mentorship' onClick={toggleMenu}>Mentorship</Link>

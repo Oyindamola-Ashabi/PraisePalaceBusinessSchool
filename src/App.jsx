@@ -9,6 +9,7 @@ import Courses from "./pages/courses/Courses"
 import Mentorship from "./pages/mentorship/Mentorship"
 import Training from "./pages/training/Training"
 import Events from "./pages/events/Events"
+import EventDetail from "./pages/events/EventDetail"; // Import the detail page
 import Contact from "./pages/contact/Contact"
 import Appointment from "./pages/appointment/Appointment"
 import Podcast from './pages/podcast/Podcast';
@@ -22,8 +23,7 @@ const LearnMorePage = () => <div><h1>Learn More</h1><p>Content goes here.</p></d
 const GetStartedPage = () => <div><h1>Get Started</h1><p>Content goes here.</p></div>;
 const SubscribePage = () => <div><h1>Subscribe Now</h1><p>Content goes here.</p></div>;
 
-
-// --- Image Imports and Data ---
+// --- Image Imports ---
 import sectionTwoImagegOne from './assets/woman.jpeg.jpg';
 import sectionTwoImageThree from './assets/secondwoman.jpeg.jpg';
 import sectionTwoImageFour from './assets/man.jpeg.jpg';
@@ -53,7 +53,6 @@ const testimonialss = [
     {id: 3, img: SectionFourImg, text: '“Practical lessons I applied immediately, results came fast.”', name: 'James L', title: 'Entrepreneur & Consultant'},
 ];
 
-
 const faqData = [
     { id: 1, question: "Do I need experience to join your classes?", answer: "No, our programs are designed to accommodate students at various skill levels, from beginners to experienced professionals." },
     { id: 2, question: "How do I join the free classes?", answer: "Free classes are usually announced on our website and social media. You can register via the dedicated link provided in the announcement." },
@@ -61,7 +60,7 @@ const faqData = [
     { id: 4, question: "Can I cancel my subscription anytime?", answer: "Yes, you can cancel your subscription at any time directly through your user dashboard with no cancellation fees." },
     { id: 5, question: "Are the classes live or recorded?", answer: "We offer a mix of live virtual classes for real-time interaction and recorded sessions that you can access on demand at your convenience." },
 ];
-    
+
 const App = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
@@ -81,11 +80,11 @@ const App = () => {
                         <Route path="/mentorship" element={<Mentorship />} />
                         <Route path="/training" element={<Training/>}/>
                         <Route path="/events" element={<Events/>}/>
+                        <Route path="/events/:id" element={<EventDetail />} /> {/* Dynamic Detail Route */}
                         <Route path="/contact" element={<Contact/>}/>
                         <Route path="/appointment" element={<Appointment/>}/>
                         <Route path="/podcast" element={<Podcast/>}/>
                         
-                        {/* Routes for Footer Links */}
                         <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
                         <Route path="/terms-and-condition" element={<TermsAndConditions/>}/>
                         <Route path="/faq" element={<FAQPage/>}/>
