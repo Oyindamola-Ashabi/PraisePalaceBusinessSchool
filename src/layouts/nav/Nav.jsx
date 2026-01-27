@@ -7,12 +7,12 @@ import menuImage from '../../assets/hamimg.png'
 const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
     const location = useLocation();
     
-    // FIX: Added startsWith('/events') so the Detail pages also get the dark theme
     const isDarkPage = location.pathname === '/about' || 
                        location.pathname === '/courses' || 
                        location.pathname.startsWith('/events') || 
                        location.pathname === '/mentorship' || 
-                       location.pathname === '/training';
+                       location.pathname === '/training' ||
+                       location.pathname === '/appointment'; // Only line added
     
     const navClass = `${isTransparent ? 'nav-transparent' : 'nav-solid'} ${isDarkPage ? 'about-theme' : ''}`; 
     

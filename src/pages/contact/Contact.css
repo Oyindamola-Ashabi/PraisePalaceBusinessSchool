@@ -1,0 +1,280 @@
+/* Container Fix */
+.contact-page {
+    width: 100%;
+    background-color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* --- HERO SECTION --- */
+.contact-hero {
+    height: 60vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    padding-bottom: 60px;
+}
+
+.c-hero-content h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0;
+    text-align: center;
+}
+
+/* --- MAIN CONTENT LAYOUT --- */
+.contact-main-content {
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+}
+
+/* --- FORM STYLING --- */
+.contact-form-container {
+    padding: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.contact-form-container h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #000;
+    font-family: 'Inter';
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-family: 'Inter';
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background-color: #fff;
+    transition: border-color 0.3s;
+    font-family: 'Inter';
+    width: 100%;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #E91E63;
+}
+
+.form-submit-btn {
+    width: 100%;
+    padding: 20px;
+    background-color: #E91E63;
+    font-family: 'Inter';
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.form-submit-btn:hover {
+    background-color: #d81b60;
+}
+
+/* --- INFO CARDS --- */
+.contact-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-icon { font-size: 28px; margin-bottom: 10px; }
+.pink-text { color: #E91E63; }
+.info-card h3 { font-size: 32px; font-weight: 700; margin: 4px 0; font-family: 'Inter';}
+.card-line { width: 60px; height: 3px; background-color: #E91E63; margin: 2px 0; }
+.info-card p { font-size: 16px; color: #555; margin: 4px 0 0; font-family: 'Poppins';}
+
+/* --- SUCCESS MODAL --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    animation: modalPop 0.3s ease-out;
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.success-icon-wrap {
+    width: 70px; height: 70px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 35px; margin: 0 auto 20px;
+}
+
+.modal-close-btn {
+    margin-top: 25px;
+    background: #E91E63;
+    color: #fff; border: none;
+    padding: 12px 35px; border-radius: 25px;
+    cursor: pointer; font-weight: 600;
+    transition: 0.3s;
+}
+
+/* --- REFINED MEDIA QUERIES --- */
+
+/* Tablets & Small Laptops */
+@media (max-width: 1024px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 40px;
+    }
+    
+    .contact-hero {
+        height: 50vh;
+        align-items: center; /* Center text vertically for better visibility */
+        padding-bottom: 0;
+    }
+
+    .c-hero-content h1 {
+        font-size: 54px; /* Slightly smaller text */
+    }
+
+    .contact-main-content {
+        padding: 60px 5%;
+    }
+}
+
+/* Mobile Phones (iPhone, Samsung Galaxy, etc) */
+@media (max-width: 768px) {
+    .contact-hero {
+        height: 40vh;
+    }
+
+    .c-hero-content h1 {
+        font-size: 42px; /* Scales down text */
+    }
+
+    .contact-main-content {
+        padding: 40px 15px;
+    }
+
+    .contact-form-container {
+        padding: 25px 20px; /* Reduce padding to save space */
+    }
+
+    .contact-form-container h2 {
+        font-size: 26px; /* Smaller form heading */
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 14px; /* Smaller labels */
+    }
+
+    .form-group input, 
+    .form-group textarea {
+        font-size: 14px; /* Smaller inputs */
+        padding: 10px 12px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .info-card h3 {
+        font-size: 24px; /* Smaller card headings */
+    }
+
+    .info-card p {
+        font-size: 14px; /* Smaller card text */
+    }
+}
+
+/* Very Small Phones */
+@media (max-width: 480px) {
+    .c-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .contact-hero {
+        height: 35vh;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr; /* Stack First and Last Name vertically */
+        gap: 0;
+    }
+
+    .form-submit-btn {
+        padding: 15px;
+        font-size: 15px;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+    }
+}

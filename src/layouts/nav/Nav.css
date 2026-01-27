@@ -234,7 +234,7 @@ nav .links a {
 @media (max-width: 1280px) {
     nav { 
         position: fixed; 
-        background-color: transparent !important; /* FIXED: Now same as desktop */
+        background-color: transparent !important; 
         padding: 10px 20px; 
         z-index: 1003; 
         top: 0; left: 0; right: 0; 
@@ -250,4 +250,20 @@ nav .links a {
     .menu-header { margin-bottom: 20px; width: 100%; }
     .mobile-book-call-link { display: block; margin-top: 30px; width: 100%; max-width: 250px; margin-left: auto; margin-right: auto; background-color: var(--primary-color); color: var(--text-light) !important; padding: 10px 24px; border-radius: 20px 10px; text-decoration: none; font-weight: 400; font-size: 16px; }
     .menu-image-column { display: none; }
+}
+
+/* 8. APPOINTMENT PAGE ACTIVE WHITE STATE LOGIC */
+
+/* Target the specific ID for the active "Book a Call" button */
+#home-appointment {
+    background-color: var(--primary-color) !important;
+    color: var(--text-light) !important; /* White Text */
+    border-radius: 20px 10px;
+    font-weight: 600;
+}
+
+/* Fix Hero Layout: Force relative position only on Appointment page so it doesn't overlap */
+.about-theme:has(.appointment-button#home-appointment) {
+    position: relative !important;
+    background-color: #fff;
 }
