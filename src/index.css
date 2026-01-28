@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,17 +10,39 @@ html, body, #root {
     height: 100%;
     margin: 0;
     padding: 0;
+    /* FIX: Set a consistent background color to remove the white gap */
+    background-color: #f8f9fa; /* Or use #000 if you want it dark like the hero */
 }
 
 .app-container {
     display: flex;
     flex-direction: column; 
     min-height: 100vh;
+    /* Ensure no background bleed here */
+    background-color: transparent;
 }
 
 .main-content-wrapper {
     flex-grow: 1; 
-    /* 💥 NEW FIX 💥: Ensures it can contain children, especially absolutely positioned ones */
     position: relative; 
+    
+    /* SOFT TRANSITION FIX */
+    animation: softFadeIn 0.8s ease-in-out;
 }
 
+/* 🛑 REMOVE TOP GAP: If your Nav has a margin-top, this removes it */
+nav {
+    margin-top: 0 !important;
+    top: 0;
+}
+
+@keyframes softFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

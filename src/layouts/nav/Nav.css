@@ -4,10 +4,9 @@
     --primary-light: #F06292;
     --text-dark: #000;
     --text-light: white;
-    --nav-bg: rgba(0, 0, 0, 0.8);
 }
 
-/* 1. BASE NAVIGATION */
+/* 1. MAIN NAVIGATION */
 nav {
     width: 100%;
     display: flex;
@@ -16,17 +15,14 @@ nav {
     position: absolute; 
     top: 0;
     z-index: 1002;
-    padding: 0; 
 }
 
 nav img {
     margin-left: 120px;
-    width: 80px;
-    height: 80px;
+    width: 80px; height: 80px;
     cursor: pointer;
 }
 
-/* 2. DESKTOP LINKS */
 nav .links {
     width: 70%;
     margin-right: 120px;
@@ -34,55 +30,42 @@ nav .links {
     justify-content: space-around;
     align-items: center;
     font-family: 'Poppins';
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    transition: visibility 0s, opacity 0.3s linear;
+    font-size: 19px;
 }
 
-nav .links.desktop-hidden {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
+nav .links a { 
+    text-decoration: none; 
+    color: var(--text-light); 
 }
 
-nav .links a {
-    text-decoration: none;
-    color: var(--text-light);
-    display: flex;
-    align-items: center;
+#home, .appointment-button {
+    height: 44px; 
+    display: flex; 
+    align-items: center; 
     justify-content: center;
+    box-sizing: border-box;
+    font-size: 19px;
 }
 
-/* --- Active Link Button Style (UPDATED: White BG, PINK TEXT, Pink Border) --- */
 #home {
     background-color: var(--text-light) !important;
-    color: var(--primary-color) !important; /* PINK TEXT */
+    color: var(--primary-color) !important;
     border-bottom: 5px solid var(--primary-color) !important; 
     border-radius: 25px;
-    width: auto;
     padding: 0 20px; 
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
     font-weight: 600;
 }
 
-/* 3. APPOINTMENT BUTTON */
 .appointment-button {
     background-color: var(--primary-color);
     color: var(--text-light);
-    padding: 10px 24px;
+    padding: 0 24px;
     border-radius: 20px 10px; 
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border: none;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; 
+    transition: all 0.3s ease;
 }
 
 .appointment-button:hover {
@@ -91,179 +74,67 @@ nav .links a {
     border-radius: 10px; 
 }
 
-/* 4. HAMBURGER ICON */
-.hamburger-button {
-    cursor: pointer;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    margin-left: 20px;
-}
-
-.links .hamburger-button:hover {
-    background-color: var(--text-light);
-    border-radius: 5px;
-}
-
-.links .hamburger-button:hover .menu-icon,
-.links .hamburger-button:hover .menu-icon::before,
-.links .hamburger-button:hover .menu-icon::after {
-    background-color: var(--primary-color);
-}
-
-.menu-icon {
-    display: block; 
-    width: 25px; 
-    height: 3px; 
-    background-color: var(--text-light); 
-    position: relative; 
-    transition: background-color 0.3s;
-}
-
-.menu-icon::before, .menu-icon::after {
-    content: ''; 
-    position: absolute; 
-    left: 0; 
-    width: 25px; 
-    height: 3px; 
-    background-color: var(--text-light);
-}
-
+.hamburger-button { cursor: pointer; margin-left: 20px; }
+.menu-icon { display: block; width: 25px; height: 3px; background-color: var(--text-light); position: relative; }
+.menu-icon::before, .menu-icon::after { content: ''; position: absolute; width: 25px; height: 3px; background-color: var(--text-light); }
 .menu-icon::before { top: -8px; }
 .menu-icon::after { top: 8px; }
 
-/* 5. MOBILE MENU OVERLAY */
+/* 2. HAMBURGER OVERLAY DETAILS */
 .hamburger-menu {
-    position: fixed; 
-    top: 0; left: 0; width: 100%; height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95); 
-    z-index: 1001; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow-y: hidden;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out, visibility 0.4s;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background-color: black;
+    z-index: 2000; display: flex; align-items: center; justify-content: center;
+    visibility: hidden; opacity: 0; transition: 0.4s;
 }
 
-.hamburger-menu.active {
-    visibility: visible;
-    opacity: 1;
-}
+.hamburger-menu.active { visibility: visible; opacity: 1; }
 
 .menu-content-wrapper {
-    width: 90%; height: 85vh; max-width: 1300px;
-    background-color: #6A1B4D; 
-    display: flex;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    overflow: hidden;
+    width: 80%; max-width: 1100px; height: 80vh;
+    background-color: #3d1d27; border: 1px solid white;
+    padding: 50px; display: flex; flex-direction: column;
 }
 
-.menu-links-column {
-    width: 50%; min-width: 300px; padding: 60px; 
-    display: flex; flex-direction: column; align-items: center; 
+.menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.menu-logo { display: flex; align-items: center; gap: 10px; }
+.menu-logo-text { color: var(--primary-color); font-size: 20px; font-weight: 700; border-right: 1px solid white; padding-right: 10px; }
+.menu-business-name p { color: white; font-size: 11px; margin: 0; text-transform: uppercase; }
+
+.menu-close-button { background: none; border: none; color: white; font-size: 32px; cursor: pointer; }
+.close-icon-x::before { content: '\00d7'; }
+
+.hamburger-main-layout { display: flex; align-items: center; justify-content: space-between; flex: 1; }
+
+.hamburger-links { display: flex; flex-direction: column; gap: 20px; }
+.hamburger-links a { color: white; text-decoration: none; font-size: 30px; font-weight: 600; transition: 0.3s; font-family: 'Inter';}
+.hamburger-links a:hover { color: var(--primary-color); }
+
+.menu-book-call-highlight { border-bottom: 2px solid var(--primary-color); padding-bottom: 5px; }
+
+.menu-dynamic-divider {
+    width: 3px; height: 70%;
+    background: linear-gradient(to bottom, transparent, #ffffff 50%, transparent);
+    margin: 0 40px;
 }
 
-.menu-header {
-    display: flex; width: 100%; justify-content: space-between; align-items: flex-start; margin-bottom: 50px;
-}
+.menu-pill-image { width: 320px; height: 480px; object-fit: cover; border-radius: 120px; }
 
-.menu-logo { display: flex; align-items: flex-start; gap: 10px; }
-.menu-logo-text { color: var(--primary-color); font-size: 18px; font-weight: 700; }
-.menu-business-name p { color: white; font-size: 12px; margin: 0; line-height: 1.2; }
-
-.menu-close-button {
-    background: none; border: none; color: white; font-size: 24px; cursor: pointer; transition: color 0.2s; padding: 5px;
-}
-
-.close-icon::before { content: 'x'; font-family: Arial, sans-serif; font-style: normal; font-weight: bold; }
-
-.hamburger-links {
-    display: flex; flex-direction: column; gap: 1px; text-align: center;
-    padding-right: 40px; border-right: 2px solid rgba(255, 255, 255, 0.2); margin-right: 40px; 
-}
-
-.hamburger-links a {
-    color: white; text-decoration: none; font-family: 'Poppins'; font-size: 28px; font-weight: 600; padding: 8px 0; transition: color 0.2s;
-}
-
-/* --- HOVER & ACTIVE STATES (LIGHT PINK HOVER, PINK ACTIVE) --- */
-.hamburger-links a:hover {
-    color: var(--primary-light) !important;
-}
-
-.hamburger-links a:active {
-    color: var(--primary-color) !important;
-}
-
-/* REMOVED STATIC PINK COLOR FROM HOME IN HAMBURGER DETAILS */
-#menu-home { 
-    background: none; 
-    border-bottom: none; 
-    border-radius: 0; 
-    width: auto; 
-    height: auto; 
-}
-
-.mobile-book-call-link { color: white !important; margin-top: 15px; font-size: 28px !important; text-decoration: underline; text-align: center; }
-.menu-image-column { flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 40px; }
-.menu-decorative-image { width: 100%; height: 100%; object-fit: cover; border-radius: 60px; max-height: 100%; max-width: 100%; }
-
-/* 6. THEME OVERRIDES */
-.about-theme .links a {
-    color: var(--text-dark) !important;
-}
-
-.about-theme .menu-icon,
-.about-theme .menu-icon::before,
-.about-theme .menu-icon::after {
-    background-color: var(--text-dark) !important;
-}
-
-.about-theme #home {
-    /* Maintained the white background for dark pages, text remains pink */
-    background-color: var(--text-light);
-}
-
-/* 7. RESPONSIVE BREAKPOINT */
-@media (max-width: 1280px) {
-    nav { 
-        position: fixed; 
-        background-color: transparent !important; 
-        padding: 10px 20px; 
-        z-index: 1003; 
-        top: 0; left: 0; right: 0; 
-    }
+/* 3. MOBILE RESPONSIVENESS */
+@media (max-width: 1024px) {
+    nav { padding: 10px 20px; position: fixed; width: 100%; box-sizing: border-box;}
     nav img { margin-left: 0; }
-    nav .links { margin-right: 0; width: auto; }
-    nav .links > a, nav .links .appointment-button { display: none !important; }
-    .links .hamburger-button { display: flex !important; margin-left: auto; }
-    .menu-content-wrapper { width: 100%; height: 100vh; border-radius: 0; flex-direction: column; padding: 0; overflow-y: auto; }
-    .menu-links-column { width: 100%; padding: 40px 20px 20px; min-width: auto; align-items: center; }
-    .hamburger-links { border-right: none; padding-right: 0; margin-right: 0; text-align: center; gap: 20px; width: 100%; }
-    .hamburger-links a { font-size: 20px; }
-    .menu-header { margin-bottom: 20px; width: 100%; }
-    .mobile-book-call-link { display: block; margin-top: 30px; width: 100%; max-width: 250px; margin-left: auto; margin-right: auto; background-color: var(--primary-color); color: var(--text-light) !important; padding: 10px 24px; border-radius: 20px 10px; text-decoration: none; font-weight: 400; font-size: 16px; }
-    .menu-image-column { display: none; }
+    nav .links { margin-right: 0; width: auto; justify-content: flex-end; }
+    nav .links > a, .appointment-button { display: none !important; }
+    
+    .menu-content-wrapper { width: 100%; height: 100vh; border: none; padding: 30px; }
+    .menu-dynamic-divider, .menu-image-container { display: none; }
+    .hamburger-links { align-items: center; width: 100%; text-align: center; gap: 15px; }
+    .hamburger-links a { font-size: 28px; }
 }
 
-/* 8. APPOINTMENT PAGE ACTIVE WHITE STATE LOGIC */
-
-/* Target the specific ID for the active "Book a Call" button */
-#home-appointment {
-    background-color: var(--primary-color) !important;
-    color: var(--text-light) !important; /* White Text */
-    border-radius: 20px 10px;
-    font-weight: 600;
-}
-
-/* Fix Hero Layout: Force relative position only on Appointment page so it doesn't overlap */
-.about-theme:has(.appointment-button#home-appointment) {
-    position: relative !important;
-    background-color: #fff;
+/* 4. THEME OVERRIDES */
+.about-theme .links a { color: var(--text-dark) !important; }
+.about-theme .menu-icon, .about-theme .menu-icon::before, .about-theme .menu-icon::after {
+    background-color: var(--text-dark) !important;
 }

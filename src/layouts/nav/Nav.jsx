@@ -2,7 +2,7 @@ import React from 'react';
 import myLogo from '../../assets/LOGO 2.png';
 import { Link, useLocation } from 'react-router-dom';
 import './Nav.css';
-import menuImage from '../../assets/hamimg.png'
+import menuImage from '../../assets/hamimg.png';
 
 const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
     const location = useLocation();
@@ -12,12 +12,13 @@ const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
                        location.pathname.startsWith('/events') || 
                        location.pathname === '/mentorship' || 
                        location.pathname === '/training' ||
-                       location.pathname === '/appointment'; // Only line added
+                       location.pathname === '/appointment';
     
     const navClass = `${isTransparent ? 'nav-transparent' : 'nav-solid'} ${isDarkPage ? 'about-theme' : ''}`; 
     
     return (
         <div className="nav-container">
+            {/* MAIN NAVIGATION */}
             <nav className={navClass}>
                 <img 
                     src={myLogo} 
@@ -47,23 +48,27 @@ const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
                 </div>
             </nav>
             
+            {/* HAMBURGER MENU DETAIL PAGE */}
             <div className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}>
                 <div className="menu-content-wrapper">
-                    <div className="menu-links-column">
-                        <div className="menu-header">
-                            <div className="menu-logo">
-                                <span className='menu-logo-text'>Logo</span>
-                                <div className="menu-business-name">
-                                    <p>PraisePalace</p>
-                                    <p>Business School</p>
-                                </div>
+                    
+                    <div className="menu-header">
+                        <div className="menu-logo">
+                            <span className='menu-logo-text'>Logo</span>
+                            <div className="menu-business-name">
+                                <p>PraisePalace</p>
+                                <p>Business School</p>
                             </div>
-                            <button className="menu-close-button" onClick={toggleMenu}>
-                                <i className="close-icon"></i>
-                            </button>
                         </div>
+                        <button className="menu-close-button" onClick={toggleMenu}>
+                            <i className="close-icon-x"></i>
+                        </button>
+                    </div>
+
+                    <div className="hamburger-main-layout">
                         <div className="hamburger-links">
-                            <Link to='/' onClick={toggleMenu}>Home</Link>
+                            {/* Home added here */}
+                            <Link to='/' onClick={toggleMenu}>Home</Link> 
                             <Link to='/about' onClick={toggleMenu}>About Us</Link>
                             <Link to='/courses' onClick={toggleMenu}>Courses</Link>
                             <Link to='/mentorship' onClick={toggleMenu}>Mentorship</Link>
@@ -71,12 +76,16 @@ const Nav = ({ isMenuOpen, toggleMenu, isTransparent }) => {
                             <Link to='/events' onClick={toggleMenu}>Events</Link>
                             <Link to='/podcast' onClick={toggleMenu}>Podcast</Link>
                             <Link to='/contact' onClick={toggleMenu}>Contact Us</Link>
-                            <Link to="/appointment" onClick={toggleMenu} className="mobile-book-call-link">Book a Call</Link>
+                            <Link to="/appointment" onClick={toggleMenu} className="menu-book-call-highlight">Book a Call</Link>
+                        </div>
+
+                        <div className="menu-dynamic-divider"></div>
+
+                        <div className="menu-image-container">
+                            <img src={menuImage} alt="Professionals" className='menu-pill-image' />
                         </div>
                     </div>
-                    <div className="menu-image-column">
-                        <img src={menuImage} alt="Business professionals" className='menu-decorative-image' />
-                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 
 // Layout Imports
 import Nav from "./layouts/nav/Nav"
@@ -9,19 +9,20 @@ import Courses from "./pages/courses/Courses"
 import Mentorship from "./pages/mentorship/Mentorship"
 import Training from "./pages/training/Training"
 import Events from "./pages/events/Events"
-import EventDetail from "./pages/events/EventDetail"; // Import the detail page
+import EventDetail from "./pages/events/EventDetail"; 
 import Contact from "./pages/contact/Contact"
 import Appointment from "./pages/appointment/Appointment"
 import Podcast from './pages/podcast/Podcast';
 import Home from "./pages/home/Home"
+import Register from './pages/registernow/Register';
 
-// --- Placeholder Components for Footer Links ---
-const PrivacyPolicy = () => <div><h1>Privacy Policy</h1><p>Content goes here.</p></div>;
-const TermsAndConditions = () => <div><h1>Terms and Conditions</h1><p>Content goes here.</p></div>;
-const FAQPage = () => <div><h1>Frequently Asked Questions</h1><p>Content goes here.</p></div>;
-const LearnMorePage = () => <div><h1>Learn More</h1><p>Content goes here.</p></div>;
-const GetStartedPage = () => <div><h1>Get Started</h1><p>Content goes here.</p></div>;
-const SubscribePage = () => <div><h1>Subscribe Now</h1><p>Content goes here.</p></div>;
+// --- Placeholder Components ---
+const PrivacyPolicy = () => <div style={{padding: '100px 10%'}}><h1>Privacy Policy</h1></div>;
+const TermsAndConditions = () => <div style={{padding: '100px 10%'}}><h1>Terms and Conditions</h1></div>;
+const FAQPage = () => <div style={{padding: '100px 10%'}}><h1>FAQ</h1></div>;
+const LearnMorePage = () => <div style={{padding: '100px 10%'}}><h1>Learn More</h1></div>;
+const GetStartedPage = () => <div style={{padding: '100px 10%'}}><h1>Get Started</h1></div>;
+const SubscribePage = () => <div style={{padding: '100px 10%'}}><h1>Subscribe</h1></div>;
 
 // --- Image Imports ---
 import sectionTwoImagegOne from './assets/woman.jpeg.jpg';
@@ -30,73 +31,88 @@ import sectionTwoImageFour from './assets/man.jpeg.jpg';
 import sectionThreeImgOne from './assets/book1.png.png';
 import SectionFourImg from './assets/star.png.png'
 
-const sectionTwoImgOne = sectionTwoImagegOne; 
-const sectionTwoImgThree = sectionTwoImageThree; 
-const sectionTwoImgFour = sectionTwoImageFour; 
-
+// --- Data Arrays ---
 const courseList = [
-    {id:1, img:sectionTwoImgOne, title:'Investment', description:'Build financial skills to grow your money.', link:'/courses'},
-    {id:2, img:sectionTwoImgOne, title:'Entrepreneurship', description:`Turn ideas into successful ventures.`, link:'/courses'},
-    {id:3, img:sectionTwoImgThree, title:'Leadership', description:`Gain tools to inspire and manage people.`, link:'/courses'},
-    {id:4, img:sectionTwoImgFour, title:'Starting a Business', description:`Learn to start and grow your business.`, link:'/courses'},
+    {id:1, img:sectionTwoImagegOne, title:'Investment', description:'Build financial skills.', link:'/courses'},
+    {id:2, img:sectionTwoImagegOne, title:'Entrepreneurship', description:'Turn ideas into ventures.', link:'/courses'},
+    {id:3, img:sectionTwoImageThree, title:'Leadership', description:'Inspire people.', link:'/courses'},
+    {id:4, img:sectionTwoImageFour, title:'Starting a Business', description:'Grow your business.', link:'/courses'},
 ];
 
 const highlightss = [
-    {id: 1, img: sectionThreeImgOne, title: "Practical Business Courses", text: "Gain tools you can apply immediately to grow your business."},
-    {id: 2, img: sectionThreeImgOne, title: "Global Networking", text: "Connect with like-minded professionals and future partners."},
-    {id: 3, img: sectionThreeImgOne, title: "Faith-Inspired Values", text: "Build businesses with integrity, purpose, and long-term impact."}
+    {id: 1, img: sectionThreeImgOne, title: "Practical Courses", text: "Apply tools immediately."},
+    {id: 2, img: sectionThreeImgOne, title: "Global Networking", text: "Connect with professionals."},
+    {id: 3, img: sectionThreeImgOne, title: "Faith Values", text: "Build with purpose."}
 ];
 
 const testimonialss = [
-    {id: 1, img: SectionFourImg, text: '“PraisePalace gave me the confidence to start my business journey.”', name: 'David K', title: 'Small Business Owner'},
-    {id: 2, img: SectionFourImg, text: '“The mentorship sessions opened doors I never imagined.”', name: 'Chinwe A', title: 'Startup Founder'},
-    {id: 3, img: SectionFourImg, text: '“Practical lessons I applied immediately, results came fast.”', name: 'James L', title: 'Entrepreneur & Consultant'},
+    {id: 1, img: SectionFourImg, text: '“PraisePalace gave me confidence.”', name: 'David K', title: 'Owner'},
+    {id: 2, img: SectionFourImg, text: '“Mentorship opened doors.”', name: 'Chinwe A', title: 'Founder'},
+    {id: 3, img: SectionFourImg, text: '“Results came fast.”', name: 'James L', title: 'Consultant'},
 ];
 
-const faqData = [
-    { id: 1, question: "Do I need experience to join your classes?", answer: "No, our programs are designed to accommodate students at various skill levels, from beginners to experienced professionals." },
-    { id: 2, question: "How do I join the free classes?", answer: "Free classes are usually announced on our website and social media. You can register via the dedicated link provided in the announcement." },
-    { id: 3, question: "What's included in the premium plan?", answer: "The premium plan includes access to all courses, one-on-one mentorship sessions, exclusive workshops, and premium support." },
-    { id: 4, question: "Can I cancel my subscription anytime?", answer: "Yes, you can cancel your subscription at any time directly through your user dashboard with no cancellation fees." },
-    { id: 5, question: "Are the classes live or recorded?", answer: "We offer a mix of live virtual classes for real-time interaction and recorded sessions that you can access on demand at your convenience." },
-];
+const faqData = [{ id: 1, question: "Experience?", answer: "None needed." }];
+
+// --- Scroll Restoration ---
+const ScrollToTop = () => {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, [pathname]);
+    return null;
+};
+
+// --- Main Content Manager ---
+const MainContent = ({ isMenuOpen, toggleMenu }) => {
+    const location = useLocation();
+    const isRegisterPage = location.pathname === '/register';
+
+    return (
+        <>
+            {/* Show Nav only if NOT on register page */}
+            {!isRegisterPage && <Nav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
+            
+            <div className="main-content-wrapper"> 
+                <Routes>
+                    <Route path="/" element={<Home courses={courseList} highlights={highlightss} testimonials={testimonialss} FAQ={faqData} />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/courses" element={<Courses courses={courseList} />} />
+                    <Route path="/mentorship" element={<Mentorship />} />
+                    <Route path="/training" element={<Training/>}/>
+                    <Route path="/events" element={<Events/>}/>
+                    <Route path="/events/:id" element={<EventDetail />} /> 
+                    <Route path="/contact" element={<Contact/>}/>
+                    <Route path="/appointment" element={<Appointment/>}/>
+                    <Route path="/podcast" element={<Podcast/>}/>
+                    <Route path="/register" element={<Register/>}/>
+
+                    <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+                    <Route path="/terms-and-condition" element={<TermsAndConditions/>}/>
+                    <Route path="/faq" element={<FAQPage/>}/>
+                    <Route path="/learn-more" element={<LearnMorePage/>}/>
+                    <Route path="/get-started" element={<GetStartedPage/>}/>
+                    <Route path="/subscribe" element={<SubscribePage/>}/>
+                </Routes>
+            </div> 
+
+            {/* Show Footer only if NOT on register page */}
+            {!isRegisterPage && <Footer />}
+        </>
+    );
+};
 
 const App = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); 
-
-    const toggleMenu = () => {
-        setIsMenuOpen(prevState => !prevState); 
-    };
+    const toggleMenu = () => setIsMenuOpen(prevState => !prevState); 
 
     return (
         <div className="app-container"> 
             <BrowserRouter>
-                <div className="main-content-wrapper"> 
-                    <Nav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-                    <Routes>
-                        <Route path="/" element={<Home courses={courseList} highlights={highlightss} testimonials={testimonialss} FAQ={faqData} />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/courses" element={<Courses courses={courseList} />} />
-                        <Route path="/mentorship" element={<Mentorship />} />
-                        <Route path="/training" element={<Training/>}/>
-                        <Route path="/events" element={<Events/>}/>
-                        <Route path="/events/:id" element={<EventDetail />} /> {/* Dynamic Detail Route */}
-                        <Route path="/contact" element={<Contact/>}/>
-                        <Route path="/appointment" element={<Appointment/>}/>
-                        <Route path="/podcast" element={<Podcast/>}/>
-                        
-                        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
-                        <Route path="/terms-and-condition" element={<TermsAndConditions/>}/>
-                        <Route path="/faq" element={<FAQPage/>}/>
-                        <Route path="/learn-more" element={<LearnMorePage/>}/>
-                        <Route path="/get-started" element={<GetStartedPage/>}/>
-                        <Route path="/subscribe" element={<SubscribePage/>}/>
-                    </Routes>
-                </div> 
-                <Footer /> 
+                <ScrollToTop /> 
+                <MainContent isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
             </BrowserRouter>
         </div>
     )
 }
 
-export default App
+export default App;

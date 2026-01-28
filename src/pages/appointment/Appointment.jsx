@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Appointment.css';
 import appointmentHero from '../../assets/appointment.hero.png'; 
 
@@ -33,7 +33,6 @@ const Appointment = () => {
         }
     };
 
-    // Clears all inputs and resets view
     const closeAndClear = () => {
         setShowModal(false);
         setFormData({ fullName: '', email: '', phone: '', purpose: '' });
@@ -66,7 +65,7 @@ const Appointment = () => {
             <section className="appt-center-section">
                 <div className="appt-dual-cards">
                     {/* CALENDAR CARD */}
-                    <div className="appt-card-fixed">
+                    <div className="appt-card-fixed cal-card">
                         <div className="cal-selectors-header">
                             <select value={viewDate.getMonth()} onChange={(e) => setViewDate(new Date(viewDate.getFullYear(), parseInt(e.target.value), 1))} className="cal-select-box">
                                 {months.map((m, i) => <option key={m} value={i}>{m}</option>)}
@@ -90,7 +89,7 @@ const Appointment = () => {
                     </div>
 
                     {/* FORM CARD */}
-                    <div className="appt-card-fixed">
+                    <div className="appt-card-fixed form-card">
                         <p className="feat-label">Featured Time</p>
                         <div className="time-row">
                             {["10:00AM", "12:00PM", "02:30PM"].map(t => (
