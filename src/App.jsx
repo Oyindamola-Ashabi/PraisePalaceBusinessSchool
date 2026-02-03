@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import Nav from "./layouts/nav/Nav"
 import Footer from "./layouts/footer/Footer"; 
 import About from "./pages/about-us/About"
-import Courses from "./pages/courses/Courses"
+
 import Mentorship from "./pages/mentorship/Mentorship"
 import Training from "./pages/training/Training"
 import Events from "./pages/events/Events"
@@ -15,6 +15,7 @@ import Appointment from "./pages/appointment/Appointment"
 import Podcast from './pages/podcast/Podcast';
 import Home from "./pages/home/Home"
 import Register from './pages/registernow/Register';
+import Academy from './pages/courses/Academy';
 
 // --- Placeholder Components ---
 const PrivacyPolicy = () => <div style={{padding: '100px 10%'}}><h1>Privacy Policy</h1></div>;
@@ -76,7 +77,7 @@ const MainContent = ({ isMenuOpen, toggleMenu }) => {
                 <Routes>
                     <Route path="/" element={<Home courses={courseList} highlights={highlightss} testimonials={testimonialss} FAQ={faqData} />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/courses" element={<Courses courses={courseList} />} />
+                    <Route path="/courses" element={<Academy courses={courseList} />} />
                     <Route path="/mentorship" element={<Mentorship />} />
                     <Route path="/training" element={<Training/>}/>
                     <Route path="/events" element={<Events/>}/>

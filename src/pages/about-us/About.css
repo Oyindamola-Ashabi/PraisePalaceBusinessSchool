@@ -1,23 +1,10 @@
 /* =========================================================
-   About.css - CORRECTED VERSION
-   ========================================================= */
+   About.css - UPDATED WITH BRAND PINK & MOVEMENT
+   ========================================================= */
 
-/* 💥 CRITICAL FIX FOR NAV OVERLAP 💥 */
-/* Pushes all main content down below the fixed header (assuming Nav is 80px high) */
-/* This rule MUST be in your global CSS or included in your Nav.css or this file if only used here */
 main {
     padding-top: 80px;
-    /* Adjust this value if your Nav height is different */
 }
-
-/* --- General Styling and Utilities --- */
-/* :root {
-    --pink-primary: #E91E63;
-    --text-dark: #333;
-    --text-light: #555;
-    --bg-light: #f9f9f9;
-    --bg-gray: #ededed;
-} */
 
 .container {
     max-width: 1200px;
@@ -25,31 +12,18 @@ main {
     padding: 0 20px;
 }
 
-.section-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.pink-text {
-    color: #E91E63;
-}
-
-
-/* ---------------------------------------------------------
-   1. HERO SECTION
-   --------------------------------------------------------- */
+/* 1. HERO SECTION & WATER ANIMATION */
 .about-hero-section {
     position: relative;
-    height: 60vh;
-    /* Adjust height as needed */
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     margin-bottom: 50px;
+    overflow: hidden;
 }
 
 .hero-background-image {
@@ -59,27 +33,16 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* background-color: #d11e5c; */
-    /* z-index: 1; */
     border-radius: 0 0 50px 50px;
-    /* Rounded bottom corners */
+    filter: brightness(0.8);
+    z-index: 0;
 }
 
 .hero-content {
     z-index: 1;
     padding: 10px;
-    /* background-color: rgba(0, 0, 0, 0.4); */
-    /* Dark overlay for readability */
-    /* border-radius: 10px; */
-    font-family: 'Inter';
+    font-family: 'Poppins';
     margin-top: 110px;
-    /* width: 100%; */
-}
-
-.hero-content h1 {
-    font-size: 66px;
-    margin-bottom: 20px;
-    font-weight: 800;
 }
 
 .hero-content p {
@@ -87,452 +50,242 @@ main {
     font-weight: 500;
 }
 
-
-/* ---------------------------------------------------------
-   2. OUR STORY SECTION
-   --------------------------------------------------------- */
-.our-story-section {
-    padding: 100px 5%; /* Generous padding for a clean look */
-    background-color: #ffffff; /* Clean white background like the image */
-    width: 100%;
-}
-
-.story-content-wrapper {
-    display: flex;
-    align-items: center; /* Vertically centers text against image */
-    justify-content: space-between;
-    gap: 60px; /* Space between text and image */
-    max-width: 1400px;
-    margin: 0 auto;
-    /* background-color: #000; */
-}
-
-.story-text {
-    flex: 1;
-    text-align: center; /* Centers the text alignment */
-}
-
-.story-text h2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 48px;
-    color: #F8BBD0; /* The soft pink color from your image */
-    margin-bottom: 30px;
-}
-
-.story-text p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 20px;
-    max-width: 550px; /* Limits width to match the image layout */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.story-image {
-    flex: 1;
+.water-text {
     position: relative;
-    /* This creates the gray "sub-box" look from your image */
-    background-color: #757575; 
-    border-radius: 40px; 
-    padding-bottom: 60px; /* The height of the gray area at the bottom */
+    display: inline-block;
+    font-size: 66px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+    line-height: 1.2;
+}
+
+.water-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #E91E63;
+    animation: water-fill-move 5s ease-in-out infinite;
+}
+
+@keyframes water-fill-move {
+    0%, 100% {
+        clip-path: polygon(0% 100%, 100% 100%, 100% 95%, 85% 97%, 70% 95%, 50% 93%, 30% 95%, 0% 97%);
+    }
+    50% {
+        clip-path: polygon(0% 100%, 100% 100%, 100% 5%, 85% 10%, 70% 5%, 50% 10%, 30% 15%, 0% 5%);
+    }
+}
+
+/* 2. ACADEMY STORY (SIDE-BY-SIDE) */
+.academy-story-section {
+    padding: 80px 5%;
+    background-color: #fff;
     overflow: hidden;
 }
 
-.story-image img {
-    width: 100%;
-    height: 400px; /* Fixed height to match image proportions */
-    object-fit: cover;
-    display: block;
-    border-radius: 40px 40px 0 0; /* Rounds top corners only to sit on the gray base */
-}
-
-
-
-/* 4 --- Values Section Base --- */
-.values-section {
-    padding: 80px 5%;
-    background-color: #E8E8E8; 
-     max-width: 1440px; 
-    margin: 0 auto;    /* Centers the gray box on wide screens */
-    width: 100%;       /* Ensures it takes full width on smaller screens */
-    
-    border-radius: 20px; /* Optional: adds slight rounding to the gray container edges */
-}
-
-.values-wrapper {
-    max-width: 1200px; /* Keeps the content centered inside the 1440px box */
+.academy-container {
+    display: flex;
+    max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 60px; 
+    gap: 60px;
 }
 
-.mission-vision-grid {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-}
-
-.mission-box,
-.vision-box {
+.academy-text-column, .academy-image-column {
     flex: 1;
-    background-color: #ffffff;
-    padding: 60px 40px;
-    text-align: center;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
-}
-.pink-text {
-    color: #F48FB1; /* Soft pink color from image */
-    font-family: 'Inter', sans-serif;
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 25px;
 }
 
-.mission-box p,
-.vision-box p {
+.academy-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 34px;
+    color: #E91E63;
+    margin-bottom: 30px;
+}
+
+.academy-paragraphs p {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: #333;
-}
-
-/* --- Row 2: Core Value & Why Choose Us --- */
-.core-why-grid {
-    display: flex;
-    gap: 100px; /* Large gap between the two columns */
-    padding-top: 40px;
-}
-
-.core-value-box,
-.why-choose-box {
-    flex: 1;
-    text-align: center;
-}
-
-.value-icons {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.value-item {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Space between icon and text */
-    font-family: 'Poppins';
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.value-item img {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
-}
-
-.why-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    text-align: left; /* List items stay left-aligned */
-}
-
-.why-list p {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 18px;
-    color: #333;
-    font-family: 'Poppins';
-}
-
-/* Custom Checkmark from Image */
-.check-icon {
-    font-weight: bold;
-    font-size: 24px;
-    color: #000; /* Black checkmark in image */
-}
-
-
-/* ---------------------------------------------------------
-   4. CONTACT ME SECTION (WIDER FORM UPDATE)
-   --------------------------------------------------------- */
-.contact-me-section {
-    padding: 80px 5%;
-    background-color: #ffffff;
-    max-width: 1440px; /* Limits the section width to your 1440px preference */
-    margin: 0 auto;
-  
-}
-
-.contact-wrapper {
-    display: flex;
-    gap: 40px; /* Reduced gap to allow form more room to grow */
-    align-items: flex-start;
-    justify-content: space-between; /* Pushes content to the edges */
-    width: 100%;
-    
-}
-
-.contact-image-area {
-    flex: 0.8; /* Takes up less space than the form */
-    display: flex;
-    justify-content: flex-start;
-    padding-top: 60px;
-}
-
-.contact-image-area img {
-    max-width: 350px; /* Keeps the arrow from being too massive */
-    width: 100%;
-    height: auto;
-}
-
-.contact-form-area {
-    flex: 1.5; /* Makes the form area significantly wider */
-    width: 100%;
-}
-
-.contact-form-area h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: #000;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%; /* Ensures the form container is full width */
-}
-
-/* --- Form Fields --- */
-.form-group-inline {
-    display: flex;
-    gap: 24px;
-    width: 100%;
-}
-
-.input-field {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.input-field label {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #000;
-}
-
-.input-field input,
-.input-field textarea {
-    padding: 16px;
-    border: 1px solid #E5E7EB; /* Very light gray border like the image */
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    color: #374151;
-    background-color: #fff;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.input-field textarea {
-    min-height: 200px; /* Makes the message box deep like the image */
-    resize: none;
-}
-
-/* --- Wide Submit Button --- */
-.submit-button {
-    background-color: #E91E63;
-    color: white;
-    padding: 20px; /* Thicker button */
-    border: none;
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%; /* Spans the entire width of the form */
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-    background-color: #d11e5c;
-}
-
-
-
-/* ---------------------------------------------------------
-   MOBILE RESPONSIVENESS (max-width: 1024px)
-   --------------------------------------------------------- */
-@media (max-width: 1024px) {
-
-    /* CRITICAL: Adjust the content offset for the fixed mobile nav */
-    main {
-        padding-top: 100px;
-        /* Increased padding for fixed mobile nav */
-    }
-
-    .container {
-        padding: 0 15px;
-    }
-
-    /* 1. HERO SECTION */
-    .hero-content h1 {
-        font-size: 36px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    /* 2. OUR STORY SECTION */
-    .story-content-wrapper {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .story-text {
-        padding-right: 0;
-        order: 2;
-        /* Text below image on mobile */
-    }
-
-    .story-text h2 {
-    font-size: 30px;
-    color: #E91E63; /* The soft pink color from your image */
     margin-bottom: 20px;
 }
 
-    .story-text p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 200;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    max-width: 550px; /* Limits width to match the image layout */
-    
+.vertical-story-img {
+    width: 100%;
+    height: 100%;
+    min-height: 650px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
 }
 
-    .story-image {
-        order: 1;
-        /* Image above text on mobile */
-    }
+/* 3. MISSION & VISION BOXES */
+.mission-vision-section {
+    padding: 80px 0;
+    background-color: #f4f4f4;
+}
 
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
 
-   
-    /* .story-content-wrapper {
+.info-box {
+    padding: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.info-box p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+.pink-label {
+    color: #E91E63;
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* 4. OFFER SECTION */
+.offer-section {
+    padding: 100px 5%;
+    background-color: #ffffff;
+}
+
+.offer-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 25px;
+    max-width: 950px;
+}
+
+/* REUSABLE BUTTON */
+.academy-cta-button {
+    background-color: #E91E63;
+    color: white;
+    padding: 13px 48px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s ease;
+}
+
+.academy-cta-button:hover {
+    background-color: #F06292;
+    transform: translateY(-2px);
+}
+
+/* --- ANIMATIONS --- */
+.is-hidden { opacity: 0; }
+.fade-in-left { animation: fadeInLeft 1.2s ease-out forwards; }
+.slide-in-right { animation: slideInRight 1.5s ease-out forwards; }
+.fade-up { animation: fadeUp 1.2s ease-out forwards; }
+
+@keyframes fadeInLeft {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* =========================================================
+   RESPONSIVENESS (DO NOT SCATTER DESKTOP)
+   ========================================================= */
+
+/* Tablets and Laptops */
+@media (max-width: 1024px) {
+    .academy-container {
         flex-direction: column;
-        text-align: center;
-    }
-    
-    .story-text h2 {
-        font-size: 36px;
+        gap: 40px;
     }
 
-    .story-image {
-        width: 100%;
-    } */
-
-
-
-   /* 2. Mission, Vision, and Values Section Fixes */
-    .values-section {
-        padding: 40px 20px;
-        max-width: 100%; /* Fill screen on mobile */
-        border-radius: 0; /* Optional: remove rounding on small screens */
+    .academy-image-column {
+        order: -1; 
     }
 
     .mission-vision-grid {
-        flex-direction: column; /* Mission and Vision stack on top of each other */
-        gap: 20px;
+        grid-template-columns: 1fr;
     }
 
-    .mission-box, .vision-box {
-        padding: 40px 20px;
+    .vertical-story-img {
+        min-height: 400px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+    /* FIXED HERO IMAGE SIZE ON MOBILE */
+    .about-hero-section {
+        min-height: 60vh; /* Shorter height so it's not "too big" */
+        margin-bottom: 30px;
     }
 
-    .pink-text {
-        font-size: 30px; /* Scale down pink headings */
+    .hero-background-image {
+        border-radius: 0 0 30px 30px;
     }
 
-    .core-why-grid {
-        flex-direction: column; /* Core Values and Why Choose Us stack */
-        gap: 50px;
-        padding-top: 20px;
+    .hero-content {
+        margin-top: 40px;
     }
 
-    .value-icons {
-        grid-template-columns: 1fr; /* One column for icons on very small screens */
-        justify-items: center;
+    .water-text {
+        font-size: 32px; /* Smaller font to fit screen */
     }
 
-    .value-item {
-        width: 100%;
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .academy-title {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .academy-paragraphs p {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .academy-cta-button {
+        display: flex;
         justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .why-list {
-        align-items: center; /* Center the list on mobile */
-    }
-
-    .why-list p {
-        font-size: 16px;
-    }
-
-    .contact-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .form-group-inline {
-        flex-direction: column;
-    }
-    
-    .contact-image-area {
-        padding-top: 0;
-        margin-bottom: 20px;
-    }
-
-    .contact-form-area h2 {
-        text-align: center;
-        font-size: 32px;
-    }
-}
-
-/* ---------------------------------------------------------
-   MOBILE RESPONSIVENESS for contact
-   --------------------------------------------------------- */
-@media (max-width: 1024px) {
-    .contact-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-    
-    .contact-image-area {
-        padding-top: 0;
-    }
-
-    .form-group-inline {
-        flex-direction: column;
-        gap: 25px;
-    }
-    
-    .contact-form-area h2 {
+    .offer-section {
+        padding: 60px 5%;
         text-align: center;
     }
 }
-

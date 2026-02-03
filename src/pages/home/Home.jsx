@@ -4,7 +4,7 @@ import Button from "../../components/button-one/Button"
 import headingImage from '../../assets/image01.jpeg'
 import heroImg2 from '../../assets/two.png'; 
 import heroImg3 from '../../assets/homesecondwomanhero.jpg'
-import sectionOneImg from '../../assets/boss.jpeg'
+import sectionOneImg from '../../assets/chairmanmain.jpeg'
 import sectionThreeImgTwo from '../../assets/iconbootcamp.png.png'
 import sectionThreeImgThree from '../../assets/icondigitalskilllab.png.png'
 import sectionThreeImgFour from '../../assets/trainingimg.png.png'
@@ -152,7 +152,7 @@ const Home = ({ courses, highlights, testimonials, FAQ }) => {
                 <img src={sectionThreeImgFour} alt="Training" />
               </div>
             </div>
-            <div className="viewall-button"><Button title="View All" link="/training" /></div>
+            <div className="viewall-button"><Button title="View All" link="/courses"/></div>
           </div>
         </div>
 

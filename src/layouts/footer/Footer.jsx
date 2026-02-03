@@ -47,7 +47,7 @@ const Footer = () => {
                 <div className="footer-column quick-links-column">
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/courses">Courses</Link></li>
+                        <li><Link to="/courses">Academy</Link></li>
                         <li><Link to="/about">About Us</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/training">Training</Link></li>

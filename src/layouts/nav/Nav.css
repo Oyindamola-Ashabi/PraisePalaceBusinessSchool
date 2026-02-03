@@ -74,7 +74,12 @@ nav .links a {
     border-radius: 10px; 
 }
 
-.hamburger-button { cursor: pointer; margin-left: 20px; }
+.hamburger-button { 
+    cursor: pointer; 
+    margin-left: 20px; 
+    display: none; /* Hidden on Desktop */
+}
+
 .menu-icon { display: block; width: 25px; height: 3px; background-color: var(--text-light); position: relative; }
 .menu-icon::before, .menu-icon::after { content: ''; position: absolute; width: 25px; height: 3px; background-color: var(--text-light); }
 .menu-icon::before { top: -8px; }
@@ -124,6 +129,8 @@ nav .links a {
 @media (max-width: 1024px) {
     nav { padding: 10px 20px; position: fixed; width: 100%; box-sizing: border-box;}
     nav img { margin-left: 0; }
+    
+    .hamburger-button { display: block; }
     nav .links { margin-right: 0; width: auto; justify-content: flex-end; }
     nav .links > a, .appointment-button { display: none !important; }
     
