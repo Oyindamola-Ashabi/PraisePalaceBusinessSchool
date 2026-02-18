@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import './Podcast.css';
 
 // Importing unique images
-import featuredImg from '../../assets/podcast.hero.png';
-import epImg1 from '../../assets/podcast.hero.png';
-import epImg2 from '../../assets/podcast.hero.png';
-import epImg3 from '../../assets/podcast.hero.png';
-import epImg4 from '../../assets/podcast.hero.png';
-import epImg5 from '../../assets/podcast.hero.png';
-import epImg6 from '../../assets/podcast.hero.png';
-import epImg7 from '../../assets/podcast.hero.png';
-import epImg8 from '../../assets/podcast.hero.png';
-import epImg9 from '../../assets/podcast.hero.png';
-import epImg10 from '../../assets/podcast.hero.png';
-import sideBanner from '../../assets/podcast.hero.png';
+import featuredImg from '../../assets/PODCASTT.png';
+import epImg1 from '../../assets/PODCASTT.png';
+import epImg2 from '../../assets/miclady.png';
+import epImg3 from '../../assets/miclady.png';
+import epImg4 from '../../assets/miclady.png';
+import epImg5 from '../../assets/miclady.png';
+import epImg6 from '../../assets/miclady.png';
+import epImg7 from '../../assets/miclady.png';
+import epImg8 from '../../assets/miclady.png';
+import epImg9 from '../../assets/miclady.png';
+import epImg10 from '../../assets/miclady.png';
+import sideBanner from '../../assets/PODCASTT.png';
 
 const Podcast = () => {
     const [filter, setFilter] = useState("All");

@@ -1,6 +1,4 @@
-/* ============================================================
-   PODCAST PAGE STYLES
-   ============================================================ */
+/* PODCAST PAGE STYLES */
 
 .podcast-container {
     width: 100%;
@@ -246,9 +244,7 @@
 .pod-side-banner { margin-top: 50px; border-radius: 20px; overflow: hidden; }
 .pod-side-banner img { width: 100%; display: block; }
 
-/* ============================================================
-   RESPONSIVE MEDIA QUERIES
-   ============================================================ */
+/* RESPONSIVE MEDIA QUERIES */
 
 /* Tablet & Smaller Laptops (Resize width) */
 @media (max-width: 1250px) {

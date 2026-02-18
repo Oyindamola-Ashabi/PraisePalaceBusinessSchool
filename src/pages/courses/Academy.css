@@ -1,6 +1,4 @@
-/* =========================================================
-   1. GLOBAL & HERO SECTION (UPDATED FOR ABOUT PAGE STYLE)
-   ========================================================= */
+/* 1. GLOBAL & HERO SECTION (UPDATED FOR ABOUT PAGE STYLE)*/
 .courses-page { 
     width: 100%; 
     margin: 0; 
@@ -41,8 +39,8 @@
 }
 
 .c-hero-content h1 { 
-    font-family: 'Inter', sans-serif; 
-    font-size: 64px; 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 66px; 
     font-weight: 800; 
     margin: 0; 
     line-height: 1.1; 
@@ -51,7 +49,7 @@
     
     /* PINK WATER EFFECT */
     color: transparent;
-    -webkit-text-stroke: 1px #E91E63; 
+    -webkit-text-stroke: 1px #fff; 
     background: linear-gradient(#E91E63 0 0) no-repeat; 
     -webkit-background-clip: text;
     background-clip: text;
@@ -60,18 +58,16 @@
 }
 
 .c-hero-content p { 
-    font-family: 'Inter', sans-serif; 
-    font-size: 26px; 
-    font-weight: 500; 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 26px;
+    font-weight: 500;
     color: #FFFFFF; 
     line-height: 1.2; 
     max-width: 800px; 
     margin: 10px auto 0 auto; 
 }
 
-/* =========================================================
-   2. AVAILABLE TRAININGS (9 CARDS - COMPACT SIZE)
-   ========================================================= */
+/* 2. AVAILABLE TRAININGS (9 CARDS - COMPACT SIZE)*/
 .available-section { 
     padding: 80px 20px; 
     display: flex; 
@@ -80,7 +76,7 @@
 }
 
 .available-title { 
-    color: #F8A7C3; 
+    color: #E91E63;
     font-size: 42px; 
     font-weight: 700; 
     text-align: center; 
@@ -115,9 +111,7 @@
 
 .c-card-img:hover { transform: scale(1.03); }
 
-/* =========================================================
-   3. COURSE DETAILS VIEW (Flyer Style)
-   ========================================================= */
+/* 3. COURSE DETAILS VIEW (Flyer Style)*/
 .details-section-view { 
     padding: 80px 20px 40px 20px; 
     background-color: #FFFFFF; 
@@ -161,7 +155,7 @@
 
 .flier-container img { width: 100%; height: 100%; object-fit: cover; }
 
-.details-title { font-size: 32px; font-weight: 800; color: #b01a1a; margin: 0 0 10px 0; line-height: 1.2; }
+.details-title { font-size: 32px; font-weight: 800; color: #E91E63; margin: 0 0 10px 0; line-height: 1.2; }
 .details-price { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; }
 .details-divider { border: none; border-top: 1px solid #eee; margin: 20px 0; }
 
@@ -182,7 +176,7 @@
 .details-qty input { width: 40px; border: none; text-align: center; font-weight: 700; font-size: 15px; }
 
 .details-add-btn { 
-    background: #b01a1a; 
+    background: #E91E63;
     color: #fff; 
     border: none; 
     border-radius: 4px; 
@@ -190,6 +184,11 @@
     font-size: 16px;
     padding: 0 30px;
     cursor: pointer; 
+}
+
+.details-add-btn:hover {
+    background-color: #F06292;
+    transform: translateY(-2px);
 }
 
 .paystack-link-styled { 
@@ -206,33 +205,34 @@
     width: 300px; 
 }
 
-/* =========================================================
-   4, 5, 6. RETAINED SECTIONS (LEARNING, TESTIMONIALS, CTA)
-   ========================================================= */
+.paystack-link-styled:hover {
+    background-color: #acc7bd; 
+    transform: translateY(-2px);
+}
+
+/* 4, 5, 6. RETAINED SECTIONS (LEARNING, TESTIMONIALS, CTA)*/
 .learning-experience-section { background-color: #FFFFFF; padding: 80px 20px 100px 20px; display: flex; flex-direction: column; align-items: center; min-height: 160px; }
-.learning-title { color: #F8A7C3; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 50px; text-align: center; }
+.learning-title { color: #E91E63; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 50px; text-align: center; }
 .learning-container { display: flex; justify-content: center; align-items: flex-start; max-width: 1300px; width: 100%; gap: 20px; }
 .learning-item { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
-.learning-icon { width: 120px; height: 120px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; }
+.learning-icon { width: 60px; height: 60px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; }
 .learning-icon img { width: 100%; height: 100%; object-fit: contain; }
 .learning-item p { font-family: 'Poppins', sans-serif; font-size: 18px; color: #333; font-weight: 500; line-height: 1.3; }
 
-.testimonials-section { background-color: #EEEEEE; padding: 100px 20px; display: flex; flex-direction: column; align-items: center; }
+/* .testimonials-section { background-color: #EEEEEE; padding: 100px 20px; display: flex; flex-direction: column; align-items: center; }
 .testimonials-title { font-family: 'Poppins', sans-serif; font-size: 48px; font-weight: 800; color: #000; margin-bottom: 60px; text-align: center; }
-.testimonials-title span { color: #F8A7C3; }
+.testimonials-title span { color: #E91E63; }
 .testimonials-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1100px; width: 100%; }
 .testimonial-card { background-color: #FFFFFF; padding: 60px 40px; border-radius: 12px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; align-items: center; text-align: center; }
 .testimonial-card:nth-child(3) { grid-column: 1 / span 2; justify-self: center; max-width: 530px; width: 100%; }
 .stars { color: #FFC107; font-size: 32px; margin-bottom: 20px; }
 .testimonial-text { font-family: 'Poppins', sans-serif; font-style: italic; font-size: 19px; color: #333; margin-bottom: 25px; line-height: 1.6; }
-.student-name { font-size: 22px; font-weight: 700; color: #000; }
+.student-name { font-size: 22px; font-weight: 700; color: #000; } */
 
 .courses-cta-section { background-color: #635C5C; width: 100%; margin-top: 10px; margin-bottom: 10px; padding: 20px 0; min-height: 120px; display: flex; justify-content: center; align-items: center; text-align: center; }
 .cta-heading { font-family: 'Poppins', sans-serif; font-size: 56px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.1; }
 
-/* =========================================================
-   7. CART VIEW
-   ========================================================= */
+/* 7. CART VIEW */
 .cart-page-bg { 
     background-color: #f7f7f7; 
     padding-top: 150px; 
@@ -257,13 +257,18 @@
 }
 
 .continue-shop-btn { 
-    background: #b01a1a; 
+    background: #E91E63;
     color: #fff; 
     border: none; 
     padding: 10px 20px; 
     border-radius: 4px; 
     cursor: pointer; 
     font-weight: 600; 
+}
+
+.continue-shop-btn:hover{
+    background-color: #F06292;
+    transform: translateY(-2px);
 }
 
 .cart-main-title { 
@@ -301,7 +306,7 @@
 
 .p-cell { display: flex; align-items: center; gap: 15px; }
 .p-cell img { width: 70px; height: 70px; object-fit: cover; border-radius: 4px; }
-.it-t { font-weight: 700; color: #b01a1a; }
+.it-t { font-weight: 700; color: #E91E63; }
 
 .qty-box-fixed { 
     border: 1px solid #ddd; 
@@ -338,13 +343,18 @@
 }
 
 .apply-btn { 
-    background: #b01a1a; 
+    background: #E91E63;
     color: #fff; 
     border: none; 
     padding: 0 25px; 
     border-radius: 4px; 
     cursor: pointer; 
     font-weight: 600; 
+}
+
+.apply-btn:hover {
+    background-color: #F06292;
+    transform: translateY(-2px);
 }
 
 .totals-card { 
@@ -364,7 +374,7 @@
 
 .total-row.grand { 
     font-weight: 800; 
-    color: #b01a1a; 
+    color: #E91E63;  
     font-size: 24px; 
     border-top: 1px solid #eee; 
     padding-top: 15px; 
@@ -374,7 +384,7 @@
 .checkout-btn { 
     width: 100%; 
     padding: 16px; 
-    background: #b01a1a; 
+    background: #E91E63;  
     color: #fff; 
     border: none; 
     border-radius: 6px; 
@@ -382,6 +392,11 @@
     font-size: 16px;
     cursor: pointer; 
     margin-top: 15px; 
+}
+
+.checkout-btn:hover {
+    background-color: #F06292;
+    transform: translateY(-2px);
 }
 
 .paystack-link-cart { 
@@ -398,9 +413,12 @@
     margin-top: 10px; 
 }
 
-/* =========================================================
-   8. NEW DESCRIPTION SECTION (BELOW HERO)
-   ========================================================= */
+.paystack-link-cart:hover {
+    background-color: #acc7bd; 
+    transform: translateY(-2px);
+}
+
+/*8. NEW DESCRIPTION SECTION (BELOW HERO)*/
 .details-description-section {
     display: flex;
     gap: 40px;
@@ -412,7 +430,7 @@
 .desc-sidebar-title {
     width: 150px;
     font-weight: 700;
-    color: #b01a1a;
+    color: #E91E63;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -425,7 +443,7 @@
 
 /* Promo Banner */
 .promo-countdown-banner {
-    background: #b01a1a;
+    background: #E91E63;
     color: white;
     padding: 20px 40px;
     display: flex;
@@ -480,12 +498,12 @@
     font-size: 12px;
 }
 
-.red-checks li::before { background: #b01a1a; color: white; }
+.red-checks li::before { background: #E91E63; color: white; }
 
 /* Full Width Red Button */
 .full-width-red-btn {
     width: 100%;
-    background: #b01a1a;
+    background: #E91E63;
     color: white;
     border: none;
     padding: 18px;
@@ -497,6 +515,11 @@
     text-transform: uppercase;
 }
 
+.full-width-red-btn:hover {
+    background-color: #F06292;
+    transform: translateY(-2px);
+}
+
 /* Video Preview */
 .video-demo-container {
     width: 100%;
@@ -506,9 +529,7 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* =========================================================
-   CHECKOUT VIEW ONLY
-   ========================================================= */
+/*CHECKOUT VIEW ONLY*/
 .checkout-view-bg {
     background-color: #fcfcfc;
     min-height: 100vh;
@@ -545,7 +566,7 @@
 }
 
 .checkout-sidebar .side-link.active {
-    color: #b01a1a;
+    color: #E91E63;
 }
 
 .billing-form .form-group {
@@ -562,7 +583,7 @@
 }
 
 .checkout-continue-btn {
-    background: #b01a1a;
+    background: #E91E63;
     color: white;
     padding: 16px 40px;
     border: none;
@@ -570,6 +591,11 @@
     font-weight: 700;
     cursor: pointer;
     float: right;
+}
+
+.checkout-continue-btn:hover {
+    background-color: #F06292;
+    transform: translateY(-2px);
 }
 
 /* FAQ Accordion */
@@ -586,23 +612,23 @@
 .promo-banner h2 { font-size: 28px; font-weight: 700; margin: 0; color: #000; }
 .promo-input-group { display: flex; gap: 10px; }
 .promo-input-group input { padding: 12px; border: 1px solid #ddd; width: 220px; border-radius: 4px; }
-.apply-coupon-btn { background: #b01a1a; color: white; border: none; padding: 12px 25px; border-radius: 4px; font-weight: 700; cursor: pointer; }
+.apply-coupon-btn { background: #E91E63; color: white; border: none; padding: 12px 25px; border-radius: 4px; font-weight: 700; cursor: pointer; }
 .checkout-grid-layout { display: grid; grid-template-columns: 250px 1fr; gap: 40px; align-items: start; }
-.checkout-sidebar .side-link { padding: 15px 0; border-bottom: 1px solid #eee; color: #b01a1a; font-weight: 500; cursor: pointer; font-size: 15px; }
+.checkout-sidebar .side-link { padding: 15px 0; border-bottom: 1px solid #eee; color: #E91E63; font-weight: 500; cursor: pointer; font-size: 15px; }
 .checkout-sidebar .side-link.active { font-weight: 700; }
 .billing-form .section-title { margin-top: 0; font-size: 22px; margin-bottom: 25px; }
 .form-group { margin-bottom: 20px; }
 .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #333; }
 .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.checkout-continue-btn { background: #b01a1a; color: white; border: none; padding: 15px 30px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+.checkout-continue-btn { background: #E91E63; color: white; border: none; padding: 15px 30px; font-weight: 700; border-radius: 4px; cursor: pointer; }
 .review-table { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
 .review-product-cell { display: flex; align-items: center; gap: 15px; padding: 15px 0; }
 .review-product-cell img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; }
 .text-right { text-align: right; }
 .review-summary-box { border-top: 1px solid #eee; padding-top: 20px; }
 .summary-line { display: flex; justify-content: space-between; padding: 8px 0; font-size: 15px; }
-.total-line { font-size: 22px; font-weight: 800; color: #b01a1a; margin-top: 10px; }
+.total-line { font-size: 22px; font-weight: 800; color: #E91E63; margin-top: 10px; }
 .payment-card-box { background: #f9f9f9; padding: 30px; border-radius: 6px; margin: 30px 0; }
 .card-header-flex { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 12px; margin-bottom: 20px; }
 .card-input-group label { font-size: 12px; color: #777; margin-bottom: 5px; display: block; font-weight: 600; }
@@ -610,13 +636,11 @@
 .save-card-check { display: flex; gap: 10px; align-items: center; margin-top: 20px; font-size: 13px; color: #666; }
 .save-card-check input { width: auto; }
 .checkout-privacy-note { font-size: 13px; color: #777; line-height: 1.6; margin: 25px 0; }
-.red-link { color: #b01a1a; text-decoration: none; cursor: pointer; font-weight: 600; }
+.red-link { color: #E91E63; text-decoration: none; cursor: pointer; font-weight: 600; }
 .place-order-flex-end { display: flex; justify-content: flex-end; }
-.place-order-btn { width: auto !important; min-width: 180px; background: #b01a1a; color: #fff; border: none; padding: 16px 45px; border-radius: 4px; font-weight: 800; cursor: pointer; text-transform: uppercase; }
+.place-order-btn { width: auto !important; min-width: 180px; background: #E91E63; color: #fff; border: none; padding: 16px 45px; border-radius: 4px; font-weight: 800; cursor: pointer; text-transform: uppercase; }
 
-/* =========================================================
-   ADDITIONAL RESPONSIVE FIXES (MEDIA QUERIES)
-   ========================================================= */
+/* ADDITIONAL RESPONSIVE FIXES (MEDIA QUERIES) */
 
 @media (max-width: 1024px) {
     .courses-container { grid-template-columns: repeat(2, 1fr); }
@@ -699,7 +723,7 @@
     }
     .desc-sidebar-title {
         width: 100%;
-        border-bottom: 2px solid #b01a1a;
+        border-bottom: 2px solid #E91E63;
         padding-bottom: 5px;
     }
     /* --- END OF FIXED SECTION --- */
@@ -730,16 +754,47 @@
     .promo-input-group input { width: 100%; }
     .checkout-form-container { padding: 20px; }
     .card-row { grid-template-columns: 1fr; }
+
+    /* ── Titles stay ABOVE their content on mobile ── */
+    .available-title,
+    .learning-title,
+    .testimonials-title,
+    .cta-heading {
+        order: -1;                    /* Forces title to be first in flex column */
+        margin-top: 0;
+        margin-bottom: 35px;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Last section (CTA) - smaller on mobile */
+    .courses-cta-section {
+        padding: 50px 15px 70px;
+    }
+    .cta-heading {
+        font-size: 32px;              /* Reduced from 56px */
+        line-height: 1.2;
+    }
 }
 
 @media (max-width: 480px) {
     .c-hero-content h1 { font-size: 32px; }
-    .cta-heading { font-size: 34px; }
+
+    /* Even smaller titles on very small screens */
+    .available-title,
+    .learning-title,
+    .testimonials-title,
+    .cta-heading {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .cta-heading {
+        font-size: 28px;
+    }
 }
 
-/* =========================================================
-   PINK WATER FILL ANIMATION
-   ========================================================= */
+/* PINK WATER FILL ANIMATION */
 @keyframes waterWavePink {
     0%, 100% {
         background-size: 100% 10%; 
@@ -757,4 +812,50 @@
         -webkit-text-stroke: 0.5px #E91E63;
         font-size: 38px; 
     }
+}
+
+/* ── ANIMATIONS - exact copy from your About page ──────────────────────── */
+.is-hidden { opacity: 0; }
+
+.fade-in-left {
+    animation: fadeInLeft 1.2s ease-out forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 1.5s ease-out forwards;
+}
+
+.fade-up {
+    animation: fadeUp 1.2s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Safety to prevent any scrollbar flicker or jump */
+.courses-page {
+    overflow-x: hidden;
+    contain: layout paint;
+}
+
+.available-section,
+.learning-experience-section,
+.testimonials-section,
+.courses-cta-section,
+.details-section-view,
+.details-description-section {
+    overflow: hidden;
+    contain: content;
 }

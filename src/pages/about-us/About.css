@@ -1,6 +1,4 @@
-/* =========================================================
-   About.css - UPDATED WITH BRAND PINK & MOVEMENT
-   ========================================================= */
+/* About.css - UPDATED WITH BRAND PINK & MOVEMENT*/
 
 main {
     padding-top: 80px;
@@ -41,7 +39,7 @@ main {
 .hero-content {
     z-index: 1;
     padding: 10px;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif; 
     margin-top: 110px;
 }
 
@@ -50,13 +48,46 @@ main {
     font-weight: 500;
 }
 
+/* ── LETTER-BY-LETTER POP ANIMATION FOR ALL SECTION TITLES ── */
+.pop-title {
+    display: inline-block;
+}
+
+.pop-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.3) translateY(20px);
+    animation: popIn 0.6s ease-out forwards;
+}
+
+.pop-title.visible span {
+    animation-play-state: running;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(20px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.15) translateY(-8px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
 .water-text {
     position: relative;
     display: inline-block;
     font-size: 66px;
     font-weight: 800;
     color: rgba(255, 255, 255, 0.1);
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+    /* -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5); */
+    -webkit-text-stroke: 1px #fff;
+
     line-height: 1.2;
 }
 
@@ -101,7 +132,7 @@ main {
 .academy-title {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 34px;
+    font-size: 36px;
     color: #E91E63;
     margin-bottom: 30px;
 }
@@ -215,9 +246,7 @@ main {
     100% { transform: translateY(0); opacity: 1; }
 }
 
-/* =========================================================
-   RESPONSIVENESS (DO NOT SCATTER DESKTOP)
-   ========================================================= */
+/* RESPONSIVENESS (DO NOT SCATTER DESKTOP)*/
 
 /* Tablets and Laptops */
 @media (max-width: 1024px) {
@@ -268,7 +297,7 @@ main {
     }
 
     .academy-title {
-        font-size: 26px;
+        font-size: 27.8px;
         text-align: center;
     }
 

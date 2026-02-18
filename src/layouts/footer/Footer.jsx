@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Footer.css'; 
+import './Footer.css';
+import myLogo from '../../assets/LOGO.png';
 
 // --- Image Imports (Use your actual paths) ---
-import FacebookIcon from '../../assets/majesticons_arrow-up-line.png.png'
-import XIcon from '../../assets/majesticons_arrow-up-line.png.png'
-import InstagramIcon from '../../assets/majesticons_arrow-up-line.png.png'
-import LinkedInIcon from '../../assets/majesticons_arrow-up-line.png.png'
-import YouTubeIcon from '../../assets/majesticons_arrow-up-line.png.png'
-import LocationIcon from '../../assets/majesticons_arrow-up-line.png.png'
-import PhoneIcon from '../../assets/majesticons_arrow-up-line.png.png'
-import EmailIcon from '../../assets/majesticons_arrow-up-line.png.png'
+import FacebookIcon from '../../assets/facebook.png'
+import XIcon from '../../assets/twitter.png'
+import InstagramIcon from '../../assets/instagram.png'
+import LinkedInIcon from '../../assets/linkdin.png'
+import YouTubeIcon from '../../assets/youtube.png'
+import LocationIcon from '../../assets/location.png'
+import PhoneIcon from '../../assets/phoneinfo.jpg'
+import EmailIcon from '../../assets/email.png'
+import SubscribeIcon from '../../assets/majesticons_arrow-up-line.png.png'
 
 const Footer = () => {
     return (
@@ -19,18 +21,25 @@ const Footer = () => {
                 <div className="footer-newsletter">
                     <input type="email" placeholder="Enter email for news letter" />
                     <button className="subscribe-button">
-                        <img src={EmailIcon} alt="Subscribe" className="subscribe-icon"/>
+                        <img src={SubscribeIcon} alt="Subscribe" className="subscribe-icon" />
                         SUBSCRIBE
                     </button>
                 </div>
             </div>
 
             <div className="footer-content-area">
-                
+
                 {/* 1. Logo and Socials Column */}
                 <div className="footer-column logo-column">
                     <div className="footer-logo-circle">
-                        <h1>LOGO</h1>
+                        <img
+                            src={myLogo}
+                            alt="logo"
+                            width="80px"
+                            height="80px"
+                            style={{ cursor: 'pointer' }}
+                            onClick={() => { if (isMenuOpen) toggleMenu(); }}
+                        />
                     </div>
                     <p>Shaping future leaders through practical training, events, and mentorship that drive business excellence.</p>
                     <div className="footer-socials">
@@ -54,7 +63,7 @@ const Footer = () => {
                         <li><Link to="/contact">Contact Us</Link></li>
                     </ul>
                 </div>
-                
+
                 {/* 3. Resources Column */}
                 <div className="footer-column resources-column">
                     <ul>
@@ -71,7 +80,7 @@ const Footer = () => {
                 <div className="footer-column contact-info-column">
                     <h2 className="p-color">Contact Us</h2>
                     <p className="contact-description">We empower entrepreneurs and professionals through podcasts, webinars, training, and events, designed to inspire growth and success. Connect with us to learn, grow, and lead.</p>
-                    
+
                     <div className="contact-detail">
                         <img src={LocationIcon} alt="Location" />
                         <span>United Kingdom</span>

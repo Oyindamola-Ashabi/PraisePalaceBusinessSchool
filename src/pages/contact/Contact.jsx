@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Contact.css';
-import contactHeroImg from '../../assets/contact.hero.png'; 
+import contactHeroImg from '../../assets/CONTACT-US.png'; 
 
 const Contact = () => {
     // State for Modal visibility

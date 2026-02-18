@@ -9,11 +9,12 @@
 }
 
 /* =========================================================
-   2. HERO SECTION
+   2. HERO SECTION – IMPROVED RESPONSIVE TEXT & IMAGE
    ========================================================= */
 .mentorship-hero {
     background-color: #EAEAEA; 
     width: 100%;
+    min-height: 100vh;
     padding: 140px 5% 80px 5%; 
 }
 
@@ -36,6 +37,7 @@
     font-weight: 800;
     color: #000000;
     margin-bottom: 25px;
+    line-height: 1.12;
 }
 
 .m-hero-content p {
@@ -43,7 +45,7 @@
     font-size: 26px;
     font-weight: 500;
     color: #757575; 
-    line-height: 1.4;
+    line-height: 1.45;
     margin-bottom: 40px;
     max-width: 550px;
 }
@@ -116,7 +118,8 @@
 }
 
 .m-benefit-item img {
-    width: 65px;
+    width: 60px;
+    height: 60px;
     margin-bottom: 15px;
 }
 
@@ -424,12 +427,26 @@
 }
 
 /* =========================================================
-   8. MEDIA QUERIES (FIXED & RESPONSIVE)
+   8. MEDIA QUERIES – ONLY HERO MADE RESPONSIVE (MOBILE UNCHANGED)
    ========================================================= */
 
+/* Gradual scaling for desktop → laptop → tablet (keeps side-by-side layout) */
+@media (max-width: 1400px) {
+    .m-hero-content h1 { font-size: 54px; }
+    .m-hero-content p { font-size: 24px; }
+    .m-hero-img { max-width: 800px; height: 410px; }
+}
+
+@media (max-width: 1200px) {
+    .m-hero-content h1 { font-size: 50px; }
+    .m-hero-content p { font-size: 22px; }
+    .m-hero-img { max-width: 720px; height: 370px; }
+}
+
 @media (max-width: 1100px) {
-    .m-hero-content h1 { font-size: 48px; }
+    .m-hero-content h1 { font-size: 46px; }
     .m-hero-content p { font-size: 20px; }
+    .m-hero-img { max-width: 640px; height: 330px; }
     
     .m-benefits-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -437,6 +454,7 @@
     }
 }
 
+/* Your original mobile view – completely untouched as requested */
 @media (max-width: 850px) {
     /* Hero Adjustments */
     .mentorship-hero { padding-top: 100px; }

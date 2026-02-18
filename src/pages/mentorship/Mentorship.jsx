@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom'; // Added for navigation
 import './Mentorship.css';
 
 // Your original Hero image
-import mentorshipHeroImg from '../../assets/heroabout.png';
+import mentorshipHeroImg from '../../assets/mentorship-hero.png';
 
 // Import the icons for the sections
-import iconGuidance from '../../assets/hamimg.png';
-import iconInsights from '../../assets/hamimg.png';
-import iconNetwork from '../../assets/hamimg.png';
-import iconAccountability from '../../assets/hamimg.png';
+import iconGuidance from '../../assets/Personal_guidance.png';
+import iconInsights from '../../assets/Real-World-Insights.png';
+import iconNetwork from '../../assets/Network-Access.png';
+import iconAccountability from '../../assets/ACCOUNTABILITY.png';
 
 const Mentorship = () => {
     // Logic to handle button click
@@ -88,32 +88,32 @@ const Mentorship = () => {
                         <h3>Startup Mentorship</h3>
                         <p>For aspiring entrepreneurs looking to launch their first business.</p>
                         <div className="m-card-footer">
-                            <span>9 Months</span>
-                            <span>#10,000</span>
+                            {/* <span>9 Months</span>
+                            <span>#10,000</span> */}
                         </div>
                     </div>
                     <div className="m-price-card">
                         <h3>Lead Mentorship</h3>
                         <p>Grow your leadership and management skills with expert guidance.</p>
                         <div className="m-card-footer">
-                            <span>9 Months</span>
-                            <span>#10,000</span>
+                            {/* <span>9 Months</span>
+                            <span>#10,000</span> */}
                         </div>
                     </div>
                     <div className="m-price-card">
                         <h3>Financial Growth</h3>
                         <p>Learn strategies for smart investing and financial growth.</p>
                         <div className="m-card-footer">
-                            <span>9 Months</span>
-                            <span>#10,000</span>
+                            {/* <span>9 Months</span>
+                            <span>#10,000</span> */}
                         </div>
                     </div>
                     <div className="m-price-card">
                         <h3>Digital Mentorship</h3>
                         <p>Get hands-on support to build and grow your brand online.</p>
                         <div className="m-card-footer">
-                            <span>9 Months</span>
-                            <span>#10,000</span>
+                            {/* <span>9 Months</span>
+                            <span>#10,000</span> */}
                         </div>
                     </div>
                 </div>

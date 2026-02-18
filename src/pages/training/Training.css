@@ -1,6 +1,4 @@
-/* =========================================================
-   1. GENERAL PAGE STYLING
-   ========================================================= */
+/* 1. GENERAL PAGE STYLING*/
 .training-page {
     width: 100%;
     margin: 0;
@@ -8,9 +6,7 @@
     background-color: #f8f9fa; 
 }
 
-/* =========================================================
-   2. HERO SECTION
-   ========================================================= */
+/* 2. HERO SECTION*/
 .training-hero {
     width: 100%;
     height: 90vh;
@@ -77,9 +73,7 @@
     margin: 0 auto;
 }
 
-/* =========================================================
-   3. SECOND SECTION: CATEGORIES
-   ========================================================= */
+/* 3. SECOND SECTION: CATEGORIES*/
 .training-categories-section {
     background-color: #ffffff;
     width: 95%;
@@ -203,9 +197,7 @@
     font-family: "Poppins";
 }
 
-/* =========================================================
-   4. THIRD SECTION: WHY CHOOSE
-   ========================================================= */
+/* 4. THIRD SECTION: WHY CHOOSE*/
 .why-choose-section {
     width: 100%;
     margin: 50px auto;
@@ -261,9 +253,7 @@
 .d-right { grid-column: 3; grid-row: 2; justify-self: start; }
 .d-bottom { grid-column: 2; grid-row: 3; }
 
-/* =========================================================
-   5. FOURTH SECTION: TESTIMONIAL
-   ========================================================= */
+/*5. FOURTH SECTION: TESTIMONIAL*/
 .testimonial-section {
     width: 100%;
     margin: 10px auto;

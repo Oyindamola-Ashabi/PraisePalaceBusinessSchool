@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Academy.css';
 
 // Image imports
@@ -11,22 +11,22 @@ import courseImg6 from '../../assets/ekklesiatwo.jpeg'
 import courseImg7 from '../../assets/ekklesiaone.jpeg'
 import courseImg8 from '../../assets/ekklesiatwo.jpeg'
 import courseImg9 from '../../assets/ekklesiaone.jpeg'
-import heroImage from '../../assets/heroabout.png';
+import heroImage from '../../assets/Academic.png';
 
 // Icons for the Learning Experience section
-import icon1 from '../../assets/hamimg.png';
-import icon2 from '../../assets/hamimg.png';
-import icon3 from '../../assets/heroabout.png';
-import icon4 from '../../assets/heroabout.png';
+import icon1 from '../../assets/Practical-hands-learning.png';
+import icon2 from '../../assets/Real-world-case-studies.png';
+import icon3 from '../../assets/Mentorship.png';
+import icon4 from '../../assets/Flexible-online-options.png';
 
-// NEW: Proper import for the Host Image
+// Host Image
 import hostImgAsset from '../../assets/chairmanmain.jpeg'
 
 const Academy = () => {
     const [selectedCourse, setSelectedCourse] = useState(null);
     const [cart, setCart] = useState([]);
     const [view, setView] = useState('main');
-    const [checkoutStep, setCheckoutStep] = useState('billing'); // New: 'billing' or 'payment'
+    const [checkoutStep, setCheckoutStep] = useState('billing');
     const [qty, setQty] = useState(1);
     const [activeFaq, setActiveFaq] = useState(null);
     const [billingData, setBillingData] = useState({
@@ -34,13 +34,48 @@ const Academy = () => {
         address: '', town: '', postcode: '', phone: ''
     });
 
+    // Animation visibility states
+    const [isAvailableVisible, setIsAvailableVisible] = useState(false);
+    const [isLearningVisible, setIsLearningVisible] = useState(false);
+    const [isTestimonialsVisible, setIsTestimonialsVisible] = useState(false);
+    const [isCtaVisible, setIsCtaVisible] = useState(false);
+
+    // Refs
+    const availableRef = useRef(null);
+    const learningRef = useRef(null);
+    const testimonialsRef = useRef(null);
+    const ctaRef = useRef(null);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [selectedCourse, view]);
 
+    // Intersection Observer - exactly like your About page
+    useEffect(() => {
+        const observerOptions = { threshold: 0.2 };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target === availableRef.current) setIsAvailableVisible(true);
+                    if (entry.target === learningRef.current) setIsLearningVisible(true);
+                    if (entry.target === testimonialsRef.current) setIsTestimonialsVisible(true);
+                    if (entry.target === ctaRef.current) setIsCtaVisible(true);
+                }
+            });
+        }, observerOptions);
+
+        if (availableRef.current) observer.observe(availableRef.current);
+        if (learningRef.current) observer.observe(learningRef.current);
+        if (testimonialsRef.current) observer.observe(testimonialsRef.current);
+        if (ctaRef.current) observer.observe(ctaRef.current);
+
+        return () => observer.disconnect();
+    }, [view, selectedCourse]);
+
     const courseData = [
         {
-            id: 1, img: courseImg1, title: "Investment & Wealth", price: 35000, subtitle: "Wealth Masterclass",
+            id: 1, img: courseImg1, title: "Investment & Wealth", price: 2000, subtitle: "Wealth Masterclass",
             discount: 15, videoID: "dQw4w9WgXcQ",
             desc: (
                 <>
@@ -59,7 +94,7 @@ const Academy = () => {
         },
         {
             id: 5, img: courseImg5, title: "Business Communication", price: 20000, subtitle: "Negotiation",
-            discount: 25, videoID: "X0S8_oP7B7o",
+            discount: 25, videoID: "zLeUrWlhloU",
             desc: (
                 <>
                     <p>In the world of business, you don't get what you deserve; you get what you negotiate. This course is a deep dive into the art of high-stakes communication and professional storytelling designed for entrepreneurs and corporate leaders alike.</p>
@@ -218,14 +253,12 @@ const Academy = () => {
         const vat = subtotal * 0.075;
         const total = subtotal + vat;
 
-        // Validation logic
         const handleContinue = () => {
             const { email, firstName, lastName, address, town, postcode, phone } = billingData;
 
-            // This checks if any field is empty
             if (!email || !firstName || !lastName || !address || !town || !postcode || !phone) {
                 alert("Please fill in all required fields marked with *");
-                return; // Stops them from going to the next page
+                return;
             }
             setCheckoutStep('payment');
         };
@@ -313,14 +346,14 @@ const Academy = () => {
                                                         <img src={item.img} alt="" />
                                                         <span>{item.title} <strong>× {item.quantity}</strong></span>
                                                     </td>
-                                                    <td className="text-right">₦{(item.price * item.quantity).toLocaleString()}.00 (ex. VAT)</td>
+                                                    <td className="text-right">£{(item.price * item.quantity).toLocaleString()}.00 (ex. VAT)</td>
                                                 </tr>
                                             ))}
                                         </tbody>
                                     </table>
                                     <div className="review-summary-box">
-                                        <div className="summary-line"><span>Subtotal</span><span>₦{subtotal.toLocaleString()}.00 (ex. VAT)</span></div>
-                                        <div className="summary-line"><span>VAT</span><span>₦{vat.toLocaleString()}.00</span></div>
+                                        <div className="summary-line"><span>Subtotal</span><span>£{subtotal.toLocaleString()}.00 (ex. VAT)</span></div>
+                                        <div className="summary-line"><span>VAT</span><span>£{vat.toLocaleString()}.00</span></div>
                                         <div className="summary-line total-line"><span>Total</span><span>₦{total.toLocaleString()}.00</span></div>
                                     </div>
                                     <div className="payment-card-box">
@@ -380,9 +413,9 @@ const Academy = () => {
                                             <img src={item.img} alt="" />
                                             <div><p className="it-t">{item.title}</p></div>
                                         </td>
-                                        <td>₦{item.price.toLocaleString()}</td>
+                                        <td>£{item.price.toLocaleString()}</td>
                                         <td><div className="qty-box-fixed">{item.quantity}</div></td>
-                                        <td>₦{(item.price * item.quantity).toLocaleString()}</td>
+                                        <td>£{(item.price * item.quantity).toLocaleString()}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -398,9 +431,8 @@ const Academy = () => {
                         </div>
                         <div className="totals-card">
                             <h3>Cart totals</h3>
-                            <div className="total-row"><span>Subtotal</span><span>₦{subtotal.toLocaleString()}</span></div>
-                            <div className="total-row grand"><span>Total</span><span>₦{(subtotal * 1.075).toLocaleString()}</span></div>
-                            {/* UPDATED: Added onClick to switch to checkout view */}
+                            <div className="total-row"><span>Subtotal</span><span>£{subtotal.toLocaleString()}</span></div>
+                            <div className="total-row grand"><span>Total</span><span>£{(subtotal * 1.075).toLocaleString()}</span></div>
                             <button className="checkout-btn" onClick={() => setView('checkout')}>Proceed to checkout</button>
                             <a href="https://paystack.com" target="_blank" rel="noopener noreferrer" className="paystack-link-cart">Pay with <span>●</span> link</a>
                         </div>
@@ -420,13 +452,13 @@ const Academy = () => {
                                 <span>←</span> Back to Academy
                             </button>
                         </div>
-                        <div className="details-grid">
+                        <div className="details-grid fade-up">
                             <div className="details-left">
                                 <div className="flier-container"><img src={selectedCourse.img} alt={selectedCourse.title} /></div>
                             </div>
                             <div className="details-right">
                                 <h1 className="details-title">{selectedCourse.title}</h1>
-                                <p className="details-price">₦{selectedCourse.price.toLocaleString()}</p>
+                                <p className="details-price">£{selectedCourse.price.toLocaleString()}</p>
                                 <hr className="details-divider" />
                                 <h2 className="details-subtitle">{selectedCourse.subtitle} | Online Training</h2>
                                 <div className="details-rich-text">
@@ -445,7 +477,7 @@ const Academy = () => {
                             </div>
                         </div>
 
-                        <div className="details-description-section">
+                        <div className="details-description-section fade-up">
                             <div className="desc-sidebar-title">Description</div>
                             <div className="desc-main-content">
                                 <div className="promo-countdown-banner">
@@ -516,16 +548,17 @@ const Academy = () => {
             <section className="courses-hero">
                 <img src={heroImage} alt="Academy Hero" className="hero-background-image" />
                 <div className="c-hero-content">
-                    {/* Use the data-text attribute for the water animation */}
                     <h1 className="water-text" data-text="Practical Business Trainings">
                         Practical Business Trainings
                     </h1>
                     <p>Hands-on programs designed to give you skills you can apply immediately</p>
                 </div>
             </section>
-            <section className="available-section">
+
+            {/* Available Trainings – fade-in-left like story text */}
+            <section className="available-section" ref={availableRef}>
                 <h2 className="available-title">Available Trainings</h2>
-                <div className="courses-container">
+                <div className={`courses-container ${isAvailableVisible ? 'fade-in-left' : 'is-hidden'}`}>
                     {courseData.map((course) => (
                         <div key={course.id} className="c-card" onClick={() => setSelectedCourse(course)}>
                             <div className="c-card-img-wrapper">
@@ -535,18 +568,34 @@ const Academy = () => {
                     ))}
                 </div>
             </section>
-            <section className="learning-experience-section">
+
+            {/* Learning Experience – fade-up like mission/vision */}
+            <section className="learning-experience-section" ref={learningRef}>
                 <h2 className="learning-title">Learning Experience</h2>
-                <div className="learning-container">
-                    <div className="learning-item"><div className="learning-icon"><img src={icon1} alt="" /></div><p>Practical, hands-on learning</p></div>
-                    <div className="learning-item"><div className="learning-icon"><img src={icon2} alt="" /></div><p>Real-world case studies</p></div>
-                    <div className="learning-item"><div className="learning-icon"><img src={icon3} alt="" /></div><p>Mentorship support</p></div>
-                    <div className="learning-item"><div className="learning-icon"><img src={icon4} alt="" /></div><p>Flexible online options</p></div>
+                <div className={`learning-container ${isLearningVisible ? 'fade-up' : 'is-hidden'}`}>
+                    <div className="learning-item">
+                        <div className="learning-icon"><img src={icon1} alt="" /></div>
+                        <p>Practical, hands-on learning</p>
+                    </div>
+                    <div className="learning-item">
+                        <div className="learning-icon"><img src={icon2} alt="" /></div>
+                        <p>Real-world case studies</p>
+                    </div>
+                    <div className="learning-item">
+                        <div className="learning-icon"><img src={icon3} alt="" /></div>
+                        <p>Mentorship support</p>
+                    </div>
+                    <div className="learning-item">
+                        <div className="learning-icon"><img src={icon4} alt="" /></div>
+                        <p>Flexible online options</p>
+                    </div>
                 </div>
             </section>
-            <section className="testimonials-section">
+
+            {/* Testimonials – slide-in-right like image column */}
+            {/* <section className="testimonials-section" ref={testimonialsRef}>
                 <h2 className="testimonials-title">What <span>Our Students Say</span></h2>
-                <div className="testimonials-container">
+                <div className={`testimonials-container ${isTestimonialsVisible ? 'slide-in-right' : 'is-hidden'}`}>
                     {[1, 2, 3].map((item) => (
                         <div key={item} className="testimonial-card">
                             <div className="stars">★★★★★</div>
@@ -555,13 +604,16 @@ const Academy = () => {
                         </div>
                     ))}
                 </div>
-            </section>
-            <section className="courses-cta-section">
-                <h2 className="cta-heading">Ready to take the next step?</h2>
+            </section> */}
+
+            {/* CTA – fade-up like offer section */}
+            <section className="courses-cta-section" ref={ctaRef}>
+                <h2 className={`cta-heading ${isCtaVisible ? 'fade-up' : 'is-hidden'}`}>
+                    Ready to take the next step?
+                </h2>
             </section>
         </div>
     );
-
 };
 
 export default Academy;

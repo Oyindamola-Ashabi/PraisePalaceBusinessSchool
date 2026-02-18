@@ -1,27 +1,24 @@
-/* =========================================================
-   FOOTER STYLES (Supports Sticky Footer Pattern)
-   ========================================================= */
+/*FOOTER STYLES (Supports Sticky Footer Pattern) */
 
 .main-footer {
     width: 100%;
     /* The main grey background color from the image */
-    background-color: #727272; 
+    background-color: #727272;
     color: white;
     padding-top: 50px;
     font-family: 'Poppins', sans-serif;
-    /* 💥 ESSENTIAL: Ensure it respects the document flow from the App.jsx Flexbox */
-    display: block; 
-    position: relative; 
+    /* ESSENTIAL: Ensure it respects the document flow from the App.jsx Flexbox */
+    display: block;
+    position: relative;
     box-sizing: border-box;
 }
 
 .p-color {
-    color: #E91E63; /* Primary Pink Color for emphasis */
+    color: #E91E63;
+    /* Primary Pink Color for emphasis */
 }
 
-/* ---------------------------------------------------------
-   Footer Top Section (Newsletter)
-   --------------------------------------------------------- */
+/*Footer Top Section (Newsletter) */
 .footer-top-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -34,7 +31,7 @@
     align-items: center;
     position: relative;
     /* FIX: Uses padding to create space instead of negative margins/top positioning */
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
 }
 
 .footer-newsletter input[type="email"] {
@@ -42,7 +39,7 @@
     border: none;
     border-radius: 8px 0 0 8px;
     font-size: 16px;
-    width: 300px; 
+    width: 300px;
     outline: none;
     box-sizing: border-box;
     color: #333;
@@ -64,19 +61,17 @@
 }
 
 .subscribe-button:hover {
-    background-color: #C2185B;
+    background-color: #E91E63;
 }
 
 .subscribe-icon {
     width: 18px;
     height: 18px;
     margin-right: 8px;
-    filter: invert(100%); 
+    filter: invert(100%);
 }
 
-/* ---------------------------------------------------------
-   Footer Content Area (4 Columns)
-   --------------------------------------------------------- */
+/*Footer Content Area (4 Columns)*/
 .footer-content-area {
     display: flex;
     justify-content: space-between;
@@ -97,20 +92,20 @@
 }
 
 .footer-logo-circle {
-    width: 120px;
-    height: 120px;
-    background-color: #E91E63;
-    border-radius: 50%;
+    /* width: 90px;
+    height: 90px; */
+    /* background-color: #E91E63; */
+    /* border-radius: 50%; */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.footer-logo-circle h1 {
-    margin: 0;
-    font-size: 30px;
-    font-weight: 800;
+.footer-logo-circle img {
+    width:80px;
+    height:80px;
+    /* background-color: #C2185B; */
 }
 
 .logo-column p {
@@ -128,10 +123,10 @@
 .footer-socials img {
     width: 30px;
     height: 30px;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 5px;
     border-radius: 5px;
-    filter: invert(100%); 
+    filter: invert(100%);
     transition: background-color 0.3s;
 }
 
@@ -140,30 +135,35 @@
 }
 
 /* 2 & 3. Link Columns */
-.quick-links-column ul, .resources-column ul {
+.quick-links-column ul,
+.resources-column ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.quick-links-column h2, .resources-column h2 {
+.quick-links-column h2,
+.resources-column h2 {
     font-size: 18px;
     margin-bottom: 15px;
     font-weight: 600;
 }
 
-.quick-links-column li, .resources-column li {
+.quick-links-column li,
+.resources-column li {
     margin-bottom: 10px;
 }
 
-.quick-links-column a, .resources-column a {
+.quick-links-column a,
+.resources-column a {
     color: white;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s;
 }
 
-.quick-links-column a:hover, .resources-column a:hover {
+.quick-links-column a:hover,
+.resources-column a:hover {
     color: #E91E63;
 }
 
@@ -193,16 +193,14 @@
     width: 18px;
     height: 18px;
     margin-right: 10px;
-    filter: invert(100%); 
+    filter: invert(100%);
 }
 
 .contact-detail span {
     font-size: 14px;
 }
 
-/* ---------------------------------------------------------
-   Footer Bottom Bar (Policy and Copyright)
-   --------------------------------------------------------- */
+/*Footer Bottom Bar (Policy and Copyright)*/
 .footer-bottom-bar {
     max-width: 1200px;
     margin: 0 auto;
@@ -225,7 +223,7 @@
     font-size: 14px;
     font-weight: 600;
     transition: color 0.3s;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 8px 15px;
     border-radius: 5px;
 }
@@ -244,31 +242,29 @@
 }
 
 
-/* =========================================================
-   MOBILE OVERRIDES (max-width: 768px)
-   ========================================================= */
+/*MOBILE OVERRIDES (max-width: 768px)*/
 @media (max-width: 768px) {
     .footer-top-section {
         padding: 0 5%;
     }
-    
+
     .footer-newsletter {
         justify-content: center;
         flex-direction: column;
-        padding-bottom: 30px; 
+        padding-bottom: 30px;
     }
-    
+
     .footer-newsletter input[type="email"] {
         width: 100%;
         border-radius: 8px 8px 0 0;
         text-align: center;
     }
-    
+
     .subscribe-button {
         width: 100%;
         border-radius: 0 0 8px 8px;
     }
-    
+
     .footer-content-area {
         flex-direction: column;
         padding: 20px 5%;
@@ -286,6 +282,7 @@
         padding-top: 0;
         border-top: none;
     }
+
     .logo-column p {
         padding: 0 15px;
     }
@@ -297,20 +294,22 @@
     .footer-socials {
         justify-content: center;
     }
-    
-    .quick-links-column ul, .resources-column ul {
+
+    .quick-links-column ul,
+    .resources-column ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px 20px;
     }
-    
-    .quick-links-column li, .resources-column li {
+
+    .quick-links-column li,
+    .resources-column li {
         width: 40%;
         margin-bottom: 0;
         text-align: center;
     }
-    
+
     .contact-detail {
         justify-content: center;
     }
@@ -323,7 +322,7 @@
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .copyright {
         font-size: 11px;
     }

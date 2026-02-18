@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react'; 
-import { useNavigate, Link } from "react-router-dom"; 
+import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate, Link } from "react-router-dom";
 import Button from "../../components/button-one/Button"
-import headingImage from '../../assets/image01.jpeg'
-import heroImg2 from '../../assets/two.png'; 
-import heroImg3 from '../../assets/homesecondwomanhero.jpg'
+// import headingImage from '../../assets/image01.jpeg'
+// import heroImg2 from '../../assets/two.png'; 
+// import heroImg3 from '../../assets/homesecondwomanhero.jpg'
+import headingImage from '../../assets/SLIDE-1.png'
+import heroImg2 from '../../assets/SLIDE-2.png'
+import heroImg3 from '../../assets/SLIDE-3.png'
 import sectionOneImg from '../../assets/chairmanmain.jpeg'
 import sectionThreeImgTwo from '../../assets/iconbootcamp.png.png'
 import sectionThreeImgThree from '../../assets/icondigitalskilllab.png.png'
@@ -14,16 +17,18 @@ import sectionFourImgThree from '../../assets/eventimg.png.png'
 import podcastMainImage from '../../assets/miclady.png'
 import playIcon from '../../assets/play.png'
 import arrowRight from '../../assets/sidearrow.png'
+
 import './Home.css'
 
-const Home = ({ courses, highlights, testimonials, FAQ }) => {
+const Home = ({ highlights, testimonials, FAQ }) => {
   const [openId, setOpenId] = useState(null);
   const [index, setIndex] = useState(0);
-  const [isExiting, setIsExiting] = useState(false); 
+  const [isExiting, setIsExiting] = useState(false);
   const navigate = useNavigate();
-  
+  const carouselRef = useRef(null);
+
   const dynamicWords = ["Entreprenuer", "Innovation", "Leadership"];
-  const dynamicImages = [headingImage, heroImg2, heroImg3]; 
+  const dynamicImages = [headingImage, heroImg2, heroImg3];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,30 +43,68 @@ const Home = ({ courses, highlights, testimonials, FAQ }) => {
 
   const handleRegisterNavigation = (e) => {
     if (e) e.preventDefault();
-    setIsExiting(true); 
-    // Wait for the CSS animation to complete
+    setIsExiting(true);
     setTimeout(() => {
       navigate('/register');
     }, 600);
   };
 
+  // Infinite loop scrolling (arrows + swipe)
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      if (scrollLeft <= 0) {
+        // At start → jump to end
+        carouselRef.current.scrollTo({ left: scrollWidth - clientWidth, behavior: 'smooth' });
+      } else {
+        carouselRef.current.scrollBy({ left: -380, behavior: 'smooth' });
+      }
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      if (scrollLeft + clientWidth >= scrollWidth - 10) {
+        // At end → jump to start
+        carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carouselRef.current.scrollBy({ left: 380, behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <div className={`homescreen ${isExiting ? 'exit-active' : ''}`}>
-      <div 
-        className="head" 
-        style={{ 
+      <div
+        className="head"
+        style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${dynamicImages[index % dynamicImages.length]})`
         }}
       >
+        <div className="hero-video-wrapper">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/zLeUrWlhloU"
+            title="Welcome Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+
         <div className="hero">
           <h1>
             Empowering <span className={dynamicWords[index].toLowerCase()}>{dynamicWords[index]}</span>
           </h1>
           <p>Join PraisePalace Business School and gain practical business knowledge,<br /> mentorship, and tools to grow your business and career.</p>
           <div className="hero-button">
-            {/* Wrapped in a div to catch the click for the animation */}
-            <div onClick={handleRegisterNavigation} style={{ display: 'inline-block' }}>
-               <Button title="Register Now" link="#" />
+            {/* <div onClick={handleRegisterNavigation} style={{ display: 'inline-block' }}>
+               <Button title="Register Now" link="#" /> */}
+                {/* i am meant to use the details i commented on up if i want it to be a registeration page and remove this one and the buton bellow. */}
+            <div> 
+              <Button title="Register Now" link="/events/2" />
             </div>
             <Button title="Join Mentorship" type="secondary" link="/mentorship" />
           </div>
@@ -83,7 +126,7 @@ const Home = ({ courses, highlights, testimonials, FAQ }) => {
               we help entrepreneurs and professionals unlock <br />their potential.
             </p>
             <p>Our programs bridge knowledge with practice, equipping you <br />to thrive in today’s market while
-                creating lasting impact in your <br />community.</p>
+              creating lasting impact in your <br />community.</p>
             <div className="Read-more-button"><Button title="Read More" link="/about" /></div>
           </div>
           <div className="abtusimg">
@@ -93,19 +136,8 @@ const Home = ({ courses, highlights, testimonials, FAQ }) => {
 
         <div className="elipse"></div>
 
-        <div className="course-section">
-          <h1>Explore our <span className="p-color">Courses</span></h1>
+        <div className="mentorship-section">
           <div className="bckworld-img">
-            <div className="shortc-group">
-              {courses.map((course) => (
-                <div className="short-courses" key={course.id}>
-                  <img src={course.img} alt={course.title} />
-                  <h3>{course.title}</h3>
-                  <p dangerouslySetInnerHTML={{ __html: course.description }} />
-                  <Button title="Enroll" type="primary small-button" link={course.link} />
-                </div>
-              ))}
-            </div>
             <div className="short-menthorship">
               <h2>Get guidance from experienced business leaders.</h2>
               <Button title="Apply for Mentorship" type="primary md-button" link="/mentorship" />
@@ -152,7 +184,7 @@ const Home = ({ courses, highlights, testimonials, FAQ }) => {
                 <img src={sectionThreeImgFour} alt="Training" />
               </div>
             </div>
-            <div className="viewall-button"><Button title="View All" link="/courses"/></div>
+            <div className="viewall-button"><Button title="View All" link="/courses" /></div>
           </div>
         </div>
 
@@ -180,25 +212,34 @@ const Home = ({ courses, highlights, testimonials, FAQ }) => {
           </div>
         </div>
 
+        {/* ── TESTIMONIAL SECTION ── */}
         <div className="home-testimonial-section">
-          <h1>What <span>Our Students Say</span> About Us</h1>
-          <div className="two-testimonial-boxes">
-            {testimonials.slice(0, 2).map((test) => (
-              <div className="main-testimonial-content" key={test.id}>
-                <img src={test.img} alt={test.name} />
-                <div className="testmonial-eclipse"></div>
-                <p>{test.text}</p>
-                <h3>{test.name}</h3>
-                <p>{test.title}</p>
-              </div>
-            ))}
-          </div>
-          <div className="main-testimonial-content">
-            <img src={testimonials[2]?.img} alt={testimonials[2]?.name} />
-            <div className="testmonial-eclipse"></div>
-            <p>{testimonials[2]?.text}</p>
-            <h3>{testimonials[2]?.name}</h3>
-            <p>{testimonials[2]?.title}</p>
+          <h1><span>Learner</span> Perspectives</h1>
+
+          <div className="testimonial-carousel-wrapper">
+            <button className="scroll-arrow left" onClick={scrollLeft}>‹</button>
+
+            <div className="testimonial-carousel" ref={carouselRef}>
+              {testimonials.map((test) => (
+                <div className="testimonial-card" key={test.id}>
+                  <div className="testimonial-photo-container">
+                    <img
+                      src={test.img}
+                      alt={test.name}
+                      className="testimonial-photo"
+                    />
+                  </div>
+                  <div className="testimonial-content">
+                    <h3>{test.name}</h3>
+                    <p className="title">{test.title}</p>
+                    <p className="class-year">{test.classYear}</p>
+                    <blockquote>{test.text}</blockquote>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <button className="scroll-arrow right" onClick={scrollRight}>›</button>
           </div>
         </div>
 
