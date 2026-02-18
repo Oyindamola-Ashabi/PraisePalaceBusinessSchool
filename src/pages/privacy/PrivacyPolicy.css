@@ -3,7 +3,7 @@
 
 /* HERO */
 .privacy-hero {
-  height: 40vh;
+  height: 48vh;
   background: linear-gradient(135deg, #202020 0%, #c2185b 100%);
   display: flex; align-items: center; justify-content: center;
   text-align: center; color: white; position: relative;
