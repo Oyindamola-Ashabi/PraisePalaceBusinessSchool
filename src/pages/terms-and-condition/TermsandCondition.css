@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.terms-page {
+  font-family: 'Poppins', sans-serif;
+  color: #2d2d2d;
+  background: #f9f9f9;
+  line-height: 1.8;
+}
+
+/* HERO SECTION */
+.terms-hero {
+  position: relative;
+  height: 48vh;
+  min-height: 380px;
+  background: linear-gradient(135deg, #202020 0%, #c2185b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+.hero-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); }
+.hero-content { position: relative; z-index: 2; max-width: 880px; padding: 0 25px; }
+.hero-content h1 { font-size: 4.2rem; font-weight: 800; }
+
+.terms-content-wrapper {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 5%;
+  gap: 50px;
+}
+
+/* DESKTOP SIDEBAR */
+.terms-sidebar {
+  width: 320px;
+  position: sticky;
+  top: 50px;
+  align-self: flex-start;
+}
+
+.sidebar-nav {
+  display: block;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.sidebar-nav button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #444;
+  font-size: 1rem;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* MAIN SECTION STYLES */
+.terms-main { flex: 1; max-width: 900px; }
+
+.terms-section {
+  margin-bottom: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 45px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  color: #e91e63;
+  font-weight: 700;
+}
+
+.accordion-icon { display: none; } /* Hide icons on desktop */
+
+.section-body { padding: 0 50px 45px 50px; }
+
+.bullet-list { list-style: none; padding-left: 0; }
+.bullet-list li { margin-bottom: 14px; position: relative; padding-left: 32px; }
+.bullet-list li::before { content: "•"; color: #e91e63; font-size: 2rem; position: absolute; left: 0; top: -5px; }
+
+.final-contact { padding: 50px; text-align: center; background: white; border-radius: 12px; }
+
+/* ======================================================
+   MOBILE VIEW - ACCORDION MODE
+   ====================================================== */
+@media (max-width: 1024px) {
+  .terms-hero { height: 30vh; min-height: 200px; }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p { font-size: 0.9rem; }
+
+  .terms-content-wrapper { padding: 20px 5%; }
+
+  /* Hide the Desktop Sidebar list entirely */
+  .terms-sidebar { display: none; }
+
+  .terms-section {
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  /* Make the header look like a clickable bar */
+  .section-header {
+    padding: 15px 20px;
+    cursor: pointer;
+    background: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1rem; /* Small sidebar-like text */
+    margin: 0;
+  }
+
+  .accordion-icon {
+    display: block;
+    font-size: 1.5rem;
+    color: #e91e63;
+    font-weight: bold;
+  }
+
+  /* Hide body by default on mobile */
+  .section-body {
+    display: none;
+    padding: 15px 20px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+  }
+
+  /* Show body when active */
+  .terms-section.is-active .section-body {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}

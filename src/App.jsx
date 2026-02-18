@@ -18,8 +18,8 @@ import Register from './pages/registernow/Register';
 import Academy from './pages/courses/Academy';
 
 // --- Placeholder Components ---
-const PrivacyPolicy = () => <div style={{ padding: '100px 10%' }}><h1>Privacy Policy</h1></div>;
-const TermsAndConditions = () => <div style={{ padding: '100px 10%' }}><h1>Terms and Conditions</h1></div>;
+// const PrivacyPolicy = () => <div style={{ padding: '100px 10%' }}><h1>Privacy Policy</h1></div>;
+// const TermsAndConditions = () => <div style={{ padding: '100px 10%' }}><h1>Terms and Conditions</h1></div>;
 const FAQPage = () => <div style={{ padding: '100px 10%' }}><h1>FAQ</h1></div>;
 const LearnMorePage = () => <div style={{ padding: '100px 10%' }}><h1>Learn More</h1></div>;
 const GetStartedPage = () => <div style={{ padding: '100px 10%' }}><h1>Get Started</h1></div>;
@@ -40,6 +40,8 @@ import sectionThreeImgEight from './assets//ekklesiatwo.jpeg';
 import sectionThreeImgNine from './assets//ekklesiaone.jpeg';
 import sectionThreeImgTen from './assets//ekklesiatwo.jpeg';
 import SectionFourImg from './assets/star.png.png'
+import PrivacyPolicy from './pages/privacy/PrivacyPolicy';
+import TermsandCondition from './pages/terms-and-condition/TermsandCondition';
 
 // --- Data Arrays ---
 const courseList = [
@@ -159,8 +161,8 @@ const MainContent = ({ isMenuOpen, toggleMenu }) => {
                     <Route path="/podcast" element={<Podcast />} />
                     <Route path="/register" element={<Register />} />
 
-                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                    <Route path="/terms-and-condition" element={<TermsAndConditions />} />
+                    <Route path="/privacy-policy" element= {<PrivacyPolicy/>}/>
+                    <Route path="/terms-and-condition" element= {<TermsandCondition/>}/>
                     <Route path="/faq" element={<FAQPage />} />
                     <Route path="/learn-more" element={<LearnMorePage />} />
                     <Route path="/get-started" element={<GetStartedPage />} />

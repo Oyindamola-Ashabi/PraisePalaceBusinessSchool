@@ -1,0 +1,107 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+.privacy-policy-page { font-family: 'Poppins', sans-serif; background: #f9f9f9; color: #2d2d2d; line-height: 1.8; }
+
+/* HERO */
+.privacy-hero {
+  height: 40vh;
+  background: linear-gradient(135deg, #202020 0%, #c2185b 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: white; position: relative;
+}
+.hero-bg-gradient { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); }
+.hero-content { position: relative; z-index: 2; padding: 0 20px; }
+.hero-content h1 { font-size: 3.5rem; font-weight: 800; }
+
+/* WRAPPER */
+.privacy-content-wrapper {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 60px 5%;
+  gap: 40px;
+}
+
+/* SIDEBAR (Desktop) */
+.privacy-sidebar {
+  width: 300px;
+  position: sticky;
+  top: 40px;
+  align-self: flex-start;
+}
+.sidebar-nav button {
+  width: 100%; text-align: left; background: none; border: none;
+  padding: 12px 0; border-bottom: 1px solid #eee; cursor: pointer;
+  color: #555; font-size: 0.95rem; transition: 0.3s;
+}
+.sidebar-nav button:hover { color: #e91e63; padding-left: 5px; }
+
+/* MAIN CONTENT */
+.privacy-main { flex: 1; max-width: 900px; }
+
+/* INTRO CARD STYLE */
+.privacy-intro-section {
+  background: white;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.section-header-static { padding: 30px 40px; }
+.section-header-static h2 { font-size: 2rem; color: #e91e63; font-weight: 700; position: relative; }
+.section-header-static h2::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 50px; height: 3px; background: #e91e63; }
+.section-body-static { padding: 0 40px 30px; color: #444; font-size: 1.1rem; }
+
+/* ACCORDION SECTIONS */
+.privacy-section {
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.section-header { padding: 30px 40px; display: flex; justify-content: space-between; align-items: center; cursor: default; }
+.section-header h2 { font-size: 1.8rem; color: #e91e63; font-weight: 700; }
+
+.section-body { padding: 0 40px 30px; }
+
+/* GRID & LISTS */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+.info-block h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.bullet-list, .info-block ul { list-style: none; padding: 0; }
+.bullet-list li, .info-block li { position: relative; padding-left: 25px; margin-bottom: 10px; }
+.bullet-list li::before, .info-block li::before { content: "•"; color: #e91e63; position: absolute; left: 0; font-size: 1.5rem; top: -5px; }
+
+.accordion-icon { display: none; }
+.contact-footer { text-align: center; padding: 40px; background: white; border-radius: 12px; margin-top: 40px; }
+
+/* ======================================================
+   MOBILE VIEW
+   ====================================================== */
+@media (max-width: 1024px) {
+  .privacy-sidebar { display: none; }
+  .privacy-content-wrapper { padding: 20px 5%; }
+  .privacy-hero { height: 30vh; min-height: 250px; }
+  .hero-content h1 { font-size: 2.2rem; }
+
+  .privacy-intro-section, .privacy-section { margin-bottom: 10px; border-radius: 8px; }
+  
+  .section-header-static, .section-header { padding: 15px 20px; cursor: pointer; }
+  .section-header-static h2, .section-header h2 { font-size: 1rem; }
+  .section-header-static h2::after { display: none; }
+  
+  .section-body-static { padding: 0 20px 15px; font-size: 0.9rem; }
+
+  .accordion-icon { display: block; font-size: 1.2rem; color: #e91e63; font-weight: bold; }
+  
+  .section-body { 
+    display: none; 
+    padding: 15px 20px; 
+    border-top: 1px solid #f9f9f9; 
+    font-size: 0.9rem;
+  }
+  
+  .info-grid { grid-template-columns: 1fr; gap: 20px; }
+  .privacy-section.is-active .section-body { display: block; }
+}
