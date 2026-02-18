@@ -58,8 +58,9 @@ const Footer = () => {
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/courses">Academy</Link></li>
                         <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/faq">FAQ</Link></li>
-                        <li><Link to="/training">Training</Link></li>
+                        <li><Link to="/#">FAQ</Link></li>
+                        <li><Link to="/courses">Training</Link></li>
+                        {/* <li><Link to="/training">Training</Link></li> */}
                         <li><Link to="/contact">Contact Us</Link></li>
                     </ul>
                 </div>
@@ -69,10 +70,10 @@ const Footer = () => {
                     <ul>
                         <li><Link to="/podcast">Podcast</Link></li>
                         <li><Link to="/events">Events</Link></li>
-                        <li><Link to="/learn-more">Learn More</Link></li>
-                        <li><Link to="/get-started">Get Started</Link></li>
+                        <li><Link to="/about">Learn More</Link></li>
+                        <li><Link to="/#">Get Started</Link></li>
                         <li><Link to="/mentorship">Mentorship</Link></li>
-                        <li><Link to="/subscribe">Subscribe Now</Link></li>
+                        <li><Link to="/#">Subscribe Now</Link></li>
                     </ul>
                 </div>
 
