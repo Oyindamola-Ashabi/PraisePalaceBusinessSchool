@@ -1,5 +1,5 @@
 import React from 'react';
-import myLogo from '../../assets/logo.png';
+import myLogo from '../../assets/LOGO.png';
 import { Link, useLocation } from 'react-router-dom';
 import './Nav.css';
 import menuImage from '../../assets/hamimg.png';
