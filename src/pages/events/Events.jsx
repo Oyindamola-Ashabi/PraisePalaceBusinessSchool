@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import eventHero from '../../assets/event.png';
 
 // Import card images
-import summitImg from '../../assets/bannerone.jpeg';
-import wealthImg from '../../assets/podcast.hero.png';
-import digitalImg from '../../assets/bannertwo.jpeg';
+import summitImg from '../../assets/business-leadership-submit.png';
+import wealthImg from '../../assets/WEALTH-MASTERY-WORKSHOPp.png';
+import digitalImg from '../../assets/DIGITAL-GROwTHh.png';
 import mixerImg from '../../assets/podcast.hero.png';
 import financeImg from '../../assets/podcast.hero.png';
 import salesImg from '../../assets/podcast.hero.png';

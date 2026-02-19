@@ -3,9 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './Events.css';
 
 // Import unique featured images
-import event1Img from '../../assets/bannerone.jpeg';
-import event2Img from '../../assets/podcast.hero.png';
-import event3Img from '../../assets/bannertwo.jpeg';
+import event1Img from '../../assets/business-leadership-submit.png';
+import event2Img from '../../assets/WEALTH-MASTERY-WORKSHOPp.png';
+import event3Img from '../../assets/DIGITAL-GROwTHh.png';
 import event4Img from '../../assets/podcast.hero.png';
 import event5Img from '../../assets/podcast.hero.png';
 import event6Img from '../../assets/podcast.hero.png';
