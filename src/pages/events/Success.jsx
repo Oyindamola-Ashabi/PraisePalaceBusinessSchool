@@ -32,7 +32,7 @@ const Success = () => {
                     <h3>Your Details</h3>
                     <p>Name: {userData.name}</p>
                     <p>Email: {userData.email}</p>
-                    <p>Phone: +234 {userData.phone}</p>
+                    <p>Phone: +44 {userData.phone}</p>
                     <p>Event: {eventData.title}</p>
                     <p>Date: {eventData.date}</p>
                     <p>Time: {eventData.time}</p>

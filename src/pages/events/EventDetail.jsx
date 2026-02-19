@@ -238,7 +238,7 @@ const EventDetail = () => {
                                 />
                             </div>
                             <div className="form-input-wrap">
-                                <span>🇳🇬 +234</span>
+                                <span>+44</span>
                                 <input 
                                     type="tel" 
                                     placeholder="000 000 0000" 
@@ -283,7 +283,7 @@ const EventDetail = () => {
                         <p>Account Name: PraisePalace Business School</p>
                         <p>Account Number: 0123456789</p>
                         <p>Bank: Zenith Bank</p>
-                        <p>Amount: NGN 5,000 (or event-specific amount)</p>
+                        <p>Amount: £5,000 (or event-specific amount)</p>
                         <p>Please use your name as reference and email proof to support@praispalacebusinessschool.com.</p>
                         <button className="book-event-btn" onClick={() => { setShowBankModal(false); setShowSuccessModal(true); }}>
                             Confirm
@@ -304,7 +304,7 @@ const EventDetail = () => {
                             <h3>Your Details</h3>
                             <p>Name: {bookedUser.name}</p>
                             <p>Email: {bookedUser.email}</p>
-                            <p>Phone: +234 {bookedUser.phone}</p>
+                            <p>Phone: +44 {bookedUser.phone}</p>
                             <p>Event: {data.title}</p>
                             <p>Date: {data.date}</p>
                             <p>Time: {data.time}</p>

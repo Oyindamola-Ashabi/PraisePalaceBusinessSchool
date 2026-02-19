@@ -4,13 +4,13 @@ import './Academy.css';
 // Image imports
 import courseImg1 from '../../assets/INVESTMENT-WEALTH.png'
 import courseImg2 from '../../assets/starting-a-business.png'
-import courseImg3 from '../../assets/ekklesiaone.jpeg'
-import courseImg4 from '../../assets/ekklesiatwo.jpeg'
+import courseImg3 from '../../assets/LEADERSHIP-MGT.png'
+import courseImg4 from '../../assets/DIGITAL-MARKETING.png'
 import courseImg5 from '../../assets/Business-Communication.png'
-import courseImg6 from '../../assets/ekklesiatwo.jpeg'
+import courseImg6 from '../../assets/ENTREPRENEURIAL-FINANCE.png'
 import courseImg7 from '../../assets/project-management.png'
-import courseImg8 from '../../assets/ekklesiatwo.jpeg'
-import courseImg9 from '../../assets/ekklesiaone.jpeg'
+import courseImg8 from '../../assets/SALES-MATERY.png'
+import courseImg9 from '../../assets/BRAND-IDENTITY.png'
 import heroImage from '../../assets/Academic.png';
 
 // Icons for the Learning Experience section
@@ -308,8 +308,10 @@ const Academy = () => {
                                     <div className="form-group">
                                         <label>Country / Region *</label>
                                         <select value={billingData.country} onChange={(e) => setBillingData({ ...billingData, country: e.target.value })} required>
-                                            <option>Nigeria</option>
                                             <option>United Kingdom</option>
+                                            <option>United State</option>
+                                            <option>Nigeria</option>
+                                            
                                         </select>
                                     </div>
                                     <div className="form-group">

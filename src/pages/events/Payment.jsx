@@ -33,7 +33,7 @@ const Payment = () => {
                     <h3>Your Details</h3>
                     <p>Name: {userData.name}</p>
                     <p>Email: {userData.email}</p>
-                    <p>Phone: +234 {userData.phone}</p>
+                    <p>Phone: +44 {userData.phone}</p>
                 </div>
                 <div className="payment-options">
                     <h3>Select Payment Method</h3>
@@ -62,7 +62,7 @@ const Payment = () => {
                         <p>Account Name: PraisePalace Business School</p>
                         <p>Account Number: 0123456789</p> {/* Replace with real details */}
                         <p>Bank: Zenith Bank</p> {/* Replace with real details */}
-                        <p>Amount: NGN 5,000 (or event-specific amount)</p> {/* Assume price; add price to event data if needed */}
+                        <p>Amount: £5,000 (or event-specific amount)</p> {/* Assume price; add price to event data if needed */}
                         <p>Please use your name as reference and email proof to [email].</p>
                     </div>
                 )}
