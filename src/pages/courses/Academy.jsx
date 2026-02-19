@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Academy.css';
 
 // Image imports
-import courseImg1 from '../../assets/ekklesiaone.jpeg'
-import courseImg2 from '../../assets/ekklesiatwo.jpeg'
+import courseImg1 from '../../assets/INVESTMENT-WEALTH.png'
+import courseImg2 from '../../assets/starting-a-business.png'
 import courseImg3 from '../../assets/ekklesiaone.jpeg'
 import courseImg4 from '../../assets/ekklesiatwo.jpeg'
-import courseImg5 from '../../assets/ekklesiatwo.jpeg'
+import courseImg5 from '../../assets/Business-Communication.png'
 import courseImg6 from '../../assets/ekklesiatwo.jpeg'
-import courseImg7 from '../../assets/ekklesiaone.jpeg'
+import courseImg7 from '../../assets/project-management.png'
 import courseImg8 from '../../assets/ekklesiatwo.jpeg'
 import courseImg9 from '../../assets/ekklesiaone.jpeg'
 import heroImage from '../../assets/Academic.png';

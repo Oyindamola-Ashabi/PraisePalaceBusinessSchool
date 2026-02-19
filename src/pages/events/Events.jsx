@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import eventHero from '../../assets/podcast.hero.png';
+import eventHero from '../../assets/event.png';
 
 // Import card images
 import summitImg from '../../assets/bannerone.jpeg';
