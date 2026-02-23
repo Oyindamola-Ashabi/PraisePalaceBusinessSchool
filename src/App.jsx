@@ -29,7 +29,7 @@ const SubscribePage = () => <div style={{ padding: '100px 10%' }}><h1>Subscribe<
 import sectionTwoImagegOne from './assets/woman.jpeg.jpg';
 import sectionTwoImageThree from './assets/secondwoman.jpeg.jpg';
 import sectionTwoImageFour from './assets/man.jpeg.jpg';
-import sectionThreeImgOne from './assets//ekklesiaone.jpeg';
+import sectionThreeImgOne from './assets//pbe.jpeg';
 import sectionThreeImgTwo from './assets//ekklesiatwo.jpeg';
 import sectionThreeImgThree from './assets//ekklesiaone.jpeg';
 import sectionThreeImgFour from './assets//ekklesiatwo.jpeg';
