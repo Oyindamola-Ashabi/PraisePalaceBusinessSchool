@@ -5,7 +5,7 @@ import './Events.css';
 // Import unique featured images
 import event1Img from '../../assets/business-leadership-submmit.png';
 import event2Img from '../../assets/WEALTH-MASTERY-WORKSHOPp.png';
-import event3Img from '../../assets/DIGITAL-GROwTHh.png';
+import event3Img from '../../assets/DIGITAL-GROWTHh.png';
 import event4Img from '../../assets/podcast.hero.png';
 import event5Img from '../../assets/podcast.hero.png';
 import event6Img from '../../assets/podcast.hero.png';
