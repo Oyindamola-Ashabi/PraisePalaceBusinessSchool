@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import eventHero from '../../assets/event.png';
 
 // Import card images
-import summitImg from '../../assets/business-leadership-submit.png';
+import summitImg from '../../assets/business-leadership-submmit.png';
 import wealthImg from '../../assets/WEALTH-MASTERY-WORKSHOPp.png';
 import digitalImg from '../../assets/DIGITAL-GROwTHh.png';
 import mixerImg from '../../assets/podcast.hero.png';
@@ -26,10 +26,10 @@ const Events = () => {
         { id: 4, title: "Entrepreneurship Mixer", date: "December 5, 2025", time: "5:00 PM – 8:00 PM", location: "Radisson Blu, Victoria Island", image: mixerImg },
         { id: 5, title: "Financial Intelligence Class", date: "January 12, 2026", time: "11:00 AM – 2:00 PM", location: "Online (Zoom)", image: financeImg },
         { id: 6, title: "Sales Mastery Seminar", date: "February 20, 2026", time: "10:00 AM – 4:00 PM", location: "PraisePalace Main Hall", image: salesImg },
-        { id: 7, title: "Marketing Analytics Masterclass", date: "March 15, 2026", time: "10:00 AM – 3:00 PM", location: "Online (Zoom)", image: marketingImg },
-        { id: 8, title: "HR & Talent Management", date: "April 10, 2026", time: "9:00 AM – 1:00 PM", location: "Lagos Continental Hotel", image: hrImg },
-        { id: 9, title: "Startup Funding Pitch Day", date: "May 22, 2026", time: "10:00 AM – 5:00 PM", location: "PraisePalace Hub", image: startupImg },
-    ];
+    //     { id: 7, title: "Marketing Analytics Masterclass", date: "March 15, 2026", time: "10:00 AM – 3:00 PM", location: "Online (Zoom)", image: marketingImg },
+    //     { id: 8, title: "HR & Talent Management", date: "April 10, 2026", time: "9:00 AM – 1:00 PM", location: "Lagos Continental Hotel", image: hrImg },
+    //     { id: 9, title: "Startup Funding Pitch Day", date: "May 22, 2026", time: "10:00 AM – 5:00 PM", location: "PraisePalace Hub", image: startupImg },
+     ];
 
     const filteredEvents = allEvents.filter(event =>
         event.title.toLowerCase().includes(searchTerm.toLowerCase())

@@ -3,15 +3,15 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './Events.css';
 
 // Import unique featured images
-import event1Img from '../../assets/business-leadership-submit.png';
+import event1Img from '../../assets/business-leadership-submmit.png';
 import event2Img from '../../assets/WEALTH-MASTERY-WORKSHOPp.png';
 import event3Img from '../../assets/DIGITAL-GROwTHh.png';
 import event4Img from '../../assets/podcast.hero.png';
 import event5Img from '../../assets/podcast.hero.png';
 import event6Img from '../../assets/podcast.hero.png';
-import event7Img from '../../assets/podcast.hero.png';
-import event8Img from '../../assets/podcast.hero.png';
-import event9Img from '../../assets/podcast.hero.png';
+// import event7Img from '../../assets/podcast.hero.png';
+// import event8Img from '../../assets/podcast.hero.png';
+// import event9Img from '../../assets/podcast.hero.png';
 
 const EventDetail = () => {
     const { id } = useParams();
