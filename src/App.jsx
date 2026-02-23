@@ -39,6 +39,12 @@ import sectionThreeImgSeven from './assets//ekklesiaone.jpeg';
 import sectionThreeImgEight from './assets//ekklesiatwo.jpeg';
 import sectionThreeImgNine from './assets//ekklesiaone.jpeg';
 import sectionThreeImgTen from './assets//ekklesiatwo.jpeg';
+import TestimonialImgOne from './assets//aisha.jpg';
+import TestimonialImgTwo from './assets//daniel.jpg';
+import TestimonialImgThree from './assets//jornalist.jpg';
+import TestimonialImgFour from './assets//hr.jpg';
+import TestimonialImgFive from './assets//small.jpg';
+
 import SectionFourImg from './assets/star.png.png'
 import PrivacyPolicy from './pages/privacy/PrivacyPolicy';
 import TermsandCondition from './pages/terms-and-condition/TermsandCondition';
@@ -77,7 +83,7 @@ const highlightss = [
 const testimonialss = [
   {
     id: 1,
-    img: sectionThreeImgOne, 
+    img: TestimonialImgOne, 
     name: 'Aisha Sanni',
     title: 'Social Media Manager of Abbfem Consulting',
     classYear: 'Class of 2026',
@@ -85,7 +91,7 @@ const testimonialss = [
   },
   {
     id: 2,
-    img: sectionThreeImgOne,
+    img: TestimonialImgTwo,
     name: 'Daniel Okafor',
     title: 'Operations Manager, Crestline Logistics',
     classYear: 'Class of 2026',
@@ -93,7 +99,7 @@ const testimonialss = [
   },
   {
     id: 3,
-    img: sectionThreeImgOne,
+    img: TestimonialImgThree,
     name: 'Caleb Michael',
     title: 'Jornalist',
     classYear: 'Class of 2026',
@@ -101,7 +107,7 @@ const testimonialss = [
   },
   {
     id: 4,
-    img: sectionThreeImgOne,
+    img: TestimonialImgFour,
     name: 'Grace Nwoye',
     title: 'HR & Talent Manager, Elevate Group',
     classYear: 'Class of 2026',
@@ -109,7 +115,7 @@ const testimonialss = [
   },
   {
     id: 5,
-    img: sectionThreeImgOne,
+    img: TestimonialImgFive,
     name: 'Isaiah Tofe',
     title: 'Small Business Owner, F&H Retail Services',
     classYear: 'Class of 2026',

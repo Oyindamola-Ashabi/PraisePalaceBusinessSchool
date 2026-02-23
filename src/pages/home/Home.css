@@ -558,11 +558,11 @@ section .abtusimg img {
 /* Photo – full visibility */
 .testimonial-photo-container {
     position: absolute;
-    top: -80px;
+    top: -40px;
     left: 50%;
     transform: translateX(-50%);
-    width: 180px;
-    height: 180px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
     overflow: hidden;
     border: 8px solid #4a4a4a;
@@ -626,9 +626,9 @@ section .abtusimg img {
     }
 
     .testimonial-photo-container {
-        top: -70px;
-        width: 160px;
-        height: 160px;
+        top: -30px;
+        width: 150px;
+        height: 150px;
         border-width: 6px;
     }
 
@@ -1070,7 +1070,7 @@ section .abtusimg img {
     .hero-video-wrapper {
         position: absolute !important;
         
-         /* margin: 20px auto !important;  */
+         /* margin: 20px auto !important; i added this part from the top to the order as at 23/2/26 */
         top: auto !important;
         left: 490px !important;
         order: 2; 
