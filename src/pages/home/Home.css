@@ -1069,6 +1069,12 @@ section .abtusimg img {
 
     .hero-video-wrapper {
         position: absolute !important;
+        
+         margin: 20px auto !important; 
+        top: auto !important;
+        left: 420px !important;
+        order: 2; 
+
         width: 100% !important;
         max-width: 400px !important; 
         height: 208px !important;    
