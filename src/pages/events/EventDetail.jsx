@@ -9,9 +9,9 @@ import event3Img from '../../assets/DIGITAL-GROWTHh.png';
 import event4Img from '../../assets/podcast.hero.png';
 import event5Img from '../../assets/podcast.hero.png';
 import event6Img from '../../assets/podcast.hero.png';
-// import event7Img from '../../assets/podcast.hero.png';
-// import event8Img from '../../assets/podcast.hero.png';
-// import event9Img from '../../assets/podcast.hero.png';
+import event7Img from '../../assets/podcast.hero.png';
+import event8Img from '../../assets/podcast.hero.png';
+import event9Img from '../../assets/podcast.hero.png';
 
 const EventDetail = () => {
     const { id } = useParams();
@@ -105,39 +105,39 @@ const EventDetail = () => {
             featuredImage: event6Img,
             isFree: false
         },
-        "7": {
-            title: "Marketing Analytics Masterclass",
-            date: "March 15, 2026",
-            time: "10:00 AM – 3:00 PM",
-            location: "Online (Zoom)",
-            overview: "Turn your data into actionable marketing plans.",
-            highlights: ["Data Tracking", "Conversion Optimization"],
-            who: ["Analytic Managers", "Digital Marketers"],
-            featuredImage: event7Img,
-            isFree: false
-        },
-        "8": {
-            title: "HR & Talent Management",
-            date: "April 10, 2026",
-            time: "9:00 AM – 1:00 PM",
-            location: "Lagos Continental Hotel",
-            overview: "How to hire, train, and keep the best employees.",
-            highlights: ["Performance Management", "Company Culture"],
-            who: ["HR Professionals", "Business Managers"],
-            featuredImage: event8Img,
-            isFree: false
-        },
-        "9": {
-            title: "Startup Funding Pitch Day",
-            date: "May 22, 2026",
-            time: "10:00 AM – 5:00 PM",
-            location: "PraisePalace Hub",
-            overview: "Present your business to active venture capitalists.",
-            highlights: ["Investment Deck Review", "Live Q&A with VCs"],
-            who: ["Tech Founders", "Innovators"],
-            featuredImage: event9Img,
-            isFree: true
-        }
+        // "7": {
+        //     title: "Marketing Analytics Masterclass",
+        //     date: "March 15, 2026",
+        //     time: "10:00 AM – 3:00 PM",
+        //     location: "Online (Zoom)",
+        //     overview: "Turn your data into actionable marketing plans.",
+        //     highlights: ["Data Tracking", "Conversion Optimization"],
+        //     who: ["Analytic Managers", "Digital Marketers"],
+        //     featuredImage: event7Img,
+        //     isFree: false
+        // },
+        // "8": {
+        //     title: "HR & Talent Management",
+        //     date: "April 10, 2026",
+        //     time: "9:00 AM – 1:00 PM",
+        //     location: "Lagos Continental Hotel",
+        //     overview: "How to hire, train, and keep the best employees.",
+        //     highlights: ["Performance Management", "Company Culture"],
+        //     who: ["HR Professionals", "Business Managers"],
+        //     featuredImage: event8Img,
+        //     isFree: false
+        // },
+        // "9": {
+        //     title: "Startup Funding Pitch Day",
+        //     date: "May 22, 2026",
+        //     time: "10:00 AM – 5:00 PM",
+        //     location: "PraisePalace Hub",
+        //     overview: "Present your business to active venture capitalists.",
+        //     highlights: ["Investment Deck Review", "Live Q&A with VCs"],
+        //     who: ["Tech Founders", "Innovators"],
+        //     featuredImage: event9Img,
+        //     isFree: true
+        // }
     };
 
     const data = eventContentMap[id] || eventContentMap["1"];
