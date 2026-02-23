@@ -446,7 +446,21 @@ section .abtusimg img {
     gap: 20px;
     align-items: center;
     margin-top: 40px;
+    
+    
 }
+
+.dotted-text-content p{
+    color: #000;
+    
+}
+
+.dotted-text-content p:hover{
+    color: #E91E63;
+    
+   
+}
+
 
 #down {
     position: relative;
