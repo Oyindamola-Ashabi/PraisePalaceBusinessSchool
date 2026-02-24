@@ -35,7 +35,7 @@ import sectionThreeImgThree from './assets//Career-Empl.jpg';
 import sectionThreeImgFour from './assets//Financial-Literacy-Business-Finance.png';
 import sectionThreeImgFive from './assets//Mentorship-Coaching.png';
 import sectionThreeImgSix from './assets//Community-Focused-Learning.png';
-import sectionThreeImgSeven from './assets//Digital-workplace-skills.png';
+import sectionThreeImgSeven from './assets//Digital-Workplace-Skills.png';
 import sectionThreeImgEight from './assets//Small-Business-Growth-Sustainability.png';
 import sectionThreeImgNine from './assets//Flexible-Learning-Options.png';
 import sectionThreeImgTen from './assets//Real-Impact-Real-Results.png';
