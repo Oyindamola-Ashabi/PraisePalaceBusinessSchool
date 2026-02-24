@@ -296,7 +296,8 @@ const Home = ({ highlights, testimonials, FAQ }) => {
           <div className="contact-content-container">
             <h1>Need help? <span className="p-color">Contact us</span> for support.</h1>
             <p>Got more questions? Contact us below!</p>
-            <a href="/contact" className="contact-us-button-outline">Contact Us</a>
+            {/* <a href="/contact" className="contact-us-button-outline">Contact Us</a> */}
+            <Link to='/contact' className="contact-us-button-outline"> Contact Us</Link>
             <div className="contact-form-box">
               <p>Send message directly below.</p>
               <div className="message-textarea-container">
