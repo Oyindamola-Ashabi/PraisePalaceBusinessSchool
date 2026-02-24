@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import Button from "../../components/button-one/Button"
-// import headingImage from '../../assets/image01.jpeg'
-// import heroImg2 from '../../assets/two.png'; 
-// import heroImg3 from '../../assets/homesecondwomanhero.jpg'
+//  import headingImage from '../../assets/image01.jpeg'
+//  import heroImg2 from '../../assets/two.png'; 
+//  import heroImg3 from '../../assets/homesecondwomanhero.jpg'
 import headingImage from '../../assets/SLIDE-1.png'
 import heroImg2 from '../../assets/SLIDE-2.png'
 import heroImg3 from '../../assets/SLIDE-3.png'

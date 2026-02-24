@@ -6,9 +6,9 @@ import './Events.css';
 import event1Img from '../../assets/business-leadership-submmit.png';
 import event2Img from '../../assets/WEALTH-MASTERY-WORKSHOPp.png';
 import event3Img from '../../assets/DIGITAL-GROWTHh.png';
-import event4Img from '../../assets/podcast.hero.png';
-import event5Img from '../../assets/podcast.hero.png';
-import event6Img from '../../assets/podcast.hero.png';
+import event4Img from '../../assets/ENTREPRENEURSHIP.jpg';
+import event5Img from '../../assets/Financial-Literacy-Business-Finance.png';
+import event6Img from '../../assets/Small-Business-Growth-Sustainability.png';
 import event7Img from '../../assets/podcast.hero.png';
 import event8Img from '../../assets/podcast.hero.png';
 import event9Img from '../../assets/podcast.hero.png';
@@ -41,9 +41,9 @@ const EventDetail = () => {
     const eventContentMap = {
         "1": {
             title: "Business Leadership Summit",
-            date: "September 10, 2025",
+            date: "September 10, 2026",
             time: "10:00 AM – 4:00 PM",
-            location: "Eko Hotel & Suites, Lagos Island",
+            location: "Radisson Blu Hotel, London Canary Wharf East",
             overview: "A gathering for visionary leaders to explore key trends in organizational growth and innovation.",
             highlights: ["Executive Networking", "Strategy Sessions", "Global Leadership Frameworks"],
             who: ["Business Owners", "Managers", "Corporate Leaders"],
@@ -52,7 +52,7 @@ const EventDetail = () => {
         },
         "2": {
             title: "Wealth Mastery Workshop",
-            date: "October 3, 2025",
+            date: "October 3, 2026",
             time: "1:00 PM – 5:00 PM",
             location: "Online (Zoom)",
             overview: "Focus on financial intelligence, investment strategies, and long-term wealth creation.",
@@ -63,9 +63,9 @@ const EventDetail = () => {
         },
         "3": {
             title: "Digital Growth Bootcamp",
-            date: "November 15, 2025",
+            date: "November 15, 2026",
             time: "9:00 AM – 3:00 PM",
-            location: "PraisePalace Auditorium, Lagos",
+            location: "PraisePalace Auditorium, United Kingdom",
             overview: "Learn to scale your brand using digital marketing, AI tools, and social media advertising.",
             highlights: ["AI for Productivity", "Content Strategy", "Paid Ads Masterclass"],
             who: ["Marketers", "SME Owners", "Creatives"],
@@ -74,9 +74,9 @@ const EventDetail = () => {
         },
         "4": {
             title: "Entrepreneurship Mixer",
-            date: "December 5, 2025",
+            date: "December 5, 2026",
             time: "5:00 PM – 8:00 PM",
-            location: "Radisson Blu, Victoria Island",
+            location: "Hampton by Hilton Glasgow Central",
             overview: "A networking-heavy event designed to connect founders with potential investors.",
             highlights: ["Pitch Sessions", "Investor Matchmaking"],
             who: ["Founders", "Angel Investors"],
@@ -85,7 +85,7 @@ const EventDetail = () => {
         },
         "5": {
             title: "Financial Intelligence Class",
-            date: "January 12, 2026",
+            date: "June 12, 2026",
             time: "11:00 AM – 2:00 PM",
             location: "Online (Zoom)",
             overview: "Master the numbers behind your business success.",
@@ -96,7 +96,7 @@ const EventDetail = () => {
         },
         "6": {
             title: "Sales Mastery Seminar",
-            date: "February 20, 2026",
+            date: "May 20, 2026",
             time: "10:00 AM – 4:00 PM",
             location: "PraisePalace Main Hall",
             overview: "Advanced closing techniques and sales psychology.",

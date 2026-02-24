@@ -6,9 +6,9 @@ import eventHero from '../../assets/event.png';
 import summitImg from '../../assets/business-leadership-submmit.png';
 import wealthImg from '../../assets/WEALTH-MASTERY-WORKSHOPp.png';
 import digitalImg from '../../assets/DIGITAL-GROWTHh.png';
-import mixerImg from '../../assets/podcast.hero.png';
-import financeImg from '../../assets/podcast.hero.png';
-import salesImg from '../../assets/podcast.hero.png';
+import mixerImg from '../../assets/ENTREPRENEURSHIP.jpg';
+import financeImg from '../../assets/Financial-Literacy-Business-Finance.png';
+import salesImg from '../../assets/Small-Business-Growth-Sustainability.png';
 import marketingImg from '../../assets/podcast.hero.png';
 import hrImg from '../../assets/podcast.hero.png';
 import startupImg from '../../assets/podcast.hero.png';
@@ -20,12 +20,12 @@ const Events = () => {
     const navigate = useNavigate();
 
     const allEvents = [
-        { id: 1, title: "Business Leadership Summit", date: "September 10, 2025", time: "10:00 AM – 4:00 PM", location: "Eko Hotel & Suites, Lagos Island", image: summitImg },
-        { id: 2, title: "Wealth Mastery Workshop", date: "October 3, 2025", time: "1:00 PM – 5:00 PM", location: "Online (Zoom)", image: wealthImg },
-        { id: 3, title: "Digital Growth Bootcamp", date: "November 15, 2025", time: "9:00 AM – 3:00 PM", location: "PraisePalace Auditorium, Lagos", image: digitalImg },
-        { id: 4, title: "Entrepreneurship Mixer", date: "December 5, 2025", time: "5:00 PM – 8:00 PM", location: "Radisson Blu, Victoria Island", image: mixerImg },
-        { id: 5, title: "Financial Intelligence Class", date: "January 12, 2026", time: "11:00 AM – 2:00 PM", location: "Online (Zoom)", image: financeImg },
-        { id: 6, title: "Sales Mastery Seminar", date: "February 20, 2026", time: "10:00 AM – 4:00 PM", location: "PraisePalace Main Hall", image: salesImg },
+        { id: 1, title: "Business Leadership Summit", date: "September 10, 2026", time: "10:00 AM – 4:00 PM", location: "Radisson Blu Hotel, London Canary Wharf East", image: summitImg },
+        { id: 2, title: "Wealth Mastery Workshop", date: "October 3, 2026", time: "1:00 PM – 5:00 PM", location: "Online (Zoom)", image: wealthImg },
+        { id: 3, title: "Digital Growth Bootcamp", date: "November 15, 2026", time: "9:00 AM – 3:00 PM", location: "PraisePalace Auditorium, United Kingdom", image: digitalImg },
+        { id: 4, title: "Entrepreneurship Mixer", date: "December 5, 2026", time: "5:00 PM – 8:00 PM", location: "Hampton by Hilton Glasgow Central", image: mixerImg },
+        { id: 5, title: "Financial Intelligence Class", date: "June 12, 2026", time: "11:00 AM – 2:00 PM", location: "Online (Zoom)", image: financeImg },
+        { id: 6, title: "Sales Mastery Seminar", date: "May 20, 2026", time: "10:00 AM – 4:00 PM", location: "PraisePalace Main Hall", image: salesImg },
     //     { id: 7, title: "Marketing Analytics Masterclass", date: "March 15, 2026", time: "10:00 AM – 3:00 PM", location: "Online (Zoom)", image: marketingImg },
     //     { id: 8, title: "HR & Talent Management", date: "April 10, 2026", time: "9:00 AM – 1:00 PM", location: "Lagos Continental Hotel", image: hrImg },
     //     { id: 9, title: "Startup Funding Pitch Day", date: "May 22, 2026", time: "10:00 AM – 5:00 PM", location: "PraisePalace Hub", image: startupImg },
