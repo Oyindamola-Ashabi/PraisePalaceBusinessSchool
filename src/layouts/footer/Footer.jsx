@@ -44,10 +44,10 @@ const Footer = () => {
                     <p>Shaping future leaders through practical training, events, and mentorship that drive business excellence.</p>
                     <div className="footer-socials">
                         {/* Placeholder links - adjust 'to' as necessary */}
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><img src={FacebookIcon} alt="Facebook" /></a>
-                        <a href="https://x.com" target="_blank" rel="noopener noreferrer"><img src={XIcon} alt="X" /></a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><img src={InstagramIcon} alt="Instagram" /></a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><img src={LinkedInIcon} alt="LinkedIn" /></a>
+                        <a href="https://www.facebook.com/profile.php?id=61579782506181" target="_blank" rel="noopener noreferrer"><img src={FacebookIcon} alt="Facebook" /></a>
+                        <a href="https://x.com/PalacePrai98515" target="_blank" rel="noopener noreferrer"><img src={XIcon} alt="X" /></a>
+                        <a href="https://www.instagram.com/praisepalacebusinessschool?igsh=bWR2OTloeDIwdTZn" target="_blank" rel="noopener noreferrer"><img src={InstagramIcon} alt="Instagram" /></a>
+                        <a href="https://www.linkedin.com/in/praise-palace-business-school-2bb7093b3?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer"><img src={LinkedInIcon} alt="LinkedIn" /></a>
                         <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><img src={YouTubeIcon} alt="YouTube" /></a>
                     </div>
                 </div>
