@@ -110,8 +110,9 @@ const Appointment = () => {
                                 <input type="email" name="email" placeholder="email address" value={formData.email} onChange={handleInputChange} required />
                             </div>
                             <div className="form-box">
-                                <span>🇳🇬</span>
-                                <input type="tel" name="phone" placeholder="+234 0000 000" value={formData.phone} onChange={handleInputChange} required />
+                                {/* <span>UK</span> */}
+                                <span>🇬🇧</span>
+                                <input type="tel" name="phone" placeholder="+44 0000 000" value={formData.phone} onChange={handleInputChange} required />
                             </div>
                             <div className="form-box">
                                 <i className="far fa-comment"></i>
